@@ -1,0 +1,338 @@
+fileFormatVersion: 2
+guid: 61aea00f819be1442961eeab00245656
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7142137728670088713
+    second: InvoHKit_0
+  - first:
+      213: -2862942437656520789
+    second: InvoHKit_1
+  - first:
+      213: 550371965950852
+    second: InvoHKit_2
+  - first:
+      213: -4274974745695215101
+    second: InvoHKit_3
+  - first:
+      213: 5156425290175244485
+    second: InvoHKit_4
+  - first:
+      213: -4583329195126902927
+    second: InvoHKit_5
+  - first:
+      213: 3493616603392001562
+    second: InvoHKit_6
+  - first:
+      213: -1635110741793904252
+    second: InvoHKit_7
+  - first:
+      213: 4700075438216993590
+    second: InvoHKit_8
+  - first:
+      213: 3973230859950767758
+    second: InvoHKit_0
+  - first:
+      213: 8431194172873340058
+    second: InvoHKit_1
+  - first:
+      213: 4438179979771307530
+    second: InvoHKit_2
+  - first:
+      213: -8825160478478641669
+    second: InvoHKit_3
+  - first:
+      213: -5294400266029497809
+    second: InvoHKit_4
+  - first:
+      213: 1822030297093797965
+    second: InvoHKit_5
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: InvoHKit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 341.3333
+        width: 136.33333
+        height: 170.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e3cf18a60c32730800000000000000
+      internalID: 3973230859950767758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InvoHKit_1
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 341.3333
+        width: 136.33333
+        height: 170.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a94757a0e6e910570800000000000000
+      internalID: 8431194172873340058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InvoHKit_2
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 341.3333
+        width: 136.33333
+        height: 170.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06e4875d25979d30800000000000000
+      internalID: 4438179979771307530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InvoHKit_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 171.33333
+        width: 136.33333
+        height: 170.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5d6727d4bb68580800000000000000
+      internalID: -8825160478478641669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InvoHKit_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 171.33333
+        width: 136.33333
+        height: 170.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22049c42038686b0800000000000000
+      internalID: -5294400266029497809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InvoHKit_5
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 171.33333
+        width: 136.33333
+        height: 170.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d487644d6e6294910800000000000000
+      internalID: 1822030297093797965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InvoHKit_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333282
+        width: 136.33333
+        height: 170.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1646927ac1db7030800000000000000
+      internalID: 3493616603392001562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InvoHKit_7
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 1.3333282
+        width: 136.33333
+        height: 170.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489e2fa817bee49e0800000000000000
+      internalID: -1635110741793904252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InvoHKit_8
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1.3333282
+        width: 136.33333
+        height: 170.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b567085b50a3140800000000000000
+      internalID: 4700075438216993590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

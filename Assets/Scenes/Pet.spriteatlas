@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pet
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 9d2236cf9ff14d6459e90d06c2abcea4, type: 3}
+    totalSpriteSurfaceArea: 30080132
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 2833169219983674867, guid: 9df001114b36b734bb65cd384b9e47b5, type: 3}
+  - {fileID: 342499079020089154, guid: 9df001114b36b734bb65cd384b9e47b5, type: 3}
+  - {fileID: -6182735747064010327, guid: 9df001114b36b734bb65cd384b9e47b5, type: 3}
+  - {fileID: -1981456417314398978, guid: 9df001114b36b734bb65cd384b9e47b5, type: 3}
+  - {fileID: -4572162454346320157, guid: 1c66283141b009248af8b1d7dc1a64b9, type: 3}
+  - {fileID: 8646302155956833706, guid: 1c66283141b009248af8b1d7dc1a64b9, type: 3}
+  - {fileID: -3519141358756291351, guid: 1c66283141b009248af8b1d7dc1a64b9, type: 3}
+  - {fileID: 2319327630900354192, guid: 1c66283141b009248af8b1d7dc1a64b9, type: 3}
+  - {fileID: 893731624875482282, guid: 19e0a4e40458ee44386a85d9547de1e6, type: 3}
+  - {fileID: -6305720284575091367, guid: 19e0a4e40458ee44386a85d9547de1e6, type: 3}
+  - {fileID: -997651204397735582, guid: 19e0a4e40458ee44386a85d9547de1e6, type: 3}
+  - {fileID: 2528170717666407330, guid: 19e0a4e40458ee44386a85d9547de1e6, type: 3}
+  - {fileID: -172353576837085244, guid: 19e0a4e40458ee44386a85d9547de1e6, type: 3}
+  - {fileID: 8182478259354503932, guid: e3106d456aa97214a9628973c6ca0910, type: 3}
+  - {fileID: -3808525182782544285, guid: e3106d456aa97214a9628973c6ca0910, type: 3}
+  - {fileID: -2606391971553982203, guid: e3106d456aa97214a9628973c6ca0910, type: 3}
+  - {fileID: 7418068125005216503, guid: e3106d456aa97214a9628973c6ca0910, type: 3}
+  - {fileID: 838216684733181517, guid: e3106d456aa97214a9628973c6ca0910, type: 3}
+  - {fileID: 5522832142139339602, guid: d2d1ee48e87eb31449ec5bd651ed9457, type: 3}
+  - {fileID: -3558074716032189687, guid: d2d1ee48e87eb31449ec5bd651ed9457, type: 3}
+  - {fileID: 4553020435365238863, guid: d2d1ee48e87eb31449ec5bd651ed9457, type: 3}
+  - {fileID: 7524446083943089770, guid: d2d1ee48e87eb31449ec5bd651ed9457, type: 3}
+  - {fileID: -6439367245663865740, guid: d2d1ee48e87eb31449ec5bd651ed9457, type: 3}
+  - {fileID: -4320636934894783902, guid: 775bae689fcc6804dbb6a01a08fe01e0, type: 3}
+  - {fileID: -4953692107199869763, guid: 775bae689fcc6804dbb6a01a08fe01e0, type: 3}
+  - {fileID: -6774754857494996149, guid: 775bae689fcc6804dbb6a01a08fe01e0, type: 3}
+  - {fileID: -8705457931675896915, guid: 775bae689fcc6804dbb6a01a08fe01e0, type: 3}
+  - {fileID: -3981768721242929053, guid: 775bae689fcc6804dbb6a01a08fe01e0, type: 3}
+  - {fileID: -3255046860573200378, guid: 775bae689fcc6804dbb6a01a08fe01e0, type: 3}
+  - {fileID: -2217397341222385862, guid: 775bae689fcc6804dbb6a01a08fe01e0, type: 3}
+  - {fileID: 6364485185144877546, guid: 775bae689fcc6804dbb6a01a08fe01e0, type: 3}
+  - {fileID: -968300583988155269, guid: 0f7e94a8ec1a68b4babb9a0136a9a0c8, type: 3}
+  - {fileID: 3875043191116997692, guid: 0f7e94a8ec1a68b4babb9a0136a9a0c8, type: 3}
+  - {fileID: -8646956326466044199, guid: 0f7e94a8ec1a68b4babb9a0136a9a0c8, type: 3}
+  - {fileID: 479139809776126620, guid: 0f7e94a8ec1a68b4babb9a0136a9a0c8, type: 3}
+  - {fileID: 4587076755555277895, guid: 0f7e94a8ec1a68b4babb9a0136a9a0c8, type: 3}
+  - {fileID: -4113806066249134996, guid: 0f7e94a8ec1a68b4babb9a0136a9a0c8, type: 3}
+  - {fileID: 2906414913107237731, guid: 181e010a723420a4faf5676fc11cab09, type: 3}
+  - {fileID: -6817183271650521304, guid: 181e010a723420a4faf5676fc11cab09, type: 3}
+  - {fileID: -2843010394337302378, guid: 181e010a723420a4faf5676fc11cab09, type: 3}
+  - {fileID: -6940615175791464070, guid: 181e010a723420a4faf5676fc11cab09, type: 3}
+  - {fileID: 5259661536502470349, guid: 181e010a723420a4faf5676fc11cab09, type: 3}
+  - {fileID: -9165146608890072811, guid: 181e010a723420a4faf5676fc11cab09, type: 3}
+  - {fileID: 5376879479319171700, guid: f94c5d1cc525e004ea665b23c956148b, type: 3}
+  - {fileID: -8751093133142143686, guid: f94c5d1cc525e004ea665b23c956148b, type: 3}
+  - {fileID: -1031287368807521635, guid: f94c5d1cc525e004ea665b23c956148b, type: 3}
+  - {fileID: 700613634419468643, guid: f94c5d1cc525e004ea665b23c956148b, type: 3}
+  - {fileID: 2940646442951912206, guid: f94c5d1cc525e004ea665b23c956148b, type: 3}
+  - {fileID: 478386615083883392, guid: f94c5d1cc525e004ea665b23c956148b, type: 3}
+  - {fileID: -7870600662154598313, guid: f94c5d1cc525e004ea665b23c956148b, type: 3}
+  - {fileID: 4798710488925617273, guid: f94c5d1cc525e004ea665b23c956148b, type: 3}
+  - {fileID: -2132003103672997868, guid: f94c5d1cc525e004ea665b23c956148b, type: 3}
+  - {fileID: 6941506845850792232, guid: f94c5d1cc525e004ea665b23c956148b, type: 3}
+  - {fileID: -1259073909182105074, guid: c277e85f1029ff7448e8c1fe8138ba32, type: 3}
+  - {fileID: -2726033205085591526, guid: c277e85f1029ff7448e8c1fe8138ba32, type: 3}
+  - {fileID: 6186139975755440165, guid: c277e85f1029ff7448e8c1fe8138ba32, type: 3}
+  - {fileID: 3017334501194554785, guid: c277e85f1029ff7448e8c1fe8138ba32, type: 3}
+  - {fileID: 506784705331302438, guid: c277e85f1029ff7448e8c1fe8138ba32, type: 3}
+  - {fileID: -7385833994234393885, guid: c277e85f1029ff7448e8c1fe8138ba32, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Pet_Wounded_0
+  - Pet_Wounded_1
+  - Pet_Wounded_2
+  - Pet_Wounded_3
+  - Pet_Idle_2
+  - Pet_Idle_3
+  - Pet_Idle_0
+  - Pet_Idle_1
+  - Pet_Saut_4
+  - Pet_Saut_3
+  - Pet_Saut_2
+  - Pet_Saut_1
+  - Pet_Saut_0
+  - Pet_Swim_4
+  - Pet_Swim_0
+  - Pet_Swim_1
+  - Pet_Swim_2
+  - Pet_Swim_3
+  - Pet_AttaqueCac_0
+  - Pet_AttaqueCac_1
+  - Pet_AttaqueCac_2
+  - Pet_AttaqueCac_3
+  - Pet_AttaqueCac_4
+  - Pet_Marche_6
+  - Pet_Marche_7
+  - Pet_Marche_4
+  - Pet_Marche_5
+  - Pet_Marche_2
+  - Pet_Marche_3
+  - Pet_Marche_0
+  - Pet_Marche_1
+  - Pet_Tp_0
+  - Pet_Tp_1
+  - Pet_Tp_2
+  - Pet_Tp_3
+  - Pet_Tp_4
+  - Pet_Tp_5
+  - Pet_Evade_1
+  - Pet_Evade_0
+  - Pet_Evade_3
+  - Pet_Evade_2
+  - Pet_Evade_5
+  - Pet_Evade_4
+  - Pet_Dead_8
+  - Pet_Dead_9
+  - Pet_Dead_6
+  - Pet_Dead_7
+  - Pet_Dead_4
+  - Pet_Dead_5
+  - Pet_Dead_2
+  - Pet_Dead_3
+  - Pet_Dead_0
+  - Pet_Dead_1
+  - Pet_Court_3
+  - Pet_Court_2
+  - Pet_Court_1
+  - Pet_Court_0
+  - Pet_Court_5
+  - Pet_Court_4
+  m_RenderDataMap: {}
+  m_Tag: Pet
+  m_IsVariant: 0

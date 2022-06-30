@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Projectiles
+  - Destructibles
+  - Passerelles
+  - PointRetour
+  - Ennemis
+  - BordDuNiveauGauche
+  - BordDuNiveauDroit
+  - Verre
+  - Waypoints
+  - BreakThings
+  - Kicker
+  - Window
+  - Chutteur
+  - Obstacle
+  - AiToIgnore
+  - OutOfGame
+  - HintSpawnPoint
+  - Weapon
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcess
+  - Sky
+  - Player
+  - Ennemis
+  - Destructibles
+  - Ladders
+  - RosiCut
+  - Sols
+  - LiquidParticles
+  - Hints
+  - Clouds
+  - InGameUi
+  - DockCranes
+  - Walls
+  - Invulnerable
+  - CableGrue
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Sky
+    uniqueID: 2022145089
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: VehiclesThrusters
+    uniqueID: 3904788655
+    locked: 0
+  - name: Vehicles
+    uniqueID: 4133972799
+    locked: 0
+  - name: BG2
+    uniqueID: 2922259035
+    locked: 0
+  - name: BackGround
+    uniqueID: 461250293
+    locked: 0
+  - name: SousSols
+    uniqueID: 395935659
+    locked: 0
+  - name: Sols
+    uniqueID: 973064895
+    locked: 0
+  - name: Interieur
+    uniqueID: 3641331911
+    locked: 0
+  - name: Props
+    uniqueID: 2245017857
+    locked: 0
+  - name: TileC
+    uniqueID: 1869997977
+    locked: 0
+  - name: TileB
+    uniqueID: 1058392811
+    locked: 0
+  - name: TileA
+    uniqueID: 2235038815
+    locked: 0
+  - name: Player
+    uniqueID: 437812983
+    locked: 0
+  - name: Ladders
+    uniqueID: 3473865651
+    locked: 0
+  - name: 1erPlan
+    uniqueID: 911441403
+    locked: 0
+  - name: Clouds
+    uniqueID: 2352110239
+    locked: 0
+  - name: PlanFlou
+    uniqueID: 4052958829
+    locked: 0

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ffec296986720641af81fcbab411fc9, type: 3}
+  m_Name: Invo1
+  m_EditorClassIdentifier: 
+  text: "Fils d'une famille de m\xE9decins, Ashk'aK a toujours \xE9t\xE9 dou\xE9
+    pour la magie noire.Il trouvait les \xE9tudes de m\xE9decine trop dures et s'enfuit
+    de chez lui pour pratiquer les arts impis. Rapidement, il se vend comme assassin. "
+  heroName: Invocator
+  pieceId: I1
+  read: 0

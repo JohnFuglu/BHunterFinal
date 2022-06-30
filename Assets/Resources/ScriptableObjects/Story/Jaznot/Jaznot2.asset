@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ffec296986720641af81fcbab411fc9, type: 3}
+  m_Name: Jaznot2
+  m_EditorClassIdentifier: 
+  text: "Jaznot a refus\xE9 les avances du gouvernement. Repouss\xE9 les offres les
+    plus all\xE8chantes pour ne pas \xEAtre \xE0 la botte des militaires. Son insolence
+    allait le trainer vers l'enfer..."
+  heroName: Jaznot
+  pieceId: J2
+  read: 1

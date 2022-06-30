@@ -1,0 +1,185 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Invoc
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 0acf34ebafefc26478bc424843e035aa, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 2667802920239508736, guid: acfe38d0ab582f84ca5ab5d984655537, type: 3}
+  - {fileID: 5774563985125546350, guid: acfe38d0ab582f84ca5ab5d984655537, type: 3}
+  - {fileID: 5934910698275632299, guid: acfe38d0ab582f84ca5ab5d984655537, type: 3}
+  - {fileID: -6543583868002281933, guid: acfe38d0ab582f84ca5ab5d984655537, type: 3}
+  - {fileID: -455047623464409454, guid: acfe38d0ab582f84ca5ab5d984655537, type: 3}
+  - {fileID: -541831878881467354, guid: bb424c02b37c1984e9bfa7cbf98448d8, type: 3}
+  - {fileID: -6408285507706890583, guid: bb424c02b37c1984e9bfa7cbf98448d8, type: 3}
+  - {fileID: 7586280846962874184, guid: bb424c02b37c1984e9bfa7cbf98448d8, type: 3}
+  - {fileID: -960308742161609561, guid: bb424c02b37c1984e9bfa7cbf98448d8, type: 3}
+  - {fileID: 3179398620128383259, guid: bb424c02b37c1984e9bfa7cbf98448d8, type: 3}
+  - {fileID: -6238466197184174119, guid: 094f32324915db1488a99b82b10657e7, type: 3}
+  - {fileID: 6548708470881922173, guid: 094f32324915db1488a99b82b10657e7, type: 3}
+  - {fileID: 8067152223395690277, guid: 094f32324915db1488a99b82b10657e7, type: 3}
+  - {fileID: 2701942251330840499, guid: 094f32324915db1488a99b82b10657e7, type: 3}
+  - {fileID: 7424229035518722563, guid: 094f32324915db1488a99b82b10657e7, type: 3}
+  - {fileID: -9205918026610130377, guid: 094f32324915db1488a99b82b10657e7, type: 3}
+  - {fileID: 5640162516112201047, guid: 9faf07c363b78bb4d876b88211c90e78, type: 3}
+  - {fileID: -7107663627053683785, guid: 9faf07c363b78bb4d876b88211c90e78, type: 3}
+  - {fileID: 2535532950093466822, guid: 9faf07c363b78bb4d876b88211c90e78, type: 3}
+  - {fileID: 7506731448800283635, guid: 9faf07c363b78bb4d876b88211c90e78, type: 3}
+  - {fileID: 21300000, guid: c933ed345ce107d479e7f35225737399, type: 3}
+  - {fileID: -2019642235378317377, guid: d4d7a7449bd8f084ea2df43792bfae53, type: 3}
+  - {fileID: 7306704935694150143, guid: d4d7a7449bd8f084ea2df43792bfae53, type: 3}
+  - {fileID: -1910799709648977537, guid: d4d7a7449bd8f084ea2df43792bfae53, type: 3}
+  - {fileID: -4123063720732307275, guid: d4d7a7449bd8f084ea2df43792bfae53, type: 3}
+  - {fileID: -8217719254531757213, guid: d4d7a7449bd8f084ea2df43792bfae53, type: 3}
+  - {fileID: 4301599383826780151, guid: d4d7a7449bd8f084ea2df43792bfae53, type: 3}
+  - {fileID: 1792692414042190017, guid: 9da4b5b4c073acc41a365e7385a77ba9, type: 3}
+  - {fileID: 8734862457932936450, guid: 9da4b5b4c073acc41a365e7385a77ba9, type: 3}
+  - {fileID: 9165535921711896982, guid: 9da4b5b4c073acc41a365e7385a77ba9, type: 3}
+  - {fileID: 379350955919160445, guid: 9da4b5b4c073acc41a365e7385a77ba9, type: 3}
+  - {fileID: -6878346614319569916, guid: 9da4b5b4c073acc41a365e7385a77ba9, type: 3}
+  - {fileID: -8179053723611735538, guid: 7775ca956d7ac084da43face4e2e91f0, type: 3}
+  - {fileID: -5439716243907364191, guid: 7775ca956d7ac084da43face4e2e91f0, type: 3}
+  - {fileID: -9155447804503193361, guid: 7775ca956d7ac084da43face4e2e91f0, type: 3}
+  - {fileID: -5453137059752095778, guid: 7775ca956d7ac084da43face4e2e91f0, type: 3}
+  - {fileID: 3859531063048226001, guid: 7775ca956d7ac084da43face4e2e91f0, type: 3}
+  - {fileID: -257367818877296725, guid: 7775ca956d7ac084da43face4e2e91f0, type: 3}
+  - {fileID: 6144985715626758268, guid: fa1af1d70590cb24bb243eead24b1d55, type: 3}
+  - {fileID: 747216977382558722, guid: fa1af1d70590cb24bb243eead24b1d55, type: 3}
+  - {fileID: -1524543149639946714, guid: fa1af1d70590cb24bb243eead24b1d55, type: 3}
+  - {fileID: -7972690972448806448, guid: fa1af1d70590cb24bb243eead24b1d55, type: 3}
+  - {fileID: 1828199938942839062, guid: fa1af1d70590cb24bb243eead24b1d55, type: 3}
+  - {fileID: 5784015661408159771, guid: fa1af1d70590cb24bb243eead24b1d55, type: 3}
+  - {fileID: 5716507962671568884, guid: fa1af1d70590cb24bb243eead24b1d55, type: 3}
+  - {fileID: -7180927712155576328, guid: fa1af1d70590cb24bb243eead24b1d55, type: 3}
+  - {fileID: 4172623015198001118, guid: fa1af1d70590cb24bb243eead24b1d55, type: 3}
+  - {fileID: 7810834285434041254, guid: 3c42c16a3d18e6b468243b4b8491b921, type: 3}
+  - {fileID: 1866158820426398859, guid: 3c42c16a3d18e6b468243b4b8491b921, type: 3}
+  - {fileID: 2185920844206639370, guid: 3c42c16a3d18e6b468243b4b8491b921, type: 3}
+  - {fileID: 5884142313372590095, guid: 3c42c16a3d18e6b468243b4b8491b921, type: 3}
+  - {fileID: -5063185692871674060, guid: 3c42c16a3d18e6b468243b4b8491b921, type: 3}
+  - {fileID: 6975931578046168988, guid: 3c42c16a3d18e6b468243b4b8491b921, type: 3}
+  - {fileID: 6709581821740506693, guid: 8cf61c7bc8fd8a049b46c6c8f1351331, type: 3}
+  - {fileID: -6410237736357146051, guid: 8cf61c7bc8fd8a049b46c6c8f1351331, type: 3}
+  - {fileID: 1567759210047838440, guid: 8cf61c7bc8fd8a049b46c6c8f1351331, type: 3}
+  - {fileID: 1384558573226855128, guid: 8cf61c7bc8fd8a049b46c6c8f1351331, type: 3}
+  - {fileID: 8079219190609563758, guid: 8cf61c7bc8fd8a049b46c6c8f1351331, type: 3}
+  - {fileID: -3995338756902678687, guid: 8cf61c7bc8fd8a049b46c6c8f1351331, type: 3}
+  - {fileID: -1940086599226034033, guid: 8cf61c7bc8fd8a049b46c6c8f1351331, type: 3}
+  - {fileID: -3114869957093970124, guid: 8cf61c7bc8fd8a049b46c6c8f1351331, type: 3}
+  - {fileID: -7131885094024327551, guid: 560b98ac9809bdb4aba3e68568dfbd2b, type: 3}
+  - {fileID: -3896652186019673829, guid: 560b98ac9809bdb4aba3e68568dfbd2b, type: 3}
+  - {fileID: -3792272911219837113, guid: 560b98ac9809bdb4aba3e68568dfbd2b, type: 3}
+  - {fileID: 5800129016449914403, guid: 560b98ac9809bdb4aba3e68568dfbd2b, type: 3}
+  - {fileID: -7045502668376046272, guid: ea99b4ddac08d5542882756289c203da, type: 3}
+  - {fileID: -4208399008131335894, guid: ea99b4ddac08d5542882756289c203da, type: 3}
+  - {fileID: -2536317830411341019, guid: ea99b4ddac08d5542882756289c203da, type: 3}
+  - {fileID: 5505019634590104588, guid: ea99b4ddac08d5542882756289c203da, type: 3}
+  - {fileID: -7709301381106566812, guid: ea99b4ddac08d5542882756289c203da, type: 3}
+  - {fileID: 4215475567103652642, guid: ea99b4ddac08d5542882756289c203da, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Invocator_Swim_4
+  - Invocator_Swim_0
+  - Invocator_Swim_1
+  - Invocator_Swim_2
+  - Invocator_Swim_3
+  - Invocator_Invoc_1
+  - Invocator_Invoc_0
+  - Invocator_Invoc_3
+  - Invocator_Invoc_2
+  - Invocator_Invoc_4
+  - Invocator_Jump_0
+  - Invocator_Jump_1
+  - Invocator_Jump_2
+  - Invocator_Jump_3
+  - Invocator_Jump_4
+  - Invocator_Jump_5
+  - Invocator_Idle_2
+  - Invocator_Idle_3
+  - Invocator_Idle_0
+  - Invocator_Idle_1
+  - Vaisseau
+  - Invocator_Dead_4
+  - Invocator_Dead_5
+  - Invocator_Dead_2
+  - Invocator_Dead_3
+  - Invocator_Dead_0
+  - Invocator_Dead_1
+  - Invocator_CaC_4
+  - Invocator_CaC_1
+  - Invocator_CaC_0
+  - Invocator_CaC_3
+  - Invocator_CaC_2
+  - Invocator_Sit_4
+  - Invocator_Sit_5
+  - Invocator_Sit_2
+  - Invocator_Sit_3
+  - Invocator_Sit_0
+  - Invocator_Sit_1
+  - Invocator_Run_1
+  - Invocator_Run_0
+  - Invocator_Run_3
+  - Invocator_Run_2
+  - Invocator_Run_5
+  - Invocator_Run_4
+  - Invocator_Run_7
+  - Invocator_Run_6
+  - Invocator_Run_8
+  - Invocator_Shoot_3
+  - Invocator_Shoot_2
+  - Invocator_Shoot_1
+  - Invocator_Shoot_0
+  - Invocator_Shoot_5
+  - Invocator_Shoot_4
+  - Invocator_Walk_3
+  - Invocator_Walk_2
+  - Invocator_Walk_1
+  - Invocator_Walk_0
+  - Invocator_Walk_7
+  - Invocator_Walk_6
+  - Invocator_Walk_5
+  - Invocator_Walk_4
+  - Invocator_Wounded_0
+  - Invocator_Wounded_1
+  - Invocator_Wounded_2
+  - Invocator_Wounded_3
+  - Invocator_Ladder_4
+  - Invocator_Ladder_5
+  - Invocator_Ladder_0
+  - Invocator_Ladder_1
+  - Invocator_Ladder_2
+  - Invocator_Ladder_3
+  m_RenderDataMap: {}
+  m_Tag: Invoc
+  m_IsVariant: 0

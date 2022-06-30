@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: b66cdb4d73e68a94db79795103ba77e4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2971436592055173807
+    second: JaznotGrenef_0
+  - first:
+      213: 3659224012909294770
+    second: JaznotGrenef_1
+  - first:
+      213: -9119292856690381752
+    second: JaznotGrenef_2
+  - first:
+      213: -9155859237769216756
+    second: JaznotGrenef_3
+  - first:
+      213: 7579442514561753056
+    second: JaznotGrenef_4
+  - first:
+      213: 5146042468631340109
+    second: JaznotGrenef_5
+  - first:
+      213: 4498816346779885905
+    second: JaznotGrenef_6
+  - first:
+      213: -4124114182580046917
+    second: JaznotGrenef_7
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JaznotGrenef_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1232
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d34f1b92653c6d0800000000000000
+      internalID: -2971436592055173807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JaznotGrenef_1
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1232
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b4b9033adc28c230800000000000000
+      internalID: 3659224012909294770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JaznotGrenef_2
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 1232
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c66328673c17180800000000000000
+      internalID: -9119292856690381752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JaznotGrenef_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 616
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d7947788adfe080800000000000000
+      internalID: -9155859237769216756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JaznotGrenef_4
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 616
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef52f33fc69f2960800000000000000
+      internalID: 7579442514561753056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JaznotGrenef_5
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 616
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4468dd3c5a6a6740800000000000000
+      internalID: 5146042468631340109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JaznotGrenef_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1512983b1a10f6e30800000000000000
+      internalID: 4498816346779885905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JaznotGrenef_7
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 0
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb37a2e500434c6c0800000000000000
+      internalID: -4124114182580046917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

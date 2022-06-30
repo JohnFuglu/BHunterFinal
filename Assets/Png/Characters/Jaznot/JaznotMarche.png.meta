@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: 890464eebc8754546aac1c48b23fcd02
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2216776239326316852
+    second: JaznotMarche_0
+  - first:
+      213: 8532443357018579994
+    second: JaznotMarche_1
+  - first:
+      213: 4433383315687052264
+    second: JaznotMarche_2
+  - first:
+      213: 7338997702900087430
+    second: JaznotMarche_3
+  - first:
+      213: 3778659645342638327
+    second: JaznotMarche_4
+  - first:
+      213: -7761691183589101335
+    second: JaznotMarche_5
+  - first:
+      213: -4479412085807917499
+    second: JaznotMarche_3
+  - first:
+      213: -5749974967664967098
+    second: JaznotMarche_6
+  - first:
+      213: -1790912096965213181
+    second: JaznotMarche_7
+  - first:
+      213: -2075319939104811205
+    second: JaznotMarche_4
+  - first:
+      213: 9190926741812067923
+    second: JaznotMarche_5
+  - first:
+      213: -250986492374047956
+    second: JaznotMarche_0
+  - first:
+      213: -4727364166961865998
+    second: JaznotMarche_1
+  - first:
+      213: -6182697875340465178
+    second: JaznotMarche_2
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JaznotMarche_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546d3ded07ee5d1c0800000000000000
+      internalID: -4479412085807917499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JaznotMarche_4
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 0
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b375f5ac28bf233e0800000000000000
+      internalID: -2075319939104811205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JaznotMarche_5
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 0
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35eb8521d2bbc8f70800000000000000
+      internalID: 9190926741812067923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JaznotMarche_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 616
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c23af9e6d11548cf0800000000000000
+      internalID: -250986492374047956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JaznotMarche_1
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 616
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fad3583657056eb0800000000000000
+      internalID: -4727364166961865998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JaznotMarche_2
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 616
+        width: 693
+        height: 616
+      alignment: 9
+      pivot: {x: 0.4552417, y: 0.3016809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ebe4ca2a05a23aa0800000000000000
+      internalID: -6182697875340465178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
