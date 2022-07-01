@@ -71,7 +71,7 @@ public class ScoreSystem : MonoBehaviour
     {
         string jSon = JsonUtility.ToJson(score, true) as string;
         File.WriteAllText(Application.persistentDataPath + "/Scores.json", jSon);
-        Debug.Log("SaveGame completed..."+ jSon);
+        Debug.Log("score was saved..."+ jSon);
 
     }
     void DisplayScores() 

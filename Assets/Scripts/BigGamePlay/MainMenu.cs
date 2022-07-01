@@ -67,7 +67,6 @@ public class MainMenu : MonoBehaviour
         System.IO.File.Delete(path);
         //UnityEngine.SceneManagement.SceneManager.GetSceneByName("HeroSelection");
         SceneManager.LoadScene("HeroSelection");
-       
     }
 
     public void QuitGame()

@@ -31,5 +31,22 @@ public class DataClass
         return toReturn;
     }
 
+    public override string ToString()
+    {
+        string hints="Hints = ";
+        string levels = "Levels = ";
+        TargetOfHunt targetOfThisHunt = Resources.Load<TargetOfHunt>("ScriptableObjects/Hunts/" + currentTarget);
+        foreach (int i in hintIds) {
+            foreach (Hint h in targetOfThisHunt.hints)
+                if (h.hintNumber == i)
+                    hints += i + ("-");
+        }
+        foreach (string s in visitedLevel)
+            levels += s+"-";
+        return "\nDEBUT JSON " + hints + "\n"+levels+ "\n" + "Hero ="+heroName+ "\n"+"Level ="+currentLevel 
+            +"\n"+"Target= "+currentTarget + "\n" + "Score= " +score + "\n" + "Moves left = " +movesLeft + "\n FIN";
+
+
+    }
 }
 

@@ -18,9 +18,7 @@ MonoBehaviour:
   specialAmmoIcon: {fileID: 21300000, guid: 82a680855c7955a4ca1e6ddb7aaca58c, type: 3}
   lifeColor: {fileID: 21300000, guid: 4ad7409d5edfd9a4296ecad11ad1ab45, type: 3}
   collectedHints: []
-  storyPieces:
-  - {fileID: 11400000, guid: 91e1341ae0b05a14ba2188be6b697f22, type: 2}
-  - {fileID: 11400000, guid: 3ea793d4399ec68458edb44d04cb1700, type: 2}
+  storyPieces: []
   fuel: 2700
   grenefs: 2
   fuelConso: 12

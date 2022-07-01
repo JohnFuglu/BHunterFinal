@@ -33,12 +33,7 @@ public class PlayerPersistentDataHandler : MonoBehaviour
      *      quand on finit un niveau on ajoute l indice trouvé, on marque le niveau comme fini
      *      si on ne finit pas le niveau (temps) on ne fait que sauver le score et reprendre les infos d'arrivée
      *      si on meurt = on efface les données de progression, on sauve le score avec le héro correspondant
-     
-     
-     
-         
-         
-         */
+     */
 
 
     public delegate void OnCompletion();
@@ -51,18 +46,15 @@ public class PlayerPersistentDataHandler : MonoBehaviour
 
 
     public int PlayerScore { get; set; }
-    //public HuntManager progressionOfHunts;  récupérer les infos ici
-    //public  int enmiesKilled;
-    public Boss[] bossKilled;
-    public string placesVisited;
-    //[SerializeField] TargetOfHunt _actualTarget;
+   // public Boss[] bossKilled;
+   // public string placesVisited;
     public TargetOfHunt thisHunt;
-    //  public TargetOfHunt[] allTargetsInGame, allReadyHunted;
 
     [Header("ManageHints")]
-    public List<Hint> collectedHints;// = new List<Hint>()
-    List<Hint> tempHintCollection;
+    public List<Hint> collectedHints;
+    //List<Hint> tempHintCollection;
     public List<Hint> hintsToFind;//= new List<Hint>()
+    public Hint thisLEvelHint;
     bool _huntCompleted = false;
     public bool foundAHintHere = false;
 
@@ -135,35 +127,22 @@ public class PlayerPersistentDataHandler : MonoBehaviour
     }
 
 
-
+    public Hint ChooseAHintForTheLevel() {
+        Hint h = new Hint();
+        foreach (Hint x in hintsToFind)
+        {
+           if(!_currentProgression.hintIds.Contains(x.hintNumber))
+                    return x;
+        }
+        Debug.LogError("No hint left to find...");
+        return null;
+    }
     public void CollectHint(Hint hintIamCollectingNow)
     {
-        if (collectedHints.Count <= 0) 
-        {
-            collectedHints.Add(hintIamCollectingNow);
-            if(!_currentHero.collectedHints.Contains(hintIamCollectingNow))
-                _currentHero.collectedHints.Add(hintIamCollectingNow);
-            hintsToFind.Remove(hintIamCollectingNow);
-        }
-        else 
-        {
-            foreach (Hint hint in collectedHints)
-            {
-                if (hintIamCollectingNow.hintNumber != hint.hintNumber)
-                {
-                    collectedHints.Add(hintIamCollectingNow);
-                    if (!_currentHero.collectedHints.Contains(hintIamCollectingNow)) 
-                    {
-                        _currentHero.collectedHints.Add(hintIamCollectingNow);
-                        tempHintCollection.Add(hintIamCollectingNow);
-                    }
-                        
-                    hintsToFind.Remove(hintIamCollectingNow);
-                }
-            }
-        }
+        collectedHints.Add(hintIamCollectingNow);
+        _currentProgression.hintIds.Add(hintIamCollectingNow.hintNumber);
+        _currentProgression.visitedLevel.Add(SceneManager.GetActiveScene().name);
         foundAHintHere = true;
-
     }
 
     public void AddHints(TargetOfHunt target)
@@ -197,15 +176,15 @@ public class PlayerPersistentDataHandler : MonoBehaviour
             data.ReturnHintIds(collectedHints, data.hintIds);
             data.heroName = player.name;
             data.currentLevel = SceneManager.GetActiveScene().name;
-
+            data.currentTarget = thisHunt.name;
+            data.score = PlayerScore;
+            data.huntEnded = _huntCompleted;
+        
         if (foundAHintHere)
             data.visitedLevel.Add(data.currentLevel);
             
    
-            data.currentTarget = thisHunt.name;
            
-            data.score = PlayerScore;
-            data.huntEnded = _huntCompleted;
     
     }
 
@@ -216,8 +195,9 @@ public class PlayerPersistentDataHandler : MonoBehaviour
       
         var json = System.IO.File.ReadAllText(path);
         Debug.Log("json = "+ json);
-            _currentProgression=_load.loadDataFromJson(json);
-            Debug.Log("Load complete with hero " + _currentProgression.heroName);   
+        _currentProgression=_load.loadDataFromJson(json);
+        Debug.Log(_currentProgression.ToString());
+        Debug.Log("Load complete!");   
     }
 
 
@@ -250,6 +230,7 @@ public class PlayerPersistentDataHandler : MonoBehaviour
                     if (hint == LevelHandler.Instance.thisLevelHint)
                     {
                         collectedHints.Remove(hint);
+                        _currentHero.collectedHints.Remove(hint);
                     }
                 }
                 Save saveGame = new Save();

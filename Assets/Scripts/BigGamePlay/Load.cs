@@ -35,20 +35,17 @@ public class Load : MonoBehaviour
     #endregion
 
     string[] niveaux = {"DownTown","UnderGround","Docks","Laboratory","SpatioPort","Canibalecter"};
-
+    //TEST
+    [SerializeField] JaznotSc sc;
 
     private void Awake()
     {
         _instance = this;
- //       _launchHunt = GetComponent<LaunchHunt>();
     }
-
-  //  LaunchHunt _launchHunt;
 
 
     public DataClass loadDataFromJson(string jSon) 
     {
-
         DataClass dataLoaded = new DataClass();
         dataLoaded = JsonUtility.FromJson<DataClass>(jSon);
 
@@ -58,8 +55,9 @@ public class Load : MonoBehaviour
             switch (dataLoaded.heroName) 
             {
                 case "Jaznot":
-                    JaznotSc hero = Resources.Load<JaznotSc>("ScriptableObjects/Heroes/" + dataLoaded.heroName);
-                    DesTrucs(dataLoaded, hero);
+                    //TEST JaznotSc hero
+                     sc = Resources.Load<JaznotSc>("ScriptableObjects/Heroes/" + dataLoaded.heroName);
+                    DesTrucs(dataLoaded, sc);//sc = hero
 
                     break;
                 case "Invocator":
@@ -91,7 +89,6 @@ public class Load : MonoBehaviour
 
     void DesTrucs(DataClass data, HeroSc hero) 
     {
-
         TargetOfHunt targetOfThisHunt = Resources.Load<TargetOfHunt>("ScriptableObjects/Hunts/" + data.currentTarget);
 
         if (targetOfThisHunt != null)//autre niveaux aussi
@@ -104,8 +101,6 @@ public class Load : MonoBehaviour
                 }
         }
         else Debug.LogWarning("targetOfThisHunt s missing !");
-
-
 
         foreach (int id in data.hintIds)
         {

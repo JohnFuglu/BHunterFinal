@@ -99,14 +99,16 @@ public class SelectAPlaceOfHunt : MonoBehaviour
             return _dataLoaded;
         }
         Debug.LogWarning("Null json!!");
-        hintsDisplay.text = "You've found " + _dataLoaded.hintIds.Count + " hint(s)";
+       
         return _dataLoaded;
     }
 
     void LoadHintsFromResources() 
     {   
         collectedHints = Resources.LoadAll<Hint>("ScriptableObjects/Hints/"+_dataLoaded.currentTarget);
+        hintsDisplay.text = "You've found " + _dataLoaded.hintIds.Count + " hint(s)";
         DisplayCollectedHints();
+        CheckForVisitedPlaces(_dataLoaded);
     }
 
 
@@ -114,7 +116,7 @@ public class SelectAPlaceOfHunt : MonoBehaviour
     { 
         foreach(string places in data.visitedLevel) // foreach(string places in _visitedPlaces) 
         {
-            UnityEngine.UI.Button button = GameObject.Find(places).GetComponent<UnityEngine.UI.Button>();
+            Button button = GameObject.Find(places).GetComponent<Button>();
             button.interactable = false;
         }
     }
