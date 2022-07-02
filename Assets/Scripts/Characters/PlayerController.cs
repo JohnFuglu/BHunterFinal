@@ -100,10 +100,10 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
 
     protected void Update()
     {  
-        WoundCheck(character);
        
         if (!_thisHero.Destroyed)
         {
+            WoundCheck(character);
             if (_thisHero.Health <= 0)
             { 
                 _thisHero.Destroyed = true;

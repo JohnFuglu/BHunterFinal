@@ -227,7 +227,7 @@ public class PlayerPersistentDataHandler : MonoBehaviour
                 Debug.Log("Save avec un hint et hero est mort");
                 foreach (Hint hint in collectedHints)
                 {
-                    if (hint == LevelHandler.Instance.thisLevelHint)
+                    if (hint == thisLEvelHint)
                     {
                         collectedHints.Remove(hint);
                         _currentHero.collectedHints.Remove(hint);

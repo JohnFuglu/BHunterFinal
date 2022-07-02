@@ -18,6 +18,18 @@ public class MainMenu : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/ProgressionDatas.json"))
         {   
             button.interactable = true;
+        }
+     }
+          
+        
+           
+
+    public void ContinueGame()
+    {
+
+        if (File.Exists(Application.persistentDataPath + "/ProgressionDatas.json"))
+        {
+            button.interactable = true;
             _dataEmpty = false;
             string json = File.ReadAllText(Application.persistentDataPath + "/ProgressionDatas.json");
             data = Load.Instance.loadDataFromJson(json);
@@ -29,21 +41,7 @@ public class MainMenu : MonoBehaviour
                 StartCoroutine(GameOver());
                 button.interactable = false;
             }
-        
         }
-        else
-        {
-            Debug.LogWarning("No json file found ....");
-            _dataEmpty = true;
-        }
-      
-     }
-          
-        
-           
-
-    public void ContinueGame()
-    {
         if (_dataEmpty == false) 
         {
           
@@ -59,14 +57,28 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
+        if (File.Exists(Application.persistentDataPath + "/ProgressionDatas.json"))
+        {
+            _dataEmpty = false;
+            string json = File.ReadAllText(Application.persistentDataPath + "/ProgressionDatas.json");
+            data = Load.Instance.loadDataFromJson(json);
+            HeroSc hsc = (HeroSc)Resources.Load("ScriptableObjects/Heroes/"+data.heroName);
+
+            //si nouveau jeu delete le fichier de save
+            string path = Application.persistentDataPath + "/ProgressionDatas.json";
+            hsc.collectedHints.Clear();
+            File.Delete(path);
+            _dataEmpty = true;
+        }
         foreach (var v in slist.stories) {
             v.read = false;
         }
-        //si nouveau jeu delete le fichier de save
-        string path = Application.persistentDataPath + "/ProgressionDatas.json";
-        System.IO.File.Delete(path);
-        //UnityEngine.SceneManagement.SceneManager.GetSceneByName("HeroSelection");
+      
         SceneManager.LoadScene("HeroSelection");
+    }
+
+    void ClearHeroScriptObject(HeroSc h) { 
+
     }
 
     public void QuitGame()
