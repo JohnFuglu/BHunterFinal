@@ -42,12 +42,13 @@ public class TurretControler : Controller
             Detection(shootDirection* _shoot.DistanceDetection);
             if (hit.transform.CompareTag("Player"))
             {
+                Debug.Log("Doit tirer");
                 AskForShot();
             }
         }
     }
 
-    private void OnDrawGizmosSelected()
+    protected void OnDrawGizmosSelected()
     {
         if(this.transform==null)
             return;

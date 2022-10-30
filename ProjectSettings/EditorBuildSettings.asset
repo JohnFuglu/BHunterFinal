@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Canibalecter.unity
     guid: 8acb4137b613ff04f843925b1cd9bd4a
+  - enabled: 1
+    path: Assets/Scenes/Zoo.unity
+    guid: ab51cf18ceb587643968d298891d8976
   m_configObjects: {}

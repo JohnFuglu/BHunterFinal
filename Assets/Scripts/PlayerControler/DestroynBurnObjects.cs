@@ -47,7 +47,7 @@ public class DestroynBurnObjects : MonoBehaviour
         lifeObject -= dotDamage;
         if (lifeObject <= 0)
         {
-            if (GetComponent<EnnemiScript>() != null || GetComponent<DroneControler>() != null)
+            if (GetComponent<EnnemiScript>() != null)
             {
                 Debug.Log("Ennemi brulé!");
                 Destroy(gameObject);

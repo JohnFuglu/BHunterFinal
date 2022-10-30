@@ -25,8 +25,6 @@ public class WaypointsController : Controller
     {
         base.Start();
         _currentWaypoint = _waypoints[_waypointNumber];
-        // player = GameObject.FindWithTag("Player").GetComponent<Transform>().position;
-        // player = PlayerPersistentDataHandler.Instance.player.GetComponent<Transform>().position;
         _player = GameObject.FindWithTag("Player");
     }
 
@@ -37,8 +35,6 @@ public class WaypointsController : Controller
         MoveAIWaypoints();
         if (_shoot.ActualAmmoInClip > 0) 
         {
-       
-            //player = GameObject.FindWithTag("Player").GetComponent<Transform>().position;
             DetectionDrone(_shoot.canon.position, _player.GetComponent<Transform>().position-_shoot.canon.position);//player
         }
           
@@ -94,12 +90,6 @@ public class WaypointsController : Controller
             }
         }
     }
- //private void OnDrawGizmosSelected()
- //       {
- //           if (frontToEnnemyA == null || frontToEnnemyB == null)
- //               return;
- //               Gizmos.DrawLine(frontToEnnemyA.transform.position, frontToEnnemyB.transform.position);
- //       }
 
     void DrawDetectionRay(Vector2 origin, Vector3 detection) 
     {

@@ -34,7 +34,7 @@ public class Load : MonoBehaviour
     }
     #endregion
 
-    string[] niveaux = {"DownTown","UnderGround","Docks","Laboratory","SpatioPort","Canibalecter"};
+    string[] niveaux = {"DownTown","UnderGround","Docks","Laboratory","SpatioPort","Canibalecter","Zoo"};
 
 
     private void Awake()

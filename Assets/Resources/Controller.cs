@@ -30,6 +30,7 @@ public class Controller: MonoBehaviour
     private string[] heroNames = { "Jaznot", "Royale" };          
     protected virtual void Start()
     {
+        target = GameObject.FindWithTag("Player");
         audioSource = GetComponent<AudioSource>();
         _shoot = GetComponent<ShootSystem>();//va générer erreur si pas là switch av attackCAc
         _animator = GetComponent<Animator>();
