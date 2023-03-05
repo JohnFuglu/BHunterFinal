@@ -5,9 +5,9 @@ using ObjectPooling;
 public class ShootSystem : MonoBehaviour
 {
     //type character qui va englober ces variables;
-    [SerializeField] int _ammo,_clipCount, _ammoMaxInClip, _actualAmmoInClip, _distanceDetection,_burstNumber;//_damage ??
+    [SerializeField] int _ammo,_clipCount, _ammoMaxInClip, _actualAmmoInClip, _distanceDetection;//_damage ??
     [SerializeField] TurretControler _controller;
-
+    public short burstNbr;
     //Clip System
     public int Ammo { get { return _ammo; } set { _ammo = value; } }
     public int ClipCount { get { return _clipCount; } set { _clipCount = value; } }
@@ -16,9 +16,10 @@ public class ShootSystem : MonoBehaviour
 
     public int DistanceDetection { get { return _distanceDetection; } set { _distanceDetection = value; } }
 
-    public int BurstNumber { get { return _burstNumber; } set { _burstNumber = value; } }
     public Projectile Projectile { get; set; }
-    public float RateOfFire { get; set; }
+    public float rateOfFire;
+    private float nextShot;
+    bool canShoot=true;
     //public Attack AttackAction { get; set; }
 
 
@@ -53,7 +54,6 @@ public class ShootSystem : MonoBehaviour
             this.pool = GameObject.Find("InvocatorPool").GetComponent<Pool>();
     }
 
-  
     public void Reload() 
     {
     
@@ -85,7 +85,7 @@ public class ShootSystem : MonoBehaviour
             GameObject shotBullet = Objectpool.Instance.RequestObjectFromAPool(pool.PoolName, directionToShootAt, _shootForce);
             shotBullet.transform.position = canon.transform.position;
             shotBullet.GetComponent<Rigidbody2D>().AddForce(directionToShootAt * _shootForce);// a éviter
-            ActualiseAmmoCount(1);
+            ActualiseAmmoCount();
         }
     }
 
@@ -97,74 +97,53 @@ public class ShootSystem : MonoBehaviour
             {    GameObject shotBullet = Objectpool.Instance.RequestObjectFromAPool(pool.PoolName, Vector3.right, _shootForce);
                 shotBullet.transform.position = canon.transform.position;
                 shotBullet.GetComponent<Rigidbody2D>().AddForce(Vector3.right * _shootForce);// a éviter
-                ActualiseAmmoCount(1);
+                ActualiseAmmoCount();
             }
             else
             {
                 GameObject shotBullet = Objectpool.Instance.RequestObjectFromAPool(pool.PoolName, Vector3.left, _shootForce);
                 shotBullet.transform.position = canon.transform.position;
                 shotBullet.GetComponent<Rigidbody2D>().AddForce(Vector3.left * _shootForce);// a éviter
-                ActualiseAmmoCount(1);
+                ActualiseAmmoCount();
             }
             
         }
     }
-
-    public void ShootBurst(Vector3 target,int burst) 
-    {
-        if (ActualAmmoInClip >0) //Ammo > 0 && ActualAmmoInClip >= 0+burst
-        {
-            Debug.DrawRay(canon.transform.position, target - canon.transform.position, Color.blue);
-            Vector2 directionToShootAt = target - canon.transform.position;
-
-            
-            for (int i = 0; i<= burst; i++) 
-            {
-                if (ActualAmmoInClip > 0) 
-                {
-                    Vector2 randomizedDirectionToShootAt = new Vector2(directionToShootAt.x, directionToShootAt.y + Random.Range(0.1f, 0.5f));
-                    GameObject shotBullet = Objectpool.Instance.RequestObjectFromAPool(pool.PoolName, randomizedDirectionToShootAt, _shootForce);
-                    shotBullet.transform.position = canon.transform.position;
-                    shotBullet.GetComponent<Rigidbody2D>().AddForce(randomizedDirectionToShootAt * _shootForce);// a éviter
-                    Debug.Log("Tire une balle ");
-                    ActualiseAmmoCount(burst); 
-                }
-            }
-        }
-
-    }
-
-    public void ShootBurstDumb(int burst)
-    {
-        int i = 0;
-       
-        if (ActualAmmoInClip >= _burstNumber) //  _ammo > 0    Ammo > 0 && 
-        {
-            if (_controller.looksRight)
-            {
-               while(i<=_burstNumber)
-                {
-                    GameObject shotBullet = Objectpool.Instance.RequestObjectFromAPool(pool.PoolName, Vector3.right, _shootForce);
-                    shotBullet.transform.position = canon.transform.position;
-                    shotBullet.GetComponent<Rigidbody2D>().AddForce(Vector3.right * _shootForce);// a éviter
-                    ActualiseAmmoCount(i);
-                    i++;
-                }
-            }
-            else
-            {
-                for (i = 0; i <= burst; i++)
-                {
-                    GameObject shotBullet = Objectpool.Instance.RequestObjectFromAPool(pool.PoolName, Vector3.left, _shootForce);
-                    shotBullet.transform.position = canon.transform.position;
-                    shotBullet.GetComponent<Rigidbody2D>().AddForce(Vector3.left * _shootForce);// a éviter
-                    ActualiseAmmoCount(burst);
-                }
-            }
-
+    public void ShootAuto(Vector3 target) {
+            if(Time.time > nextShot) {
+                Vector2 directionToShootAt = target - canon.transform.position;
+                Vector2 randomizedDirectionToShootAt = new Vector2(directionToShootAt.x, directionToShootAt.y + Random.Range(0.1f, 0.5f));
+                GameObject shotBullet = Objectpool.Instance.RequestObjectFromAPool(pool.PoolName, randomizedDirectionToShootAt, _shootForce);
+                shotBullet.transform.position = canon.transform.position;
+                shotBullet.GetComponent<Rigidbody2D>().AddForce(randomizedDirectionToShootAt * _shootForce);// a éviter
+                ActualiseAmmoCount();
+            nextShot = Time.time + rateOfFire;
         }
     }
+    public void ShootBurst(Vector3 target) 
+    {
+        canShoot = true;
+        if (canShoot)
+        {
+            if (ActualAmmoInClip > 0) //Ammo > 0 && ActualAmmoInClip >= 0+burst
+            {
+                Debug.DrawRay(canon.transform.position, target - canon.transform.position, Color.blue);
+                Vector2 directionToShootAt = target - canon.transform.position;
 
+                for (short i = 0; i<burstNbr; i++)
+                {
+                        Vector2 randomizedDirectionToShootAt = new Vector2(directionToShootAt.x, directionToShootAt.y + Random.Range(0.1f, 0.5f));
+                        GameObject shotBullet = Objectpool.Instance.RequestObjectFromAPool(pool.PoolName, randomizedDirectionToShootAt, _shootForce);
+                        shotBullet.transform.position = canon.transform.position;
+                        shotBullet.GetComponent<Rigidbody2D>().AddForce(randomizedDirectionToShootAt * _shootForce);// a éviter
+                        Debug.Log("Tire une balle ");
+                        ActualiseAmmoCount();
+                }
+                
+            }
+        }
+    }
+    public void StopAutoFire() { canShoot = false; }
     public void ShootHero(bool playerDirectionIsRight) 
     {
         Debug.Log("Hero looks right = " + playerDirectionIsRight);
@@ -175,14 +154,14 @@ public class ShootSystem : MonoBehaviour
                 GameObject shotBullet = Objectpool.Instance.RequestObjectFromAPool(pool.PoolName, Vector3.right, _shootForce);
                 shotBullet.transform.position = canon.transform.position;
                 shotBullet.GetComponent<Rigidbody2D>().AddForce(Vector3.right * _shootForce);// a éviter
-                ActualiseAmmoCount(1);
+                ActualiseAmmoCount();
             }
             else
             {
                 GameObject shotBullet = Objectpool.Instance.RequestObjectFromAPool(pool.PoolName, Vector3.left, _shootForce);
                 shotBullet.transform.position = canon.transform.position;
                 shotBullet.GetComponent<Rigidbody2D>().AddForce(Vector3.left * _shootForce);// a éviter
-                ActualiseAmmoCount(1);
+                ActualiseAmmoCount();
             }
 
         }
@@ -190,9 +169,9 @@ public class ShootSystem : MonoBehaviour
 
 
 
-    void ActualiseAmmoCount(int nbrBulletsShot) 
+    void ActualiseAmmoCount() 
     {
-        ActualAmmoInClip-= nbrBulletsShot;
+        ActualAmmoInClip--;
     }
 
 }

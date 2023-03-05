@@ -2,35 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PetPuzzler : MonoBehaviour
+public class PetPuzzler : ActionOnDestroy
 {
-    [SerializeField] GameObject _toOpen;
+
     Transform _origin;
 
-   void OnEnable()
+
+   public override void Action()
     {
-
-        ElectricFuse.onFuseDestroyedPet += OpenGate;
-
-    }
-    void OnDisable()
-    {
-
-        ElectricFuse.onFuseDestroyedPet -= OpenGate;
-
-    }
-
-   void OpenGate()
-    {
+        GameObject toOpen = gameObject;
         _origin = GetComponent<Transform>();
-        _toOpen.transform.localScale = new Vector3(0.1f,1,1);
-        _toOpen.transform.localPosition = new Vector3(-87, 1, 1);
+        toOpen.transform.localScale = new Vector3(0.1f,1,1);
+        toOpen.transform.localPosition = new Vector3(-87, 1, 1);
+
     }
 
-    void CloseGate() 
+    void CloseGate()
     {
-        _toOpen.transform.position = _origin.position;
-        _toOpen.transform.localScale = _origin.localScale;
+        GameObject toOpen = gameObject;
+        toOpen.transform.position = _origin.position;
+        toOpen.transform.localScale = _origin.localScale;
     }
-
 }

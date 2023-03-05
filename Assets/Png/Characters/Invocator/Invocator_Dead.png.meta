@@ -48,7 +48,7 @@ TextureImporter:
       213: 4898515637192137813
     second: Invocator_Dead_5
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -68,6 +68,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -76,9 +78,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -99,10 +101,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -118,6 +124,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -147,7 +165,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ad6e4daa537a44410800000000000000
-      internalID: 1460476028116068058
+      internalID: -8217719254531757213
       vertices: []
       indices: 
       edges: []
@@ -168,7 +186,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 18264200b8cf568d0800000000000000
-      internalID: -2853597114936302975
+      internalID: 4301599383826780151
       vertices: []
       indices: 
       edges: []
@@ -189,7 +207,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cf95373bde4a334c0800000000000000
-      internalID: -4308919077638546948
+      internalID: -1910799709648977537
       vertices: []
       indices: 
       edges: []
@@ -210,7 +228,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 85cb9f2fa877ee7b0800000000000000
-      internalID: -5193081881645958056
+      internalID: -4123063720732307275
       vertices: []
       indices: 
       edges: []
@@ -231,7 +249,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3bab99f4916d43de0800000000000000
-      internalID: -1354222183733675341
+      internalID: -2019642235378317377
       vertices: []
       indices: 
       edges: []
@@ -252,7 +270,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 55c9881c4060bf340800000000000000
-      internalID: 4898515637192137813
+      internalID: 7306704935694150143
       vertices: []
       indices: 
       edges: []
@@ -267,6 +285,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Invocator_Dead_4: -2019642235378317377
+      Invocator_Dead_1: 4301599383826780151
+      Invocator_Dead_0: -8217719254531757213
+      Invocator_Dead_5: 7306704935694150143
+      Invocator_Dead_2: -1910799709648977537
+      Invocator_Dead_3: -4123063720732307275
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

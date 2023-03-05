@@ -51,7 +51,7 @@ TextureImporter:
       213: 1896246653542123744
     second: Arsene_Walk_7
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -71,6 +71,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -79,9 +81,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -102,10 +104,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -121,6 +127,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
@@ -150,7 +168,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d8ace4887c0147a60800000000000000
-      internalID: 7670774514490198669
+      internalID: -5588054424799911036
       vertices: []
       indices: 
       edges: []
@@ -171,7 +189,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4ef07045eed5be4e0800000000000000
-      internalID: -1951362735341629468
+      internalID: -8087535061909176037
       vertices: []
       indices: 
       edges: []
@@ -192,7 +210,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 31bbcdee260dd9fb0800000000000000
-      internalID: -4639322917788927213
+      internalID: 8003847122887041063
       vertices: []
       indices: 
       edges: []
@@ -213,7 +231,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c997db6d4ccebcb30800000000000000
-      internalID: 4308797798670498204
+      internalID: 8424669229459799648
       vertices: []
       indices: 
       edges: []
@@ -234,7 +252,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e8fec509039654c80800000000000000
-      internalID: -8339143477705248882
+      internalID: 1449770163978496635
       vertices: []
       indices: 
       edges: []
@@ -255,7 +273,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1804dec932eba5700800000000000000
-      internalID: 529944966335381633
+      internalID: 251618004719707462
       vertices: []
       indices: 
       edges: []
@@ -276,7 +294,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9b343d31156a46400800000000000000
-      internalID: 316560740977951673
+      internalID: 3239652043205815038
       vertices: []
       indices: 
       edges: []
@@ -297,7 +315,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0e8c6eed842d05a10800000000000000
-      internalID: 1896246653542123744
+      internalID: -7502174225392368347
       vertices: []
       indices: 
       edges: []
@@ -312,6 +330,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Arsene_Walk_2: 8003847122887041063
+      Arsene_Walk_3: 8424669229459799648
+      Arsene_Walk_0: -5588054424799911036
+      Arsene_Walk_5: 251618004719707462
+      Arsene_Walk_7: -7502174225392368347
+      Arsene_Walk_1: -8087535061909176037
+      Arsene_Walk_4: 1449770163978496635
+      Arsene_Walk_6: 3239652043205815038
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

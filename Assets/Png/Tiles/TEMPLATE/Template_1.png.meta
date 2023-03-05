@@ -51,7 +51,7 @@ TextureImporter:
       213: -8625367452455254939
     second: Template_1_15
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -110,6 +111,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -125,6 +127,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -484,6 +498,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Template_1_0: -2166369694082373117
+      Template_1_10: -7381991728825982110
+      Template_1_9: 1806271357399567901
+      Template_1_5: -5638708606008105651
+      Template_1_3: 2013468966437797080
+      Template_1_8: 2476576742681284885
+      Template_1_2: -4492257308393935205
+      Template_1_6: 8761978136396255337
+      Template_1_13: -3319315064922164418
+      Template_1_11: -1751293392943620628
+      Template_1_1: 4159822261208799660
+      Template_1_7: 4508531539653512390
+      Template_1_12: 617195784720824355
+      Template_1_4: 590323624314647680
+      Template_1_14: -4667554456617194348
+      Template_1_15: -8625367452455254939
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

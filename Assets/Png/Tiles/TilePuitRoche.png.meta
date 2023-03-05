@@ -63,7 +63,7 @@ TextureImporter:
       213: 5012695322142607202
     second: TilePuitRoche_19
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -83,6 +83,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -91,9 +93,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -114,10 +116,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -133,6 +139,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -576,6 +594,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      TilePuitRoche_2: -2461263564904811417
+      TilePuitRoche_11: -310936188069101232
+      TilePuitRoche_17: -2226516766140326311
+      TilePuitRoche_18: -5382317001800344795
+      TilePuitRoche_9: 1913370330168442510
+      TilePuitRoche_6: 6318890546900283215
+      TilePuitRoche_10: 2949348493863663808
+      TilePuitRoche_13: 402667316164439883
+      TilePuitRoche_8: -5695118967730619875
+      TilePuitRoche_0: 8363772180154750750
+      TilePuitRoche_14: 7148045353745108820
+      TilePuitRoche_16: 8899626874368568292
+      TilePuitRoche_12: -7488744249180708684
+      TilePuitRoche_4: -5322110150889086485
+      TilePuitRoche_5: -1668917828441884895
+      TilePuitRoche_7: -322351826453702145
+      TilePuitRoche_15: -7559382374881082147
+      TilePuitRoche_3: 847092776885272730
+      TilePuitRoche_19: 5012695322142607202
+      TilePuitRoche_1: -1875428291944368010
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

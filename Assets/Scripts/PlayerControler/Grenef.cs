@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.LWRP;
+
 
 public class Grenef : MonoBehaviour
 {
     [SerializeField] ParticleSystem explosion;
     [SerializeField] SpriteRenderer grenef;
-    [SerializeField] UnityEngine.Experimental.Rendering.Universal.Light2D lum;
+    [SerializeField] UnityEngine.Rendering.Universal.Light2D lum;
     [SerializeField] float temps;
     [SerializeField] AudioClip grenefS;
      [SerializeField] AudioSource audSource;

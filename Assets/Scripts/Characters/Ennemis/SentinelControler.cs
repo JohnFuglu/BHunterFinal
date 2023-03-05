@@ -166,7 +166,7 @@ public class SentinelControler : TurretControler, IWalk, ICanBleedAndDie
                 case enemyState.Attacking:
                    if(character.Health > 0) 
                     {
-                    if (_shoot.ActualAmmoInClip > _shoot.BurstNumber)
+                    if (_shoot.ActualAmmoInClip > _shoot.burstNbr)
                           base.AskForShot();
                         if (_shoot.ActualAmmoInClip <= 0 && _shoot.Ammo>0)//0+base.burstNumber    && _shoot.weaponReloaded
                         {

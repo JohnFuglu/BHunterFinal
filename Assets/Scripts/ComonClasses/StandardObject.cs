@@ -25,7 +25,7 @@ public class StandardObject : MonoBehaviour, IDamageable, IDestructible
 
     AnimationInactiveSelf fxAnimationScript;
     Transform whereToSpawn;
- 
+
     public void TakeDamage(int damageAmount)
     {
         Health -= damageAmount;

@@ -1,36 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
 
-public class ElectricFence : MonoBehaviour
+
+public class ElectricFence : ActionOnDestroy
 {
   
-    protected PolygonCollider2D _collider;
-    protected ParticleSystem _particle;
-    protected Light2D _light;
+    
     [SerializeField]float fenceDamage;
 
-    void Start()
-    {
-        _collider = GetComponent<PolygonCollider2D>();
-        _light= GetComponent<Light2D>();
-        _particle = GetComponent<ParticleSystem>();
-    }
-
-    protected void OnEnable()
-    {
-        
-        ElectricFuse.onFuseDestroyed += OpenGate;
-
-    }
-    protected void OnDisable()
-    {
-
-        ElectricFuse.onFuseDestroyed -= OpenGate;
-
-    }
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.TryGetComponent(out Hero hero)) 
         {
@@ -39,10 +18,11 @@ public class ElectricFence : MonoBehaviour
     }
 
 
-    protected virtual void OpenGate() 
+    public override void Action() 
     {
-        _collider.enabled = false;
-        _particle.Stop();
-        _light.intensity = 0;
+        GetComponent<PolygonCollider2D>().enabled = false;
+        GetComponent<ParticleSystem>().Stop();
+        GetComponent<UnityEngine.Rendering.Universal.Light2D>().intensity = 0;
+        this.enabled = false;
     }
 }

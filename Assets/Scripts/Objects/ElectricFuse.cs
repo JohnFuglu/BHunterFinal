@@ -5,23 +5,34 @@ using System;
 
 public class ElectricFuse : StandardObject
 {
-  
-    public static Action onFuseDestroyed;
-    public static Action onFuseDestroyedPet;
+  /*
+   qd cassé : action
+  cassé = 0 pv
+   */
+    
 
-    [SerializeField] ElectricFence _fence;
+    [SerializeField] ActionOnDestroy action;
   
     void Update()
     {
-        if (onFuseDestroyed != null) 
-        {
-            if (Health <= 0 && _fence != null)
+        if (Health <= 0 && !Destroyed ) {
+            if (TryGetComponent<ElectricFence>(out ElectricFence fence))
             {
-                onFuseDestroyed();
+                fence.Action();
+                GetDestroyed();
             }
-            else if (Health <= 0 && _fence == null)
-                onFuseDestroyedPet();
+            if (TryGetComponent<PetPuzzler>(out PetPuzzler trappe))
+            {
+                trappe.Action();
+                GetDestroyed();
+            }
+
+            else
+            {
+                action.Action();
+                GetDestroyed();
+            }
         }
-        
+  
     }
 }

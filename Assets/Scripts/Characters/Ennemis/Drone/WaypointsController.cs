@@ -84,7 +84,6 @@ public class WaypointsController : Controller
             if (hit.collider != null && hit.transform.CompareTag("Player")) // et si le drone avance dans le même sens du rayon, il peut tirer
             {
                 target = hit.collider.gameObject;
-                //if (Physics2D.OverlapArea(frontToEnnemyA.transform.position, frontToEnnemyB.transform.position, _playerLayer))
                     if (Physics2D.OverlapCircle(_circle.transform.position, _circleRadius, _playerLayer))
                         _animator.SetTrigger("Shoot");
             }

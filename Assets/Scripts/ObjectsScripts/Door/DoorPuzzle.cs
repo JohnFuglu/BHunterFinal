@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 public class DoorPuzzle : DoorScript
 {
     [SerializeField] int[] correctInput;
     [SerializeField] int[] inputs;
     [SerializeField] short arraySize;
-    [SerializeField] Light2D[] colorCheck;
+    [SerializeField] UnityEngine.Rendering.Universal.Light2D[] colorCheck;
 
     [SerializeField] bool[] check = { false,false,false };
     /*
-     tableau de lights met les lum à la bonne couleur qd reçoit un input
+     tableau de lights met les lum ï¿½ la bonne couleur qd reï¿½oit un input
      
      */
     private void Start()
@@ -26,8 +26,8 @@ public class DoorPuzzle : DoorScript
         if (arraySize <= correctInput.Length)
         {
             inputs[arraySize] = n; // ajoute le nombre aux inputs
-            colorCheck[arraySize].color = c;  // met la lumière au checker
-            if (inputs[arraySize] == correctInput[arraySize])//si ça correspond coche la croix 
+            colorCheck[arraySize].color = c;  // met la lumiï¿½re au checker
+            if (inputs[arraySize] == correctInput[arraySize])//si ï¿½a correspond coche la croix 
             {   
                 check[arraySize] = true;
                  Debug.Log("array size = " +arraySize);
@@ -43,7 +43,7 @@ public class DoorPuzzle : DoorScript
         if (arraySize == correctInput.Length && !open)//si on a fait le tour et pas ouvert
         {
             arraySize = 0; // reset 
-            for (int i = 0; i < check.Length; i++) { //remet à 0 les checker
+            for (int i = 0; i < check.Length; i++) { //remet ï¿½ 0 les checker
                 check[i] = false;
                 colorCheck[i].color = Color.white;
             }

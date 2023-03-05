@@ -51,7 +51,7 @@ TextureImporter:
       213: 1462906420062181033
     second: MursClairs_15
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -110,6 +111,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -125,6 +127,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -484,6 +498,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MursClairs_8: -592189436324733836
+      MursClairs_11: -137256197884117470
+      MursClairs_3: 5602451238246450844
+      MursClairs_5: -7911766350772417935
+      MursClairs_0: -1051593539203977888
+      MursClairs_2: -3472591642528938532
+      MursClairs_9: 6796591668622365373
+      MursClairs_12: -2441069383837846392
+      MursClairs_10: 2651833616338178119
+      MursClairs_13: 843443971595451281
+      MursClairs_1: -4054427803246596105
+      MursClairs_14: -5201438258359497735
+      MursClairs_7: 1747517933050324051
+      MursClairs_15: 1462906420062181033
+      MursClairs_4: -1607560105223433143
+      MursClairs_6: 4095507547636072037
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

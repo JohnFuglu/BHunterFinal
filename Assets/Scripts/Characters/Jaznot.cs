@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 public class Jaznot : PlayerController
 {
     //temp
@@ -13,7 +13,7 @@ public class Jaznot : PlayerController
     [SerializeField] ParticleSystem _particle;
     [SerializeField] AudioClip _flameThSound;
     bool _shooting;
-    [SerializeField] Light2D _light;
+    [SerializeField] UnityEngine.Rendering.Universal.Light2D _light;
 
     [Header("Grenef")]   //------------------>non général
     [SerializeField] GameObject grenef;

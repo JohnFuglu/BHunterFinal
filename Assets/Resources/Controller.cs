@@ -6,7 +6,7 @@ using System.Linq;
 [System.Serializable]
 public class Controller: MonoBehaviour
 {
-
+    protected bool _playerDead = false;
     protected Animator _animator;// virtual
     protected Rigidbody2D _rb;
     protected Collider2D _collider;
@@ -36,7 +36,8 @@ public class Controller: MonoBehaviour
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
         _collider= GetComponent<Collider2D>();
-
+       if(!gameObject.CompareTag("Player")) 
+            PlayerController.killedDelegate += PlayerDead;
     }
 
     #region("Comportement General")
@@ -70,6 +71,12 @@ public class Controller: MonoBehaviour
 
 
 
+    protected void PlayerDead()
+    {
+        _playerDead = true;
+    }
+
+
 
     #region ("Animation")
     public void ShootAnimation()
@@ -93,13 +100,15 @@ public class Controller: MonoBehaviour
     }
     public void ShootDumbBurstAnimation()
     { 
-        
         _shoot.ShootDumb();
+    }
+    public void ShootAuto() {
+        _shoot.ShootAuto(target.transform.position);
     }
 
     public void ShootBurstAnimation() 
     {
-        _shoot.ShootBurst(target.transform.position,_shoot.BurstNumber);
+        _shoot.ShootBurst(target.transform.position);
     }
 
     public void ReloadAnimation()

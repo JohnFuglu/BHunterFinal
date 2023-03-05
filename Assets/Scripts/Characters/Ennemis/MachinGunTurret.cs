@@ -7,17 +7,28 @@ public class MachinGunTurret : TurretControler
 {
 
     ShootSystem shoot;
-    Animator animator;
-    [SerializeField] GameObject circle;
-    [SerializeField] float circleRadius;
-    [SerializeField] LayerMask playerLayer;
-
+    Vector3 dir;
     void Update()
     {
-        var dir = target.transform.position - transform.position;
+        dir = target.transform.position - transform.position;
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        ShootDumbBurstAnimation();
-       
+        DetectionDrone();
+    }
+
+
+    void DetectionDrone()
+    {
+        hit = Physics2D.Raycast(_shoot.canon.position, dir, _shoot.DistanceDetection);
+        
+        detectSomething = hit;
+        Debug.DrawRay(_shoot.canon.position, dir, Color.red);
+        if (detectSomething)
+        {
+                target = hit.collider.gameObject;                
+                if (Physics2D.OverlapCircle(transform.position, _rangeToDetectPlayer, _layerMask))
+                    _animator.SetBool("ShootBool",true);
+                else _animator.SetBool("ShootBool", false);
+        }
     }
 }

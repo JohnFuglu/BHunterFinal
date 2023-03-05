@@ -51,7 +51,7 @@ TextureImporter:
       213: 4263499633637079223
     second: Tileslab_15
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -110,6 +111,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -125,6 +127,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -484,6 +498,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Tileslab_7: -6552906932201896713
+      Tileslab_5: -6665989190923390243
+      Tileslab_0: -7002884539095056055
+      Tileslab_15: 4263499633637079223
+      Tileslab_8: -8051651961091319672
+      Tileslab_1: -2235266643934563433
+      Tileslab_4: -2409410257057369821
+      Tileslab_14: 6867143725608457419
+      Tileslab_9: -3603204752009226132
+      Tileslab_11: -5539803023231086413
+      Tileslab_3: 104953176690412294
+      Tileslab_2: 5576356063555172239
+      Tileslab_6: 8104074495950630587
+      Tileslab_10: 2393489277119068699
+      Tileslab_13: 7657964499802763037
+      Tileslab_12: 5696229458963224019
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

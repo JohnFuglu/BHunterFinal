@@ -11,6 +11,7 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
     protected Hero _thisHero;
 
     [Header("FallDamages")]
+    [SerializeField] float yVelocity = 0f;
     [SerializeField]protected float _killHeight = -10f;
      bool _falled;
     
@@ -99,7 +100,9 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
     }
 
     protected void Update()
-    {  
+    {
+        yVelocity =Mathf.Abs(_rb.velocity.y);
+        Mathf.Clamp(yVelocity,0f, 40f);
         WoundCheck(character);
        
         if (!_thisHero.Destroyed)
@@ -319,12 +322,11 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
 
     bool DamageFall()
     {
-        if (_rb.velocity.y <= _killHeight && _rb.velocity.y < 0)
+        if (yVelocity > _killHeight && !handsOnLadder)
         {
-         //   Debug.Log("Y velocity = " + _rb.velocity.y + "  kill heigt = "+ _killHeight);
             return true;
         }
-            
+       
         else return false;
     }
     

@@ -78,7 +78,7 @@ TextureImporter:
       213: 6842519653582144189
     second: MurSol_24
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -98,6 +98,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -106,9 +108,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -129,10 +131,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -148,6 +154,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -696,6 +714,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MurSol_16: 7974446788808001231
+      MurSol_18: -8847263198851182142
+      MurSol_22: -7665005758461084849
+      MurSol_13: 1833345777413750842
+      MurSol_19: -4770243419681696910
+      MurSol_11: 474113555645814538
+      MurSol_3: -1553346162945319537
+      MurSol_10: -5403611778635410057
+      MurSol_23: 1712619240639368296
+      MurSol_0: 4963215568537658833
+      MurSol_15: 2786564284578144624
+      MurSol_9: 8883979340179983641
+      MurSol_21: -3900073754166025353
+      MurSol_24: 6842519653582144189
+      MurSol_1: -2570130222518581680
+      MurSol_6: 3715270161395348852
+      MurSol_5: -142827930802234873
+      MurSol_8: -5191288126352433914
+      MurSol_14: -5170807795327907982
+      MurSol_12: 6993270558788794866
+      MurSol_7: -712731500409252521
+      MurSol_20: 4031796756549196905
+      MurSol_4: 1185209621203098584
+      MurSol_2: 5709660391098533698
+      MurSol_17: 3677678431107069979
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

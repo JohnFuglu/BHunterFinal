@@ -78,7 +78,7 @@ TextureImporter:
       213: 3295634134341657720
     second: TileGrotteALL_24
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -98,6 +98,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -106,9 +108,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -129,10 +131,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -148,6 +154,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -696,6 +714,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      TileGrotteALL_10: 3800392580924674356
+      TileGrotteALL_3: -5731121226286240127
+      TileGrotteALL_24: 3295634134341657720
+      TileGrotteALL_7: 607007560261220705
+      TileGrotteALL_16: -1315047312392248493
+      TileGrotteALL_2: -3788606003371147499
+      TileGrotteALL_21: -350547335279227995
+      TileGrotteALL_12: 2232991046022579666
+      TileGrotteALL_0: -7183287823093763962
+      TileGrotteALL_5: 8731757668545331828
+      TileGrotteALL_15: -7501620317805634209
+      TileGrotteALL_4: 4930242274382782876
+      TileGrotteALL_1: -1609051659950321921
+      TileGrotteALL_9: 669607981894502899
+      TileGrotteALL_19: 4064448692372963394
+      TileGrotteALL_23: 6517122445498797423
+      TileGrotteALL_11: 7899491132069332560
+      TileGrotteALL_17: 5381919922615274656
+      TileGrotteALL_18: -1706394646038262081
+      TileGrotteALL_13: -2771532799596291929
+      TileGrotteALL_6: 8003462029284599440
+      TileGrotteALL_22: 5901566435871755662
+      TileGrotteALL_14: -241673713887526533
+      TileGrotteALL_8: -4001140511313192506
+      TileGrotteALL_20: 5318107509229590069
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

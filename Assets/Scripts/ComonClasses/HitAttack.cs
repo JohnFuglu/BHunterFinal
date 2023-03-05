@@ -14,21 +14,15 @@ public class HitAttack : MonoBehaviour // classe generic de type character
     public bool hasAttacked = false;
     public float ccCoolDown = 1.2f;
     public Rigidbody2D toPush;
-
+    [SerializeField] float damage;
 
     //windows
     List<Rigidbody2D> _contactRigidBodies = new List<Rigidbody2D>();
     GameObject _gOToSpawnOn;
     [SerializeField] AudioClip _glassSound1, _glassSound2;
     
-    private int _damage;
-   
-        private void Start()
-        {
-            _damage = GetComponentInParent<Character>().Damage;
-          //  _audioSource = GetComponentInParent<AudioSource>();
 
-}
+   
 
     public void Push<T>(Rigidbody2D rb) where T: TurretControler
     {
@@ -45,14 +39,14 @@ public class HitAttack : MonoBehaviour // classe generic de type character
                 if (rb.TryGetComponent(out Character character))
                 {
                     Debug.Log("character");
-                    character.TakeDamage(_damage);
+                    character.TakeDamage(damage);
                     character.gameObject.GetComponent<PlayerController>().WoundedBlood();//temporaire
                 }
                 rb.AddForce(rightAndRandomY * _hitForce);
                 if (rb.TryGetComponent(out StandardObject destroyableObject))
                 {
                     Debug.Log("standart");
-                    destroyableObject.TakeDamage(_damage);
+                    destroyableObject.TakeDamage(damage);
                 }
                 else
                 {
@@ -74,7 +68,7 @@ public class HitAttack : MonoBehaviour // classe generic de type character
 
                 if (rb.TryGetComponent(out StandardObject destroyableObject))
                 {
-                    destroyableObject.TakeDamage(_damage);
+                    destroyableObject.TakeDamage(damage);
                 }
             }
         }
@@ -84,7 +78,7 @@ public class HitAttack : MonoBehaviour // classe generic de type character
             rb.AddForce(Vector2.up*10, ForceMode2D.Impulse); 
             if (rb.TryGetComponent(out StandardObject std ))
             {
-                std.TakeDamage(_damage);
+                std.TakeDamage(damage);
             }
 
         }

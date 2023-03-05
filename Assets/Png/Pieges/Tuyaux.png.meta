@@ -51,7 +51,7 @@ TextureImporter:
       213: -7801365145443404683
     second: Tuyaux_15
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -110,6 +111,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -125,6 +127,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -484,6 +498,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Tuyaux_12: 5603121928075555142
+      Tuyaux_13: -1755408444124675696
+      Tuyaux_11: 7363896164728711613
+      Tuyaux_4: 7374753661178208409
+      Tuyaux_6: 4272841750268896411
+      Tuyaux_0: 3401594941230054093
+      Tuyaux_2: -618434162475747603
+      Tuyaux_7: 9107889478076698382
+      Tuyaux_15: -7801365145443404683
+      Tuyaux_9: 5644440527891914252
+      Tuyaux_8: 6911646020754096388
+      Tuyaux_14: -2768350194643952667
+      Tuyaux_10: -6386921769828455420
+      Tuyaux_1: 4465381121705558888
+      Tuyaux_3: 3523278228630016737
+      Tuyaux_5: -4151026621704998463
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -45,7 +45,7 @@ TextureImporter:
       213: -2932089569584124926
     second: Arsene_Fire_7
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -65,6 +65,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -73,9 +75,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -96,9 +98,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -114,6 +121,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
@@ -143,7 +162,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 503ffd3d775d4b2c0800000000000000
-      internalID: -4416670623911120123
+      internalID: 8123197731228683017
       vertices: []
       indices: 
       edges: []
@@ -164,7 +183,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f11bbe53390e6e120800000000000000
-      internalID: 2442886770764525855
+      internalID: 4078041830537095019
       vertices: []
       indices: 
       edges: []
@@ -185,7 +204,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8c57563cda387baf0800000000000000
-      internalID: -380690861158730296
+      internalID: 8388342037663506037
       vertices: []
       indices: 
       edges: []
@@ -206,7 +225,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b71dba09050e18260800000000000000
-      internalID: 7098201124341797243
+      internalID: -1295500982768588816
       vertices: []
       indices: 
       edges: []
@@ -227,7 +246,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2039d43c8ff3c8a40800000000000000
-      internalID: 5371738793207239426
+      internalID: -5339258793407680221
       vertices: []
       indices: 
       edges: []
@@ -248,7 +267,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ccbcf598b9ff04b20800000000000000
-      internalID: 3116771985630153676
+      internalID: -8055390859302764548
       vertices: []
       indices: 
       edges: []
@@ -305,6 +324,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Arsene_Fire_4: -5339258793407680221
+      Arsene_Fire_1: 4078041830537095019
+      Arsene_Fire_2: 8388342037663506037
+      Arsene_Fire_0: 8123197731228683017
+      Arsene_Fire_5: -8055390859302764548
+      Arsene_Fire_7: -2932089569584124926
+      Arsene_Fire_6: -7930739528858888393
+      Arsene_Fire_3: -1295500982768588816
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

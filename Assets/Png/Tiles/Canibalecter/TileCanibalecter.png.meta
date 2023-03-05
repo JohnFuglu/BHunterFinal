@@ -51,7 +51,7 @@ TextureImporter:
       213: 5232667323194230697
     second: TileCanibalecter_15
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -110,6 +111,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -125,6 +127,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -484,6 +498,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      TileCanibalecter_4: 136159444789935278
+      TileCanibalecter_3: -6003656093935137491
+      TileCanibalecter_6: -7084868993260026731
+      TileCanibalecter_5: 783607649709668354
+      TileCanibalecter_7: -8443275928423955879
+      TileCanibalecter_11: -9130737047519924130
+      TileCanibalecter_2: -3181056682387347166
+      TileCanibalecter_10: 3745238698075386027
+      TileCanibalecter_14: 9114575024485415077
+      TileCanibalecter_8: 5061600135067123514
+      TileCanibalecter_15: 5232667323194230697
+      TileCanibalecter_1: 8489675849424944820
+      TileCanibalecter_13: -987390282134800451
+      TileCanibalecter_9: -3545474191677158962
+      TileCanibalecter_12: -5418055938215831784
+      TileCanibalecter_0: 6334411690176252917
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

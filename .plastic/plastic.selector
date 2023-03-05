@@ -1,0 +1,4 @@
+repository "BHunter"
+  path "/"
+    smartbranch "/main"   
+     

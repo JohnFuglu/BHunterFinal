@@ -26,9 +26,7 @@ public class Pet : PlayerController
     ParticleSystem _leachFx;
     bool _fx;
     Hero _thisPetHero;
-    HitAttack _hitAttack;
-
-
+  
     public Hero invocator;
     public int EvadeCharges { get { return _evadeExposer; }protected set { value = _evadeExposer; } }
     public int TeleportationCharges
@@ -46,7 +44,6 @@ public class Pet : PlayerController
         _instance = this; 
         base.Start();
         _player = GameObject.Find("Invocator").GetComponent<Invocator>();
-        _hitAttack = GetComponent<HitAttack>();
         _thisPetHero  =GetComponent<Hero>();
     }
     protected override void FixedUpdate() 
@@ -58,7 +55,6 @@ public class Pet : PlayerController
                 _animator.SetTrigger("Shoot");
             if (_thisPetHero.Health <= 0 && !_animator.GetBool("DeadBool") || Input.GetKeyDown(KeyCode.J) && !_animator.GetBool("DeadBool"))
             {
-              
                 DeathPet();
             }  
         }
@@ -119,7 +115,7 @@ public class Pet : PlayerController
 
     public void HpLeach() 
     {
-        if (_hitAttack.toPush.CompareTag("Ennemis"))
+        if (_closeAttack.toPush.CompareTag("Ennemis"))
         {
             int rd = Random.Range(1, 6);
             if (rd == 2)
@@ -128,6 +124,7 @@ public class Pet : PlayerController
                 invocator.Health += _hpLeach;
             }
         }
+        else return;
        
     }
     void HpLeachFx() 
