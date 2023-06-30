@@ -41,18 +41,20 @@ public class FireDamage : ElementalEffect
 public class FireSpawner{
     public FireSpawner(GameObject other, ParticleSystem part)
     {
-        if (other.CompareTag("Destructibles") || other.CompareTag("Ennemis") && !other.GetComponent<StandardObject>().Destroyed)
-        {
-            if (!other.GetComponentInChildren<FireDamage>())
-            {  
-               SpriteRenderer tempRend = other.GetComponent<SpriteRenderer>();
-            
-                ParticleSystem flames = MonoBehaviour.Instantiate(part) as ParticleSystem;
-                flames.Pause();
-                flames.transform.SetParent(other.transform);
-                flames.main.customSimulationSpace.localScale = other.transform.localScale; //tempRend.bounds.size
-                flames.transform.position = new Vector3(tempRend.bounds.min.x + (tempRend.bounds.size.x / 1.5f), tempRend.bounds.min.y, 1); 
-                flames.Play();
+        if (!other.GetComponent<StandardObject>().Destroyed) {
+            if (other.CompareTag("Destructibles") || other.CompareTag("Ennemis"))
+            {
+                if (!other.GetComponentInChildren<FireDamage>())
+                {  
+                    SpriteRenderer tempRend = other.GetComponent<SpriteRenderer>();
+                    ParticleSystem flames = MonoBehaviour.Instantiate(part) as ParticleSystem;
+                    flames.Pause();
+                    flames.transform.SetParent(other.transform);
+                    flames.main.customSimulationSpace.localScale = other.transform.localScale;
+                    flames.transform.position = other.transform.position;
+
+                    flames.Play();
+                }
             }
         }
     }
