@@ -19,25 +19,28 @@ public class StoryTeller : MonoBehaviour
     string st = "";
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        foreach (Story s in PlayerPersistentDataHandler.Instance._currentHero.storyPieces) {
-            if (!s.read && !affiche)
-            {
-                st = s.text;
-                s.read = true;
-                affiche = true;
-            }
+        if(collision.gameObject.tag == "Player") {
+            foreach (Story s in PlayerPersistentDataHandler.Instance._currentHero.storyPieces) {
+                if (!s.read && !affiche)
+                {
+                    st = s.text;
+                    s.read = true;
+                    affiche = true;
+                }
         
         }
-        
-        UIManager.Instance.AfficheTexte(st);
-        Destroy(gameObject);
+            UIManager.Instance.AfficheTexte(st);
+            Destroy(gameObject);
+        }
     }
    
     private void OnTriggerExit2D(Collider2D collision)
     {
-      //  UIManager.Instance.EffaceTexte();
-        affiche = false;
-        st = "";
+        if (collision.gameObject.tag == "Player")
+        {
+            affiche = false;
+            st = "";
+        }
     }
 
     

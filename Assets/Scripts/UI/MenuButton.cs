@@ -11,13 +11,11 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnPointerClick(PointerEventData eventData)
     {
 
-        Debug.Log("Clique");
         _audio.PlayOneShot(_buttonSfx[1]);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Dessus");
         _audio.PlayOneShot(_buttonSfx[0]);
     }
 

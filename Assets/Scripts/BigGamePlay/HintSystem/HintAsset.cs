@@ -35,7 +35,6 @@ public class HintAsset : MonoBehaviour
     IEnumerator WaitForSetInactive() 
     { 
         yield return new WaitForSeconds(_fxOnContact.duration);
-        //affiche.GetComponentInParent<Image>().enabled = true ;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         StartCoroutine(WaitToKillText());
     }

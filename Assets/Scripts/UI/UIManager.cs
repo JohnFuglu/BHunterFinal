@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
     ShootSystem _heroAmmo; // pour les chargeurs de Royale ... sinon juste in int/float
     Pet _thePet;
 
-    [SerializeField] TextMeshProUGUI afficheurTexte;
+    [SerializeField] Text afficheurTexte;
 
 
     private void Awake()

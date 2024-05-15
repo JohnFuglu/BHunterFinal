@@ -58,7 +58,7 @@ public class LevelHandler : MonoBehaviour
         string nom = PlayerPersistentDataHandler.Instance.thisHero.Name;
         switch (nom) {
             case "Jaznot":
-                id = Random.Range(0, 4);
+                id = Random.Range(1, 4);
                 break;
             case "Invocator":
                 id = Random.Range(5, 9);
@@ -88,6 +88,7 @@ public class LevelHandler : MonoBehaviour
         int randomNumber = Random.Range(0, potentialHintsHideOuts.Length);//est ce que ca inclut le dernier item du tableau?
         HintAllocator _hintAllocator = potentialHintsHideOuts[randomNumber].AddComponent<HintAllocator>();
         _hintAllocator.hint = thisLevelHint;
+        _hintAllocator.InitHints();
     }
 
      public void PlaceCollectables(Hero hero) 

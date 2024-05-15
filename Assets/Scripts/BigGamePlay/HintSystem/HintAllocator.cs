@@ -16,14 +16,12 @@ public class HintAllocator : MonoBehaviour
     //    SpawnHint(hint.hintPrefabToSpawn);
     //}
 
-    private void Start()
-    {
+    public void InitHints() {
         _hintPrefab = hint.hintPrefabToSpawn;
         GameObject instantiated = Instantiate(_hintPrefab) as GameObject;
         instantiated.GetComponent<HintAsset>().hintToFind = hint;
         instantiated.transform.position = transform.position;
     }
-
     public GameObject SpawnHint(GameObject prefabHint)
     {
         if (GetComponent<HintAllocator>() != null && !_spawned)
