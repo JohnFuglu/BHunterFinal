@@ -75,7 +75,8 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
 
     public ParticleSystem bloodParticle { get { return _bloodParticle; } set { _bloodParticle = value; } }
     public GameObject bloodGo { get { return _bloodGo; } set { _bloodGo = value; } }
-    
+    protected UIManager ui;
+
     protected override void Start()
     {
         _cam = GameObject.Find("CameraCine").GetComponent<CinemachineVirtualCamera>();
@@ -91,7 +92,7 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
         base.Start();
         AssignCamera(_thisHero.name);
     }
-
+   
     protected void AssignCamera(string name)
     {
         Debug.LogWarning("Assign Camera");
@@ -101,17 +102,15 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
 
     protected void Update()
     {
-        yVelocity =Mathf.Abs(_rb.velocity.y);
-        Mathf.Clamp(yVelocity,0f, 40f);
-        WoundCheck(character);
-       
         if (!_thisHero.Destroyed)
-        {
+        { 
+            yVelocity =Mathf.Abs(_rb.velocity.y);
+            Mathf.Clamp(yVelocity,0f, 40f);
+            WoundCheck(character);
             if (_thisHero.Health <= 0)
             { 
                 _thisHero.Destroyed = true;
                 _animator.SetTrigger("Dead");
-               
             }
 
 
@@ -125,14 +124,16 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
             if(inWater && _thisHero.Health > 0)
                 Jump(_jumpForce - waterdebuf);
         }
+        else 
+            HeroDeath();
     }
 
     public void HeroDeath()//Dans l'animation
     {
-            _animator.SetBool("DeadBool", true);
+        _animator.SetBool("DeadBool", true);
         Dead(_thisHero);
         HeroSDead();
-            PlayerPersistentDataHandler.Instance.EndLevel();
+        PlayerPersistentDataHandler.Instance.EndLevel();
     }
 
     protected virtual void FixedUpdate()
@@ -201,7 +202,7 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
 
     void HeroSDead() 
     {
-        if (UIManager.Instance._playerHeroName!="Pet") 
+        if (GameObject.Find("Canvas").GetComponent<UIManager>()._playerHeroName!="Pet") 
         { 
             if (killedDelegate != null) 
             {

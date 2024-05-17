@@ -39,21 +39,25 @@ public class FireDamage : ElementalEffect
 }
 
 public class FireSpawner{
+    int max = 5;
     public FireSpawner(GameObject other, ParticleSystem part)
     {
         if (!other.GetComponent<StandardObject>().Destroyed) {
+            
             if (other.CompareTag("Destructibles") || other.CompareTag("Ennemis"))
             {
                 if (!other.GetComponentInChildren<FireDamage>())
                 {  
-                    SpriteRenderer tempRend = other.GetComponent<SpriteRenderer>();
-                    ParticleSystem flames = MonoBehaviour.Instantiate(part) as ParticleSystem;
-                    flames.Pause();
-                    flames.transform.SetParent(other.transform);
-                    flames.main.customSimulationSpace.localScale = other.transform.localScale;
-                    flames.transform.position = other.transform.position;
-
-                    flames.Play();
+                        other.AddComponent<FireDamage>();
+                        ParticleSystem flames = MonoBehaviour.Instantiate(part) as ParticleSystem;
+                        flames.Pause();
+                        flames.transform.position = other.transform.position;
+                        flames.gameObject.AddComponent<DistanceJoint2D>();
+                        flames.GetComponent<DistanceJoint2D>().connectedBody = other.GetComponent<Rigidbody2D>();
+                        flames.Play();
+                        if (!flames.IsAlive())
+                            GameObject.Destroy(flames.gameObject);
+                    
                 }
             }
         }

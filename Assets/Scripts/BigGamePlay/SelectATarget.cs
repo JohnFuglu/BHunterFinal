@@ -32,12 +32,9 @@ public class SelectATarget : MonoBehaviour
 
    DataClass LoadCurrentProgression(DataClass previous)
     {
-        Debug.Log("Loading......");
         string path = Application.persistentDataPath + "/ProgressionDatas.json";
         var json = System.IO.File.ReadAllText(path);
         previous = _load.loadDataFromJson(json);
-        Debug.Log(json);
-        Debug.Log("name =" + previous.heroName);
         return previous;
     }
    

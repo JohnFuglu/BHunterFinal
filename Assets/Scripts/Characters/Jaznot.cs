@@ -19,19 +19,16 @@ public class Jaznot : PlayerController
     [SerializeField] GameObject grenef;
     [SerializeField] Transform grenefLaunch;
     [SerializeField] float throwForce = 40f;
-
-    private Hero _hero ;
     protected override void Start()
     {
         base.Start();
         _particleTransform = _particle.GetComponent<Transform>();
         _particle.Pause();
         lanceFlamme = _particle.GetComponent<LanceFlamme>();
-        _hero = GetComponent<Hero>();
     }
     protected override void FixedUpdate()
     {
-        if(!_thisHero.Destroyed)//&& !_shooting
+        if(!_thisHero.Destroyed)
             base.FixedUpdate();
         if (!_thisHero.Destroyed)
         {
@@ -114,7 +111,7 @@ public class Jaznot : PlayerController
 
     public void Grenef()
     {
-        if (_hero.SpecialAmmo > 0)
+        if (_thisHero.SpecialAmmo > 0)
         {
             GameObject gr = Instantiate(grenef, grenefLaunch.position, Quaternion.identity);
             Rigidbody2D grRb = gr.GetComponent<Rigidbody2D>();
@@ -123,7 +120,7 @@ public class Jaznot : PlayerController
                 grRb.AddForce(Vector2.right * throwForce);
             else
                 grRb.AddForce(Vector2.left * throwForce);
-            _hero.SpecialAmmo --;
+            _thisHero.SpecialAmmo --;
         }
 
     }

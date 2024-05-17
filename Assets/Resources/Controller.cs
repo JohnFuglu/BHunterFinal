@@ -129,7 +129,7 @@ public class Controller: MonoBehaviour
     }
     public void Dead<T>(T obj) where T : StandardObject
     {
-        if (!obj.Destroyed)
+        if (!obj.Destroyed) // devrait etre vrai et est faux 
         {
             _animator.SetBool("DeadBool", true);
             audioSource.PlayOneShot(deathSound);

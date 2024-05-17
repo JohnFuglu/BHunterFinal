@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject _escapePanel;
     [SerializeField] Transform _KeyScroll;
     [SerializeField] Image _keyPrefab;
-    [SerializeField] Animator _fadeBlack;
+    Animator _fadeBlack;
     [SerializeField] Image[] keys = new Image[4];
     [SerializeField] Text[] _allUiTexts;
     [SerializeField] Color[] _colors;  // par ordre de création
@@ -207,8 +207,8 @@ public class UIManager : MonoBehaviour
         
         Debug.Log("FADE");
         string path = Application.persistentDataPath + "/ProgressionDatas.json";
-     
-        _fadeBlack.SetBool("SetBlack",true);
+
+        GameObject.Find("FadeBlck").GetComponent<Animator>().SetBool("SetBlack",true);
         
         if (path != null)
         {

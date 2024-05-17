@@ -80,7 +80,6 @@ public class PlayerPersistentDataHandler : MonoBehaviour
   
     public float defaultCamOrthoSize = 8;
     public void OnFinishedLoading(Scene scene, LoadSceneMode mode) {
-        Debug.Log("Level Loaded"+ scene.name);
         _instance = this;
         _load = GetComponent<Load>();
         LoadCurrentProgression();
@@ -91,7 +90,6 @@ public class PlayerPersistentDataHandler : MonoBehaviour
             CheckHeroByName(player.name);
             thisHero = player.GetComponent<Hero>();
             LevelHandler.Instance.PlaceCollectables(thisHero);
-            Debug.Log("----------" + "PlayerCreated"+"hero = "+thisHero.Name + "-----------");
         }
         catch (Exception e)
         {
@@ -213,11 +211,8 @@ public class PlayerPersistentDataHandler : MonoBehaviour
     {
         Debug.Log("Loading......");
         string path = Application.persistentDataPath + "/ProgressionDatas.json";
-      
         var json = System.IO.File.ReadAllText(path);
-        Debug.Log("json = "+ json);
-            _currentProgression=_load.loadDataFromJson(json);
-            Debug.Log("Load complete with hero " + _currentProgression.heroName);   
+        _currentProgression=_load.loadDataFromJson(json);
     }
 
 

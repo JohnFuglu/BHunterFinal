@@ -21,8 +21,6 @@ public class MainMenu : MonoBehaviour
             _dataEmpty = false;
             string json = File.ReadAllText(Application.persistentDataPath + "/ProgressionDatas.json");
             data = Load.Instance.loadDataFromJson(json);
-            Debug.Log("Found a Json file");
-            Debug.Log(json);
             if (data.movesLeft == 0)
             {
                 gameOverPanel.SetActive(true);

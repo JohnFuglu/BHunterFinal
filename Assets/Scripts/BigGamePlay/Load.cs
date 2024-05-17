@@ -99,11 +99,11 @@ public class Load : MonoBehaviour
             foreach (string s in niveaux)
                 if (SceneManager.GetActiveScene().name == s)
                 {
-                    Debug.Log("targetOfThisHunt" + targetOfThisHunt.name);
                     PlayerPersistentDataHandler.Instance.thisHunt = targetOfThisHunt;
                 }
         }
-        else Debug.LogWarning("targetOfThisHunt s missing !");
+        else 
+            Debug.LogWarning("targetOfThisHunt s missing !");
 
 
 

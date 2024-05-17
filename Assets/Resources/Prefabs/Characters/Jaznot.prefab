@@ -10340,7 +10340,7 @@ MonoBehaviour:
   - {x: -0.35130233, y: -1.7508452, z: 0}
   m_ShapePathHash: 274471727
   m_Mesh: {fileID: 0}
-  m_InstanceId: 79390
+  m_InstanceId: 143138
   m_LocalBounds:
     m_Center: {x: 0.018418133, y: 0.11619949, z: 0}
     m_Extent: {x: 0.4176839, y: 1.8772999, z: 0}
@@ -20480,8 +20480,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6706462375973996769, guid: 796aad5a2e4cc2346a52efd6974e6673, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
