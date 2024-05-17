@@ -114,14 +114,12 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
             }
 
 
-            if (!inWater && _thisHero.Health > 0)
+            if (!inWater)
             {
-                _falled = DamageFall();
-                
-
+                _falled = DamageFall();     
                 Jump(_jumpForce);
             }
-            if(inWater && _thisHero.Health > 0)
+            if(inWater)
                 Jump(_jumpForce - waterdebuf);
         }
         else 
@@ -138,6 +136,7 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
 
     protected virtual void FixedUpdate()
     {
+        if(!_thisHero.Destroyed){
         if (_thisHero.Health > 0 && !grounded)
         {
                 _animator.SetFloat("VSpeed", _rb.velocity.y); 
@@ -172,6 +171,7 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
             {
                 _closeAttack.AttackCloseCombat(_animator);
             }
+        }
         }
     }
 
