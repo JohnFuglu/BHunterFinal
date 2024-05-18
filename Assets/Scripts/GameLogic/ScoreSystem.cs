@@ -8,29 +8,14 @@ using TMPro;
 [System.Serializable]
 public class ScoreSystem : MonoBehaviour
 {
-    private static ScoreSystem _instance;
-    public static ScoreSystem Instance 
-    {
-        get
-        {
-            if (_instance == null)
-                Debug.LogError("Il n'y a pas de scoreSystem !!");
-            return _instance;
-        }
-    }
-
 
     public List<ScoreData> oldScores = new List<ScoreData>();
    
     public TextMeshProUGUI _scoreDisplay;
 
-    private void Awake()
-    {
-        _instance = this;
-    }
 
 
-    private void Start()
+    public void SetScore()
     {
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "MainMenu" && 
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "HeroSelection"&& 

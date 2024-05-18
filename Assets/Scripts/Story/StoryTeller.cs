@@ -3,16 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
-
-// savoir ce qui a été lu et en garder trace
-// enregistrer le string "pieceId" correspondant à la story piece ex : "A1", "A2"..
-// afficher le bon texte quand on passe sur une clef usb
-
-// rendre accessible les textes dans un menu
-//
-
-
 public class StoryTeller : MonoBehaviour
 {
     bool affiche = false; 
@@ -20,7 +10,7 @@ public class StoryTeller : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player") {
-            foreach (Story s in PlayerPersistentDataHandler.Instance._currentHero.storyPieces) {
+            foreach (Story s in GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>()._currentHero.storyPieces) {
                 if (!s.read && !affiche)
                 {
                     st = s.text;
@@ -29,7 +19,7 @@ public class StoryTeller : MonoBehaviour
                 }
         
         }
-            UIManager.Instance.AfficheTexte(st);
+            GameObject.Find("GameHandler").GetComponent<UIManager>().AfficheTexte(st);
             Destroy(gameObject);
         }
     }

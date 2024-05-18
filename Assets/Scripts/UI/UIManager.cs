@@ -8,17 +8,6 @@ using TMPro;
 public class UIManager : MonoBehaviour
 
 {
-    private static UIManager _instance;
-    public static UIManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-                Debug.LogWarning("UiManager est null");
-            return _instance;
-        }
-    }
-
 
     //    [SerializeField] LevelHandler _levelHandler;
     Hero _invocator, _pet;
@@ -50,13 +39,8 @@ public class UIManager : MonoBehaviour
     Pet _thePet;
 
     [SerializeField] Text afficheurTexte;
-
-
-    private void Awake()
-    {
-        _instance = this;
-    }
-    private void Start()
+    PlayerPersistentDataHandler gameHander;
+    public void SetUI(Hero hero)
     {
         if (GameObject.Find("Invocator") != null)
         {
@@ -74,22 +58,18 @@ public class UIManager : MonoBehaviour
         {
             _fuel = GameObject.Find("LanceFlamme").GetComponent<LanceFlamme>();
         }
-
-
-
-        _playerHeroName = Hero.Instance.name;
-        _timeLeft = LevelHandler.Instance.timeToCompleteLevel;
-        _displayPlayerHp.maxValue = Hero.Instance.Health;
-        _displaySpecialAmmoIcon.sprite = Hero.Instance.specialAmmoIcon;
-        _displayAmmoIcon.sprite = Hero.Instance.ammoIcon;
-        _displayFaceIcon.sprite = Hero.Instance.faceIcon;
-        _displayLifeColor.sprite = Hero.Instance.lifeColor;
-        _scoreDisplay.text = "Score : " + PlayerPersistentDataHandler.Instance.PlayerScore.ToString();
+        gameHander = GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>();
+        _playerHeroName = hero.name;
+        _timeLeft = gameHander.GetComponent<LevelHandler>().timeToCompleteLevel;
+        _displayPlayerHp.maxValue = hero.Health;
+        _displaySpecialAmmoIcon.sprite = hero.specialAmmoIcon;
+        _displayAmmoIcon.sprite = hero.ammoIcon;
+        _displayFaceIcon.sprite = hero.faceIcon;
+        _displayLifeColor.sprite = hero.lifeColor;
+        _scoreDisplay.text = "Score : " + 
+        GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().PlayerScore.ToString();
 
         StartDisplay();
-
-        PlayerPersistentDataHandler.endTheLevel += FadeToBlack;
-        KeySimple.displayKey += DisplayKey;
     }
 
     void ThisIsAPet()
@@ -115,12 +95,13 @@ public class UIManager : MonoBehaviour
 
     void RefreshDisplay()
     {
-        _scoreDisplay.text = "Score : " + PlayerPersistentDataHandler.Instance.PlayerScore.ToString();
+        _scoreDisplay.text = "Score : " + 
+        GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().PlayerScore.ToString();
         switch (_playerHeroName)
         {
             case "Jaznot":
-                _displayPlayerHp.value = Hero.Instance.Health;
-                _displaySpecialAmmo.text = Hero.Instance.SpecialAmmo.ToString();
+                _displayPlayerHp.value =  gameHander.thisHero.Health;
+                _displaySpecialAmmo.text = gameHander.thisHero.SpecialAmmo.ToString();
                 _displayAmmo.text = _fuel.Fuel.ToString(); // lanceflamme.Fuel
                 break;
 
@@ -133,9 +114,9 @@ public class UIManager : MonoBehaviour
                 break;
 
             case "Pet":
-                _displayPlayerHp.value = Pet.Instance.gameObject.GetComponent<Hero>().Health;
-                _displaySpecialAmmo.text = Pet.Instance.gameObject.GetComponent<Hero>().SpecialAmmo.ToString();
-                _displayAmmo.text = Pet.Instance.EvadeCharges.ToString();
+                _displayPlayerHp.value = gameHander.masterInvoc.gameObject.GetComponent<Hero>().Health;
+                _displaySpecialAmmo.text = gameHander.masterInvoc.gameObject.GetComponent<Hero>().SpecialAmmo.ToString();
+                _displayAmmo.text = gameHander.masterInvoc._pet.EvadeCharges.ToString();
                 AssignColorToUi(_colors[1]);
                 CreateSpecialHud();
                 break;
@@ -145,29 +126,30 @@ public class UIManager : MonoBehaviour
 
     void StartDisplay()
     {
-        _scoreDisplay.text = "Score : " + PlayerPersistentDataHandler.Instance.PlayerScore.ToString();
+        _scoreDisplay.text = "Score : " + 
+        GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().PlayerScore.ToString();
         switch (_playerHeroName)
         {
             case "Jaznot":
-                _displayPlayerHp.maxValue = Hero.Instance.Health;
-                _displayPlayerHp.value = Hero.Instance.Health;
-                _displaySpecialAmmo.text = Hero.Instance.SpecialAmmo.ToString();
+                _displayPlayerHp.maxValue = gameHander.thisHero.Health;
+                _displayPlayerHp.value = gameHander.thisHero.Health;
+                _displaySpecialAmmo.text = gameHander.thisHero.SpecialAmmo.ToString();
                 _displayAmmo.text = _fuel.Fuel.ToString(); // lanceflamme.Fuel
                 break;
 
             case "Invocator":
 
-                _displayPlayerHp.maxValue = _invocator.Health;
-                _displayPlayerHp.value = _invocator.Health;
-                _displaySpecialAmmo.text = _invocator.SpecialAmmo.ToString();
-                _displayAmmo.text = _heroAmmo.ActualAmmoInClip.ToString();
+                _displayPlayerHp.maxValue = gameHander.thisHero.Health;
+                _displayPlayerHp.value = gameHander.thisHero.Health;
+                _displaySpecialAmmo.text = gameHander.thisHero.SpecialAmmo.ToString();
+                _displayAmmo.text = gameHander.thisHero.GetComponent<ShootSystem>().ActualAmmoInClip.ToString();
                 AssignColorToUi(_colors[1]);
                 break;
 
             case "Pet":
-                _displayPlayerHp.maxValue = Pet.Instance.gameObject.GetComponent<Hero>().Health;
-                _displaySpecialAmmo.text = Pet.Instance.gameObject.GetComponent<Hero>().SpecialAmmo.ToString();
-                _displayAmmo.text = Pet.Instance.EvadeCharges.ToString();
+                _displayPlayerHp.maxValue = gameHander.masterInvoc._pet.gameObject.GetComponent<Hero>().Health;
+                _displaySpecialAmmo.text = gameHander.masterInvoc._pet.GetComponent<Hero>().SpecialAmmo.ToString();
+                _displayAmmo.text = gameHander.masterInvoc._pet.EvadeCharges.ToString();
                 AssignColorToUi(_colors[2]);
                 CreateSpecialHud();
                 break;
@@ -190,15 +172,14 @@ public class UIManager : MonoBehaviour
         _timeLeft -= Time.deltaTime;
         _timerDisplay.text = "Time left :" + Mathf.Round(_timeLeft);
         if (_timeLeft < 0 && !_gameOverScreen.activeInHierarchy)
-        {
-            PlayerPersistentDataHandler.Instance.EndLevel();
-        }
+            GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().EndLevel();
+        
 
     }
 
     public void ExitAndSaveDataWithPersistenPlayer()
     {
-        PlayerPersistentDataHandler.Instance.SaveProgression();
+        GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().SaveProgression();
     }
 
 
@@ -207,23 +188,8 @@ public class UIManager : MonoBehaviour
         
         Debug.Log("FADE");
         string path = Application.persistentDataPath + "/ProgressionDatas.json";
-
         GameObject.Find("FadeBlck").GetComponent<Animator>().SetBool("SetBlack",true);
-        
-        if (path != null)
-        {
-            System.IO.File.Delete(path);
-        }
-    
-        StartCoroutine(DeathScreen());
     }
-
-    IEnumerator DeathScreen()
-    {
-        yield return new WaitForSeconds(1.3f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-    }
-
 
 
 
@@ -253,17 +219,17 @@ public class UIManager : MonoBehaviour
 
     void CreateSpecialHud()
     {
-           _displaySpecialAmmoIcon.sprite = Pet.Instance.gameObject.GetComponent<Hero>().specialAmmoIcon;
-           _displayAmmoIcon.sprite = Pet.Instance.gameObject.GetComponent<Hero>().ammoIcon;
-           _displayFaceIcon.sprite = Pet.Instance.gameObject.GetComponent<Hero>().faceIcon;
-           _displayLifeColor.sprite = Pet.Instance.gameObject.GetComponent<Hero>().lifeColor;
+           _displaySpecialAmmoIcon.sprite = gameHander.masterInvoc._pet.gameObject.GetComponent<Hero>().specialAmmoIcon;
+           _displayAmmoIcon.sprite = gameHander.masterInvoc._pet.gameObject.GetComponent<Hero>().ammoIcon;
+           _displayFaceIcon.sprite = gameHander.masterInvoc._pet.gameObject.GetComponent<Hero>().faceIcon;
+           _displayLifeColor.sprite = gameHander.masterInvoc._pet.gameObject.GetComponent<Hero>().lifeColor;
     }
     public void DisplayBackInvocatorHud()
     {
-        _displaySpecialAmmoIcon.sprite = Invocator.Instance.gameObject.GetComponent<Hero>().specialAmmoIcon;
-        _displayAmmoIcon.sprite = Invocator.Instance.gameObject.GetComponent<Hero>().ammoIcon;
-        _displayFaceIcon.sprite = Invocator.Instance.gameObject.GetComponent<Hero>().faceIcon;
-        _displayLifeColor.sprite = Invocator.Instance.gameObject.GetComponent<Hero>().lifeColor;
+        _displaySpecialAmmoIcon.sprite = gameHander.masterInvoc.gameObject.GetComponent<Hero>().specialAmmoIcon;
+        _displayAmmoIcon.sprite = gameHander.masterInvoc.gameObject.GetComponent<Hero>().ammoIcon;
+        _displayFaceIcon.sprite = gameHander.masterInvoc.gameObject.GetComponent<Hero>().faceIcon;
+        _displayLifeColor.sprite = gameHander.masterInvoc.gameObject.GetComponent<Hero>().lifeColor;
     }
 
     public void AfficheTexte(string s) {
@@ -274,23 +240,5 @@ public class UIManager : MonoBehaviour
     {
         afficheurTexte.text = " ";
     }
-}
-
-public class InvocatorStats 
-{
-    private float _hp;
-    private int _ammo;
-    private int _specialAmmo;
-    private int _score;
-
-    public InvocatorStats(float hp, int ammo,int specialAmmo,int score) 
-    {
-        _hp = hp;
-        _ammo = ammo;
-        _specialAmmo = specialAmmo;
-        _score = score;
-    }
- 
-
 }
 

@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
             button.interactable = true;
             _dataEmpty = false;
             string json = File.ReadAllText(Application.persistentDataPath + "/ProgressionDatas.json");
-            data = Load.Instance.loadDataFromJson(json);
+            data = GetComponent<Load>().loadDataFromJson(json);
             if (data.movesLeft == 0)
             {
                 gameOverPanel.SetActive(true);

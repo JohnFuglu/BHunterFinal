@@ -13,7 +13,7 @@ public class PortInsertionTrigger : MonoBehaviour
         if (collision.CompareTag("Player") && _escape)
         {
             _audio.PlayOneShot(_audio.clip);
-            PlayerPersistentDataHandler.Instance.EndLevel();
+            GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().EndLevel();
         }
         else if (collision.CompareTag("Player"))
         {

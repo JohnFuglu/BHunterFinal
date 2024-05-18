@@ -344,7 +344,7 @@ public class SentinelControler : TurretControler, IWalk, ICanBleedAndDie
     }
 
 
-    protected virtual void OnDrawGizmosSelected()
+    protected new virtual void OnDrawGizmosSelected()
     {
         if (_fallChecker == null && _floorChecker && _wallChecker && _jumpChecker == null)
             return;

@@ -7,43 +7,7 @@ using UnityEngine.SceneManagement;
 [System.Serializable]
 public class Load : MonoBehaviour
 {
-    #region Explications
-    /*
-      récupérer le nom de la cible
-    trouver le scriptable object qui correspond
-
-    récupérer le nom du hero pour en faire un string qui va servir à instancier le bon hero
-    faire un foreach dans les <hint> et sortir ceux dont les id sont présent le json
-
-    récup string pour faire sceneManager get at scene by name
-    récup le score en un int
-    vérifier que le bool huntEnd est bien false, si c'est pas le cas prévoir un retour au menu, griser continuer et delete json.
-     */
-    #endregion
-    #region(Singleton)
-
-    private static Load _instance;
-    public static Load Instance 
-    { 
-        get 
-        {
-            if (_instance == null)
-                Debug.LogError("No Load singleton");
-            return _instance;
-        } 
-    }
-    #endregion
-
     string[] niveaux = {"DownTown","UnderGround","Docks","Laboratory","SpatioPort","Canibalecter","Zoo"};
-
-
-    private void Awake()
-    {
-        _instance = this;
- //       _launchHunt = GetComponent<LaunchHunt>();
-    }
-
-  //  LaunchHunt _launchHunt;
 
 
     public DataClass loadDataFromJson(string jSon) 
@@ -76,8 +40,7 @@ public class Load : MonoBehaviour
 
             if (SceneManager.GetActiveScene().name != "Stories" && SceneManager.GetActiveScene().name!="MainMenu" && SceneManager.GetActiveScene().name != "TownMap" && SceneManager.GetActiveScene().name != "TargetSelection" && SceneManager.GetActiveScene().name != "HeroSelection") 
             {
-                 PlayerPersistentDataHandler.Instance.PlayerScore = dataLoaded.score;
-             //    PlayerPersistentDataHandler.Instance.storyPieces = dataLoaded.storiesSeen;
+                 GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().PlayerScore = dataLoaded.score;
             }
              
             return dataLoaded;
@@ -99,7 +62,7 @@ public class Load : MonoBehaviour
             foreach (string s in niveaux)
                 if (SceneManager.GetActiveScene().name == s)
                 {
-                    PlayerPersistentDataHandler.Instance.thisHunt = targetOfThisHunt;
+                    GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().thisHunt = targetOfThisHunt;
                 }
         }
         else 

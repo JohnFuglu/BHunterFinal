@@ -5,19 +5,6 @@ using UnityEngine;
 public class Pet : PlayerController
 {
     [SerializeField] ParticleSystem particle;
-    private static Pet _instance;
-    public static Pet Instance
-    {
-        get
-        {
-            if (_instance == null)
-                Debug.LogError("No Pet !!!!");
-            return _instance;
-        }
-    }
-
-
-
     [Header("PetSpecials")]
     [SerializeField] AudioClip _petSendBackSound;
     [SerializeField] float _evadeJumpForce, _hpLeach;
@@ -36,19 +23,18 @@ public class Pet : PlayerController
             return 1;
         }
     }
-    Invocator _player;
+    public Invocator invoc;
     
     
-    private void OnEnable()
+    protected override void OnEnable()
     {
-        _instance = this; 
         base.Start();
-        _player = GameObject.Find("Invocator").GetComponent<Invocator>();
+        invoc = GameObject.Find("Invocator").GetComponent<Invocator>();
         _thisPetHero  =GetComponent<Hero>();
     }
     protected override void FixedUpdate() 
     {
-        if (_player.petIsHere && !_thisPetHero.Destroyed)
+        if (invoc.petIsHere && !_thisPetHero.Destroyed)
         {
             base.FixedUpdate();
             if (Input.GetKeyDown(KeyCode.LeftControl) && EvadeCharges > 0)
@@ -67,9 +53,9 @@ public class Pet : PlayerController
 
     void TeleportationAnimation() 
     {
-        Invocator.Instance.transform.position = gameObject.transform.position;
+        invoc.transform.position = gameObject.transform.position;
         particle.Play();
-        Invocator.Instance.InvocationEnd(this.gameObject);
+        invoc.InvocationEnd(this.gameObject);
     }
 
     void DeathPet() 
@@ -79,7 +65,7 @@ public class Pet : PlayerController
          audioSource.PlayOneShot(deathSound);
     }
 
-    public void DeathPetAnimation() { Invocator.Instance.InvocationEnd(this.gameObject); }
+    public void DeathPetAnimation() { invoc.InvocationEnd(this.gameObject); }
     void Evade(bool looksRight) 
     {
         _evadeExposer--;

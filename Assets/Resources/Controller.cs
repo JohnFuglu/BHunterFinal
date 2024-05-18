@@ -36,8 +36,6 @@ public class Controller: MonoBehaviour
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
         _collider= GetComponent<Collider2D>();
-       if(!gameObject.CompareTag("Player")) 
-            PlayerController.killedDelegate += PlayerDead;
     }
 
     #region("Comportement General")
@@ -131,9 +129,9 @@ public class Controller: MonoBehaviour
     {
         if (!obj.Destroyed) // devrait etre vrai et est faux 
         {
+            _animator.SetTrigger("Dead");      
             _animator.SetBool("DeadBool", true);
             audioSource.PlayOneShot(deathSound);
-            _animator.SetTrigger("Dead");      
             obj.Destroyed = true;
         }
 
@@ -175,6 +173,6 @@ public class Controller: MonoBehaviour
 
     void UpdateScore()
     {
-        PlayerPersistentDataHandler.Instance.PlayerScore += character.Score;
+        GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().PlayerScore += character.Score;
     }
 }

@@ -4,35 +4,6 @@ using UnityEngine;
 
 public class Invocator : PlayerController
 {
-    //utiliser la vie pour gérer les invocations
-    //munitions spéciales doivent être utilisées d'une manière
-    //Invocation instancie ou affiche une créature
-    //le joueur controle cette bestiole pendant que son perso se pose par terre
-    //la caméra va sur la bestiole
-
-    //en fin d'invoc on revient sur le hero et la bestiole est masquée
-
-    //l'invoc doit pouvoir se soigner
-
-    //invoq spé =  
-    //sons d'invoc, de retour, fx *2
-
-    private static Invocator _instance;
-    public static Invocator Instance 
-    { get 
-        {
-            if (_instance == null)
-                Debug.LogError("No Invocator !!!!");
-            return _instance;
-        } 
-    }
-
-
-
-
-    public delegate void OnInvocation();
-    public static OnInvocation becomeThePet;
-
    
     [Header("Invocator spécials")]
     [SerializeField] AudioClip _invocSound;
@@ -45,18 +16,13 @@ public class Invocator : PlayerController
     public Transform petPosition;
     public bool petIsHere = false;
     [SerializeField] float _invocCost;
-    Pet _pet;
+    public Pet _pet;
 
     Camera _mainCamera;
     public InvoqSc invocatorSc;
 
     private Hero _hero;
-    
-
-    private void Awake()
-    {
-        _instance = this;
-    }
+ 
     protected override void Start()
     {
         base.Start();
@@ -87,7 +53,7 @@ public class Invocator : PlayerController
             this.tag = "OutOfGame";
             petIsHere = true;
             _thisHero.Health -= _invocCost;
-            Hero.Instance.SpecialAmmo--;
+            GetComponent<Hero>().SpecialAmmo--;
         }
     }
 
@@ -101,14 +67,10 @@ public class Invocator : PlayerController
         pet.transform.position = petPosition.position;
         AssignCamera("Pet");
         _rb.simulated=false;
-        UIManager.Instance._playerHeroName = "Pet";
-        if (becomeThePet != null)
-        { 
-            becomeThePet();
-            _hero.enabled = false;
-           
-        }
+        GameObject.Find("Canvas").GetComponent<UIManager>()._playerHeroName = "Pet";
+        _hero.enabled = false;
         _pet = pet.GetComponent<Pet>();
+        _pet.invoc = GetComponent<Invocator>();
     }
     public IEnumerator InvocTimer(float timer) {
         yield return new WaitForSeconds(timer);
@@ -126,8 +88,8 @@ public class Invocator : PlayerController
        _invocFx.Play();
         _animator.SetTrigger("BackToBody");
         _animator.SetBool("OutOfBody",false);
-        UIManager.Instance._playerHeroName = "Invocator";
-        UIManager.Instance.DisplayBackInvocatorHud();
+        GameObject.Find("Canvas").GetComponent<UIManager>()._playerHeroName = "Invocator";
+        GameObject.Find("Canvas").GetComponent<UIManager>().DisplayBackInvocatorHud();
         AssignCamera("Invocator");
         _rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         _rb.simulated = true; 

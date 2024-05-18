@@ -76,11 +76,16 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
     public ParticleSystem bloodParticle { get { return _bloodParticle; } set { _bloodParticle = value; } }
     public GameObject bloodGo { get { return _bloodGo; } set { _bloodGo = value; } }
     protected UIManager ui;
+    private PlayerPersistentDataHandler playerData;
 
+
+    virtual protected void OnEnable(){
+        playerData = GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>();
+    }
     protected override void Start()
     {
         _cam = GameObject.Find("CameraCine").GetComponent<CinemachineVirtualCamera>();
-        _cam.m_Lens.OrthographicSize = PlayerPersistentDataHandler.Instance.defaultCamOrthoSize;
+        _cam.m_Lens.OrthographicSize = playerData.defaultCamOrthoSize;
         _groundCheck = GameObject.Find("GroundCheck").transform;
         splash = splashGo.GetComponent<ParticleSystem>();
         _thisHero = GetComponent<Hero>();
@@ -128,10 +133,8 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
 
     public void HeroDeath()//Dans l'animation
     {
-        _animator.SetBool("DeadBool", true);
         Dead(_thisHero);
-        HeroSDead();
-        PlayerPersistentDataHandler.Instance.EndLevel();
+        playerData.EndLevel();
     }
 
     protected virtual void FixedUpdate()
@@ -187,7 +190,6 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
         if (_falled && !_thisHero.Destroyed)
         {
             Dead(_thisHero); 
-            HeroSDead(); 
         }
     }
 
@@ -196,19 +198,7 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
         if (collision.gameObject.CompareTag("Chutteur") && !_thisHero.Destroyed)
         {
             Dead(_thisHero);
-            HeroSDead();
         }
-    }
-
-    void HeroSDead() 
-    {
-        if (GameObject.Find("Canvas").GetComponent<UIManager>()._playerHeroName!="Pet") 
-        { 
-            if (killedDelegate != null) 
-            {
-                killedDelegate();
-            }
-        }    
     }
 
     void Deplacement()

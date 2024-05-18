@@ -8,47 +8,7 @@ using System;
 [System.Serializable]
 public class PlayerPersistentDataHandler : MonoBehaviour
 {
-    #region(Singleton)
-    private static PlayerPersistentDataHandler _instance;
-    public static PlayerPersistentDataHandler Instance
-    {
-        get
-        {
-            if (_instance == null)
-                Debug.LogWarning("PlayerPersistentDataHandler est null");
-            return _instance;
-        }
-    }
-
-    #endregion
-
-    /*sauvegarder la progression du héro tant qu'il n'est pas mort.
-     * progression = niveaux parcourus, indices récoltés, score, cible, hero choisi
-     * S'il meurt recommencer une progression
-     * A GARGER MEME MORT = les morceaux d'histoire, le score et nom du héro qui l'a fait, cibles débloquées, heros débloqués
-     * 
-     * créer un fichier en début de partie
-     *  dans ce fichier mettre le nom du héro, la cible
-     *      on arrive dans un niveau = on spawn le bon hero (NOM DU HERO), le score est celui qui a été sauvé
-     *      quand on finit un niveau on ajoute l indice trouvé, on marque le niveau comme fini
-     *      si on ne finit pas le niveau (temps) on ne fait que sauver le score et reprendre les infos d'arrivée
-     *      si on meurt = on efface les données de progression, on sauve le score avec le héro correspondant
-     
-     
-     
-         
-         
-         */
-
-
-    public delegate void OnCompletion();
-    public static OnCompletion endTheLevel;
-    public delegate void OnLoaded(Hero hero);
-    public static OnLoaded loaded;
-
-
     [SerializeField]   private Cinemachine.CinemachineVirtualCamera _camera;
-
 
     public int PlayerScore { get; set; }
     //public HuntManager progressionOfHunts;  récupérer les infos ici
@@ -77,19 +37,20 @@ public class PlayerPersistentDataHandler : MonoBehaviour
     public List<string> storyPieces;
     [SerializeField] HeroSpawnList _herosList;
     [SerializeField] Transform _spawnPlayer;
-  
+    public Invocator masterInvoc;
     public float defaultCamOrthoSize = 8;
-    public void OnFinishedLoading(Scene scene, LoadSceneMode mode) {
-        _instance = this;
+    public void LoadDataFromPlayer() {
         _load = GetComponent<Load>();
         LoadCurrentProgression();
         AddHints(thisHunt);
         try
         {
             player= SpawnHero(_currentProgression.heroName);
+            if(_currentProgression.heroName == "Invocator")
+                masterInvoc = player.GetComponent<Invocator>();
             CheckHeroByName(player.name);
             thisHero = player.GetComponent<Hero>();
-            LevelHandler.Instance.PlaceCollectables(thisHero);
+            GetComponent<LevelHandler>().PlaceCollectables(thisHero);
         }
         catch (Exception e)
         {
@@ -101,17 +62,8 @@ public class PlayerPersistentDataHandler : MonoBehaviour
             if (l == SceneManager.GetActiveScene().name)
                 foundAHintHere = true;
      
-        PlayerController.killedDelegate += EndLevel;
-    }
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnFinishedLoading;
     }
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnFinishedLoading;
-    }
 
     GameObject SpawnHero(string name) 
     {
@@ -123,8 +75,6 @@ public class PlayerPersistentDataHandler : MonoBehaviour
                 temp = Instantiate(h) as GameObject;
                 temp.transform.position = _spawnPlayer.position;
                 temp.name = name;
-              
-               
                 return temp;
             }
         }
@@ -216,13 +166,9 @@ public class PlayerPersistentDataHandler : MonoBehaviour
     }
 
 
-  
-
-
     public void SaveProgression()
     {
         Debug.Log("quitte");
-      
         AssignDataToSave(_currentProgression, _currentHero);
         Save saveGame = new Save();
         saveGame.SaveData(_currentProgression);
@@ -230,19 +176,16 @@ public class PlayerPersistentDataHandler : MonoBehaviour
     }
 
 
-
     public void EndLevel()
     {
-        ScoreSystem.Instance.SaveScoreList(ScoreSystem.Instance.UpdateScores(PlayerScore, thisHero.Name));
-
-        if (thisHero.Destroyed) {
-
+        if (thisHero.Destroyed) 
+        {
             if (foundAHintHere)
             {
                 Debug.Log("Save avec un hint et hero est mort");
                 foreach (Hint hint in collectedHints)
                 {
-                    if (hint == LevelHandler.Instance.thisLevelHint)
+                    if (hint == GetComponent<LevelHandler>().thisLevelHint)
                     {
                         collectedHints.Remove(hint);
                     }
@@ -251,19 +194,8 @@ public class PlayerPersistentDataHandler : MonoBehaviour
                 saveGame.SaveData(_currentProgression);
                 SceneManager.LoadScene("TownMap");
             }
-
-            else
-            {
-                Debug.LogWarning("MORT");
-                if (endTheLevel != null)
-                {
-                    endTheLevel();
-                }
-            }
+            SceneManager.LoadScene("MainMenu");
         }
-
-        
-      
 
         if (foundAHintHere)
         {

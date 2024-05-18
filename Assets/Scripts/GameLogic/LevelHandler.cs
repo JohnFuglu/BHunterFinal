@@ -6,36 +6,25 @@ using Cinemachine;
 [System.Serializable]
 public class LevelHandler : MonoBehaviour
 {
-    private static LevelHandler _instance;
-    public static LevelHandler Instance {
-        get{
-            if(_instance==null)Debug.LogError("Pas de levelHandler");
-                        return _instance;
-        }
-    }
     public float timeToCompleteLevel = 240;
 
     [SerializeField] GameObject[] potentialHintsHideOuts;
     [SerializeField] Transform[] collectablesSpawns;
     public Hint thisLevelHint;
-
+    private PlayerPersistentDataHandler playData;
     string t = " ";
 
 
-    private void Awake()
+    void Awake()
     {
-        _instance = this; 
-     
-        
-    }
-
-    void Start()
-    {
-     
-        if (!PlayerPersistentDataHandler.Instance.foundAHintHere) 
+        playData= GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>();
+        playData.LoadDataFromPlayer();
+        if (!playData.foundAHintHere) 
         { 
             thisLevelHint=ChooseMissingHint();
             AddHintInOneGameObject(thisLevelHint);
+            GameObject.Find("Canvas").GetComponent<UIManager>().SetUI(playData.thisHero);
+            playData.GetComponent<ScoreSystem>().SetScore();
         }
     }
 
@@ -53,9 +42,9 @@ public class LevelHandler : MonoBehaviour
          * Royale Bleu
          * Ass Rouge
          
-         */
+        
         int id=0;
-        string nom = PlayerPersistentDataHandler.Instance.thisHero.Name;
+        string nom = playData.thisHero.Name;
         switch (nom) {
             case "Jaznot":
                 id = Random.Range(1, 4);
@@ -70,9 +59,9 @@ public class LevelHandler : MonoBehaviour
                  id = Random.Range(15, 19);
                 break;
         }
-
-       
-        foreach(Hint hints in PlayerPersistentDataHandler.Instance.hintsToFind) 
+ */
+        int id=Random.Range(0,3);
+        foreach(Hint hints in playData.hintsToFind) 
         {
             if (hints.hintNumber == id) 
             {
