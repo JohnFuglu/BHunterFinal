@@ -5,12 +5,6 @@ using System;
 
 public class ElectricFuse : StandardObject
 {
-  /*
-   qd cassé : action
-  cassé = 0 pv
-   */
-    
-
     [SerializeField] ActionOnDestroy action;
   
     void Update()
@@ -26,7 +20,6 @@ public class ElectricFuse : StandardObject
                 trappe.Action();
                 GetDestroyed();
             }
-
             else
             {
                 action.Action();

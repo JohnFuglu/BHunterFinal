@@ -42,9 +42,10 @@ public class FireSpawner{
     int max = 5;
     public FireSpawner(GameObject other, ParticleSystem part)
     {
-        if (!other.GetComponent<StandardObject>().Destroyed) {
+
+       if (other.CompareTag("Destructibles") || other.CompareTag("Ennemis")){
             
-            if (other.CompareTag("Destructibles") || other.CompareTag("Ennemis"))
+            if (!other.GetComponent<StandardObject>().Destroyed)  
             {
                 if (!other.GetComponentInChildren<FireDamage>())
                 {  

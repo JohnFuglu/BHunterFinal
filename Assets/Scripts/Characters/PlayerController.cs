@@ -80,10 +80,11 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
 
 
     virtual protected void OnEnable(){
-        playerData = GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>();
+        
     }
     protected override void Start()
     {
+         playerData = GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>();
         _cam = GameObject.Find("CameraCine").GetComponent<CinemachineVirtualCamera>();
         _cam.m_Lens.OrthographicSize = playerData.defaultCamOrthoSize;
         _groundCheck = GameObject.Find("GroundCheck").transform;

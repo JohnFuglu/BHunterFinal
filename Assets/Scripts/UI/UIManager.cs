@@ -19,7 +19,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject _escapePanel;
     [SerializeField] Transform _KeyScroll;
     [SerializeField] Image _keyPrefab;
-    Animator _fadeBlack;
+     [SerializeField]Animator blackFin;
+     public bool black;
     [SerializeField] Image[] keys = new Image[4];
     [SerializeField] Text[] _allUiTexts;
     [SerializeField] Color[] _colors;  // par ordre de création
@@ -158,7 +159,6 @@ public class UIManager : MonoBehaviour
     }
 
 
-
     void AssignColorToUi(Color color)
     {
         foreach (var text in _allUiTexts)
@@ -183,15 +183,17 @@ public class UIManager : MonoBehaviour
     }
 
 
-    void FadeToBlack()
-    {
-        
-        Debug.Log("FADE");
-        string path = Application.persistentDataPath + "/ProgressionDatas.json";
-        GameObject.Find("FadeBlck").GetComponent<Animator>().SetBool("SetBlack",true);
+    public void FadeToBlack()
+    {   
+        blackFin.enabled =true;
+        blackFin.SetTrigger("SetBlack");
+        StartCoroutine(ToBlack());
+    } 
+
+    IEnumerator ToBlack(){
+        yield return new WaitForSeconds(1.25f);
+        black=true;
     }
-
-
 
     void DisplayKey(Sprite sprite)
     {

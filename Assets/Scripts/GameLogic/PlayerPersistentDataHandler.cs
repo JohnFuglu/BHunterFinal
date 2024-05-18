@@ -178,11 +178,11 @@ public class PlayerPersistentDataHandler : MonoBehaviour
 
     public void EndLevel()
     {
-        if (thisHero.Destroyed) 
-        {
-            if (foundAHintHere)
-            {
-                Debug.Log("Save avec un hint et hero est mort");
+     UIManager ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+     ui.FadeToBlack(); 
+     if(ui.black){
+     if(!thisHero.Destroyed){
+            if(collectedHints.Count > 0){
                 foreach (Hint hint in collectedHints)
                 {
                     if (hint == GetComponent<LevelHandler>().thisLevelHint)
@@ -194,16 +194,16 @@ public class PlayerPersistentDataHandler : MonoBehaviour
                 saveGame.SaveData(_currentProgression);
                 SceneManager.LoadScene("TownMap");
             }
-            SceneManager.LoadScene("MainMenu");
-        }
-
-        if (foundAHintHere)
-        {
-            Save saveGame = new Save();
-            saveGame.SaveData(_currentProgression);
-            SceneManager.LoadScene("TownMap");
+            else {
+                SceneManager.LoadScene("TownMap");
+            }
+        }  
+        else {
+              SceneManager.LoadScene("TownMap"); 
         }
     }
+    }
+    
 }
 
 

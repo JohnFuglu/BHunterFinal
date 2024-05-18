@@ -12,7 +12,6 @@ public class LevelHandler : MonoBehaviour
     [SerializeField] Transform[] collectablesSpawns;
     public Hint thisLevelHint;
     private PlayerPersistentDataHandler playData;
-    string t = " ";
 
 
     void Awake()
