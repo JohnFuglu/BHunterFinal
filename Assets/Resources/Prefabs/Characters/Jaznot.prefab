@@ -10271,8 +10271,8 @@ MonoBehaviour:
   theGround:
     serializedVersion: 2
     m_Bits: 1087488
-  _jumpForce: 26
-  _boostedJumpForce: 40
+  _jumpForce: 20
+  _boostedJumpForce: 25
   _runSpeed: 10
   _speed: 5
   inWater: 0
@@ -10340,7 +10340,7 @@ MonoBehaviour:
   - {x: -0.35130233, y: -1.7508452, z: 0}
   m_ShapePathHash: 274471727
   m_Mesh: {fileID: 0}
-  m_InstanceId: 70342
+  m_InstanceId: 90454
   m_LocalBounds:
     m_Center: {x: 0.018418133, y: 0.11619949, z: 0}
     m_Extent: {x: 0.4176839, y: 1.8772999, z: 0}

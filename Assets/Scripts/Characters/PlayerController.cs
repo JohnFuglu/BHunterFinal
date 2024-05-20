@@ -323,7 +323,6 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
         {
             return true;
         }
-       
         else return false;
     }
     
