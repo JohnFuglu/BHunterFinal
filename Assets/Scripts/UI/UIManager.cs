@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Transform _KeyScroll;
     [SerializeField] Image _keyPrefab;
      [SerializeField]Animator blackFin;
-     public bool black;
+     public bool black=false;
     [SerializeField] Image[] keys = new Image[4];
     [SerializeField] Text[] _allUiTexts;
     [SerializeField] Color[] _colors;  // par ordre de création
@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject _gameOverScreen, _victoryScreen;
     public string _playerHeroName = "";
     //float _playerHp;
-    float _timeLeft;
+    public float _timeLeft;
 
 
     LanceFlamme _fuel;
@@ -41,6 +41,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] Text afficheurTexte;
     PlayerPersistentDataHandler gameHander;
+    public bool quit = false;
     public void SetUI(Hero hero)
     {
         if (GameObject.Find("Invocator") != null)
@@ -72,7 +73,9 @@ public class UIManager : MonoBehaviour
 
         StartDisplay();
     }
-
+    private void Awake(){
+        Debug.Log("Hello");
+    }
     void ThisIsAPet()
     {
         _playerHeroName = "Pet";
@@ -93,7 +96,14 @@ public class UIManager : MonoBehaviour
     {
         RefreshDisplay();
     }
-
+    public int GetScore(){
+        string s =_scoreDisplay.text;
+        string[] morceaux = s.Split(':');
+        morceaux = morceaux[1].Split(' ');
+        string retourner = morceaux[1];
+        Debug.Log(retourner);
+        return int.Parse(retourner);
+    }
     void RefreshDisplay()
     {
         _scoreDisplay.text = "Score : " + 
@@ -173,13 +183,12 @@ public class UIManager : MonoBehaviour
         _timerDisplay.text = "Time left :" + Mathf.Round(_timeLeft);
         if (_timeLeft < 0 && !_gameOverScreen.activeInHierarchy)
             GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().EndLevel();
-        
-
     }
 
     public void ExitAndSaveDataWithPersistenPlayer()
     {
-        GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().SaveProgression();
+        quit=true;
+        GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().EndLevel();
     }
 
 

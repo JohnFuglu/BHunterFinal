@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
-    public  delegate void OnAction();
-    public static OnAction switched;
-
     [SerializeField] Sprite on;
     Sprite off;
     SpriteRenderer rd;
+    [SerializeField]GameObject toActivate;
     private void Start()
     {
        rd= GetComponent<SpriteRenderer>();
@@ -25,7 +23,6 @@ public class Switch : MonoBehaviour
     }
     void Activate() {
         rd.sprite = on;
-        if (switched != null)
-            switched();
+        toActivate.GetComponent<IActivable>().Action();
     }
 }

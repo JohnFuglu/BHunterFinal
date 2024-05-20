@@ -15,7 +15,7 @@ public class PortInsertionTrigger : MonoBehaviour
             _audio.PlayOneShot(_audio.clip);
             GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().EndLevel();
         }
-        else if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             _audio.PlayOneShot(_audio.clip);
             _anima_ship.SetTrigger("TakeOff");

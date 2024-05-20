@@ -20,7 +20,6 @@ public class Save
         string jSon = JsonUtility.ToJson(data,true);
         File.WriteAllText(Application.persistentDataPath + "/ProgressionDatas.json", jSon);
         Debug.Log("SaveGame completed... \n" + jSon);
-
     }
 }
 

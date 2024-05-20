@@ -75,9 +75,18 @@ public class LevelHandler : MonoBehaviour
     {
         int randomNumber = Random.Range(0, potentialHintsHideOuts.Length);//est ce que ca inclut le dernier item du tableau?
         HintAllocator _hintAllocator = potentialHintsHideOuts[randomNumber].AddComponent<HintAllocator>();
-        _hintAllocator.hint = thisLevelHint;
-        _hintAllocator.InitHints();
-    }
+        Debug.Log("HintAllocator "+_hintAllocator +'\n' );
+        try{
+            _hintAllocator.hint = thisLevelHint; 
+            Debug.Log("LevelHint "+ thisLevelHint.name +'\n' );
+            _hintAllocator.InitHints();
+    
+        }catch{
+            Debug.LogError("Pas de Hint");
+        }
+    }  
+       
+        
 
      public void PlaceCollectables(Hero hero) 
     {

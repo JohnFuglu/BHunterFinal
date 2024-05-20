@@ -77,7 +77,7 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
     public GameObject bloodGo { get { return _bloodGo; } set { _bloodGo = value; } }
     protected UIManager ui;
     private PlayerPersistentDataHandler playerData;
-
+    protected bool specialCooldown = true;
 
     virtual protected void OnEnable(){
         
@@ -165,7 +165,8 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
 
                 if (Input.GetKey(KeyCode.G) && _thisHero.SpecialAmmo > 0)//si dispo en muni
                 {
-                    SpecialAttack();
+                    if(specialCooldown)
+                        SpecialAttack();
                 }
 
             }
@@ -178,8 +179,12 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
         }
         }
     }
-
-    protected virtual void SpecialAttack() { }
+    protected void SpecialAnimEnded(){
+        specialCooldown=true;
+    }
+    protected virtual void SpecialAttack() {
+        specialCooldown=false;
+     }
     
     private void OnCollisionEnter2D(Collision2D collision)
     {

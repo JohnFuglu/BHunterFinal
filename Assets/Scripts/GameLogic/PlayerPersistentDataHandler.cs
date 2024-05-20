@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using System.Runtime.Serialization;
 
 
 [System.Serializable]
@@ -181,29 +182,56 @@ public class PlayerPersistentDataHandler : MonoBehaviour
      UIManager ui = GameObject.Find("Canvas").GetComponent<UIManager>();
      ui.FadeToBlack(); 
      if(ui.black){
-     if(!thisHero.Destroyed){
-            if(collectedHints.Count > 0){
-                foreach (Hint hint in collectedHints)
-                {
-                    if (hint == GetComponent<LevelHandler>().thisLevelHint)
+        /*Sauve le niveau en cours
+        sauver le score mis à jour
+        */
+        _currentProgression.currentLevel=SceneManager.GetActiveScene().name;
+        int score = ui.GetScore();
+        Debug.Log("Score = "+score);
+        GetComponent<ScoreSystem>().UpdateScores(score,_currentHero.name);
+        GetComponent<ScoreSystem>().SaveScoreList();
+     /*5 cas : 
+     -le hero est mort
+     -le hero n'a plus de temps
+     -le hero a fini sans hint
+     -le hero a fini avec un hint #avec mvt restants #sans mvt restants
+     -le joueur a sauvé et quitté*/
+     if(thisHero.Destroyed){
+           
+            SceneManager.LoadScene("TownMap",LoadSceneMode.Single); 
+     }
+     if(ui._timeLeft <= 0){
+       
+        SceneManager.LoadScene("TownMap",LoadSceneMode.Single);
+     }
+     if(ui.quit){
+        SaveProgression();
+    }
+     if(!thisHero.Destroyed && ui._timeLeft > 0){
+            if(_currentProgression.movesLeft > 0){
+                if(collectedHints.Count > 0){
+                    foreach (Hint hint in collectedHints)
                     {
-                        collectedHints.Remove(hint);
+                        if (hint == GetComponent<LevelHandler>().thisLevelHint)
+                        {
+                            collectedHints.Remove(hint);
+                        }
                     }
+                    Save saveGame = new Save();
+                    saveGame.SaveData(_currentProgression);
+                    SceneManager.LoadScene("TownMap",LoadSceneMode.Single);
+                    
                 }
-                Save saveGame = new Save();
-                saveGame.SaveData(_currentProgression);
-                SceneManager.LoadScene("TownMap");
-            }
-            else {
-                SceneManager.LoadScene("TownMap");
-            }
-        }  
-        else {
-              SceneManager.LoadScene("TownMap"); 
+                else {
+                    SceneManager.LoadScene("TownMap",LoadSceneMode.Single);
+                }
         }
+        SceneManager.LoadScene("MainMenu",LoadSceneMode.Single);  
+
     }
     }
     
-}
+}}
+
 
 

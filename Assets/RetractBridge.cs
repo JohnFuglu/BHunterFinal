@@ -11,8 +11,7 @@ public class RetractBridge : MonoBehaviour, IActivable
 
     private void Start()
     {
-         origin = this.transform;
-        Switch.switched += Action;
+        origin = this.transform;
     }
 
    public void Action() {
@@ -23,11 +22,9 @@ public class RetractBridge : MonoBehaviour, IActivable
         
     }
 
-    IEnumerator Retract() {
+    public IEnumerator Retract() {
  
-            transform.localScale = new Vector3(origin.localScale.x, transform.localScale.y - scaleRate, origin.transform.localScale.z);
-
-        
+        transform.localScale = new Vector3(origin.localScale.x, transform.localScale.y - scaleRate, origin.transform.localScale.z);
         yield return new WaitForSeconds(1f);  
     }
 }

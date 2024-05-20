@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using TMPro;
+using UnityEngine.UIElements;
+using System.IO;
+using UnityEngine.SceneManagement;
+
 
 public class SelectAPlaceOfHunt : MonoBehaviour
 {
@@ -24,19 +28,17 @@ public class SelectAPlaceOfHunt : MonoBehaviour
     private string _bossName;
     private Load _load;
     private Save _save;
-    [SerializeField] Button _backButton;
+    [SerializeField] UnityEngine.UI.Button _backButton;
     [SerializeField] private DataClass _dataLoaded;
     //private List<string> _visitedPlaces= new List<string>();
     [Header("Hints display")]
     public Hint[] collectedHints = new Hint[4];
     [SerializeField] Transform _hintDisplay;
-    [SerializeField] Button _buttonPrefab;
-    [SerializeField] Button bossButton;
-    //  [SerializeField] Text _hintDescription;
-
+    [SerializeField] UnityEngine.UI.Button _buttonPrefab;
+    [SerializeField] UnityEngine.UI.Button bossButton;
     [SerializeField] TextMeshProUGUI movesLeft;
     [SerializeField] Text hintsDisplay;
-
+    [SerializeField] List<UnityEngine.UI.Button> lieux;
     public RectTransform zoomedPanelTransform;
     
     public void HuntTheBoss()//Boss target
@@ -54,22 +56,21 @@ public class SelectAPlaceOfHunt : MonoBehaviour
                 break;
             
             }
-           /* _bossName= target.name;
-            switch (_bossName) 
-            {
-                case "Canibalecter":
-                    UnityEngine.SceneManagement.SceneManager.LoadScene("Canibalecter");
-                    break;
-
-                    //autres cas !!!!
-            }*/
         }    
     }
 
     private void Awake()
     {
         _instance = this;
-       
+        _load = GetComponent<Load>();
+        _dataLoaded=CheckForData();
+        foreach(string s in _dataLoaded.visitedLevel){
+            foreach(UnityEngine.UI.Button button in lieux){
+                if(s == button.name){
+                    button.IsInteractable().Equals(false);
+        }
+        }
+        }
     }
 
     
@@ -78,6 +79,9 @@ public class SelectAPlaceOfHunt : MonoBehaviour
         _load = GetComponent<Load>();
         _dataLoaded=CheckForData();
         movesLeft.text = "You've got " + _dataLoaded.movesLeft + " movements left.";
+        if(_dataLoaded.movesLeft <=0){
+            GameOver();
+        }
         LoadHintsFromResources();
         HuntTheBoss();
     }
@@ -125,7 +129,7 @@ public class SelectAPlaceOfHunt : MonoBehaviour
      int y = 0;
             foreach(var id in _dataLoaded.hintIds) 
             {
-               Button hint = Instantiate(_buttonPrefab)as Button;
+               UnityEngine.UI.Button hint = Instantiate(_buttonPrefab)as UnityEngine.UI.Button;
                HintButton hBut= hint.GetComponent<HintButton>();
                 foreach (Hint ht in collectedHints) 
                 {
@@ -160,6 +164,11 @@ public class SelectAPlaceOfHunt : MonoBehaviour
     {
         if (_dataLoaded.heroName == null)
              UnityEngine.SceneManagement.SceneManager.LoadScene("TargetSelection");
+    }
+    public void GameOver(){
+        File.Delete(Application.persistentDataPath + "/ProgressionDatas.json");
+        Debug.Log("SaveGame deleted... \n");
+        SceneManager.LoadScene("MainMenu");
     }
 }
 

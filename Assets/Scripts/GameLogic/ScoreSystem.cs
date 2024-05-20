@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using TMPro;
+using System;
 
 
 [System.Serializable]
@@ -13,8 +14,27 @@ public class ScoreSystem : MonoBehaviour
    
     public TextMeshProUGUI _scoreDisplay;
 
-
-
+    void Start(){
+        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Scores"){
+        if (File.Exists(Application.persistentDataPath + "/Scores.txt"))
+        {
+                Debug.Log("Found a score textfile");
+                FileToScoreData();
+                if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Scores") 
+                {
+                    DisplayScores();
+                }    
+        }
+        }
+    }
+    public int MaxScore(string hero){
+        int tmp=0;
+        foreach(ScoreData sD in oldScores){
+            if(sD.sToSave>tmp)
+                tmp=sD.sToSave;
+        }
+        return tmp;
+    }
     public void SetScore()
     {
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "MainMenu" && 
@@ -22,72 +42,58 @@ public class ScoreSystem : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "TargetSelection" && 
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "TownMap")
         {
-            if (File.Exists(Application.persistentDataPath + "/Scores.json"))
+            if (File.Exists(Application.persistentDataPath + "/Scores.txt"))
             {
-                string jSon = File.ReadAllText(Application.persistentDataPath + "/Scores.json");
-                Debug.Log("Found a Json file");
-
-                ScoreData score = JsonUtility.FromJson<ScoreData>(jSon);
-                oldScores.Add(score);
-                
-                Debug.Log(jSon);
-                if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Scores") 
-                {
-                   
-                    DisplayScores();
-                }
-                   
+                string str = File.ReadAllText(Application.persistentDataPath + "/Scores.txt");
+                Debug.Log("Found a score textfile");
+                FileToScoreData();
+                UIManager ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+                //TODO ajouter set score dans UI, prob du perso joué etc
             }
             else
             {
-                Debug.LogWarning("No json file found ....");
+                Debug.LogWarning("No Score textfile found ....");
             }
         }
     }
-    public ScoreData UpdateScores(int score, string heroSName)//, DateTime dateAndTime
+    public void UpdateScores(int score, string heroSName)
     {
-        ScoreData scoreD = new ScoreData(score, heroSName);//, ,dateAndTime
+        ScoreData scoreD = new ScoreData(score, heroSName);
         oldScores.Add(scoreD);
-        return scoreD;
-        
     }
-
-    public void SaveScoreList(ScoreData score) 
+    private void FileToScoreData(){
+        string path =Application.persistentDataPath + "/Scores.txt";
+        Debug.Log(path);
+        
+                string[] s = File.ReadAllLines(path);
+                List<string> scores = new List<string>();
+                foreach(string score in s){
+                    scores.Add(score);
+                }
+                foreach(string st in scores){
+                    string[]tmp = st.Split('!');
+                    ScoreData score = new ScoreData(int.Parse(tmp[0]),tmp[1],tmp[2]);
+                    oldScores.Add(score);
+                }
+    }
+    public void SaveScoreList() 
     {
-        string jSon = JsonUtility.ToJson(score, true) as string;
-        File.WriteAllText(Application.persistentDataPath + "/Scores.json", jSon);
-        Debug.Log("SaveGame completed..."+ jSon);
+        string s1 = "";
+        foreach(ScoreData s in oldScores){
+            s1+=s.SaveToString()+'#'+'\n';
+        }
+        File.WriteAllText(Application.persistentDataPath + "/Scores.txt", s1);
+        Debug.Log("SaveGame completed..."+ s1);
 
     }
     void DisplayScores() 
     {
         foreach(var s in oldScores)
-            _scoreDisplay.text = s.ReturnScoreDatas(s) + "\n";
+            _scoreDisplay.text += s.ReturnScoreDatas() + "\n";
     }
 
     public void GoBack()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-    }
-}
-
-[System.Serializable]
-public class ScoreData
-{
-    public int sToSave;
-    public string heroPlayedWithScore;
-    //   public DateTime dateTime;
-    PlayerPrefs player;
-    public ScoreData(int scoreToSave, string heroName) //, DateTime dateInfo
-    {
-        sToSave = scoreToSave;
-        heroPlayedWithScore = heroName;
-     //   dateTime = dateInfo;
-    }
-
-    public string ReturnScoreDatas(ScoreData scoreDatas) 
-    {
-        string toReturn = "You've gathered " + sToSave + " points" + " with" + heroPlayedWithScore + " !";//"On "+
-        return toReturn;
     }
 }
