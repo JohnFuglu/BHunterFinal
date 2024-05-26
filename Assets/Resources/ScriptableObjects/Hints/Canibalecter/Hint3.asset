@@ -15,6 +15,8 @@ MonoBehaviour:
   hintNumber: 3
   descriptionImage: {fileID: 21300000, guid: a5f410da7e36cfd47a1491508ca5f656, type: 3}
   description: 'A dismembered body : still warm...'
+  preciseDescription: Cannibalecter went crazy on this one. Body parts was stiff
+    enough for you to know that the trail' s fresh.
   nameOfHint: A fresh victim
   hintPrefabToSpawn: {fileID: 8735926764865145718, guid: 4fdd99809932349488d98b38e7cfcf9b,
     type: 3}

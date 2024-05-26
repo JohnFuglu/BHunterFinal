@@ -89,6 +89,37 @@ public class ShootSystem : MonoBehaviour
         }
     }
 
+    public void ShootDumbBurst(Vector3 target) 
+    {
+        canShoot = true;
+        if (canShoot)
+        {
+            if (ActualAmmoInClip > 0) //Ammo > 0 && ActualAmmoInClip >= 0+burst
+            { 
+                Debug.DrawRay(canon.transform.position, target - canon.transform.position, Color.blue);
+                Vector2 directionToShootAt = target - canon.transform.position;
+                StartCoroutine(RateOfFire(rateOfFire,burstNbr,directionToShootAt)); 
+                
+                ActualiseAmmoCount(burstNbr);
+
+                //StopCoroutine(RateOfFire(rateOfFire,burstNbr,directionToShootAt));
+            }
+        }
+        
+    }
+    IEnumerator RateOfFire(float rateOfFire,short burstNbr, Vector2 directionToShootAt){
+        int i =0;
+        while (i<burstNbr){
+            i++;
+            Vector2 randomizedDirectionToShootAt = new Vector2(directionToShootAt.x, directionToShootAt.y + Random.Range(0.1f, 0.5f));
+            GameObject shotBullet = Objectpool.Instance.RequestObjectFromAPool(pool.PoolName, randomizedDirectionToShootAt, _shootForce);
+            shotBullet.transform.position = canon.transform.position;
+            shotBullet.GetComponent<Rigidbody2D>().AddForce(randomizedDirectionToShootAt * _shootForce);// a éviter
+        yield return new WaitForSeconds(rateOfFire);
+        }
+        
+        
+    }
     public void ShootDumb() 
     {
         if (ActualAmmoInClip > 0) //  _ammo > 0    Ammo > 0 && 
@@ -167,6 +198,9 @@ public class ShootSystem : MonoBehaviour
         }
     }
 
+    void ActualiseAmmoCount(int burst){
+        ActualAmmoInClip-=burst;
+    }
 
 
     void ActualiseAmmoCount() 
@@ -175,55 +209,3 @@ public class ShootSystem : MonoBehaviour
     }
 
 }
-#region(Working)
-//public void ShootBurst(Vector3 target, int burst)
-//{
-//    if (ActualAmmoInClip > 0) //Ammo > 0 && ActualAmmoInClip >= 0+burst
-//    {
-//        Debug.DrawRay(canon.transform.position, target - canon.transform.position, Color.blue);
-//        Vector2 directionToShootAt = target - canon.transform.position;
-
-//        List<GameObject> burstGameObjects = new List<GameObject>();
-//        for (int i = 0; i <= burst; i++)
-//        {
-//            burstGameObjects.Add(_ammoPrefab);
-//            Debug.Log("ajout d'une balle dans " + burstGameObjects);
-//        }
-//        foreach (GameObject bullet in burstGameObjects)
-//        {
-
-//            Vector2 randomizedDirectionToShootAt = new Vector2(directionToShootAt.x, directionToShootAt.y + Random.Range(0.1f, 0.5f));
-//            GameObject shotBullet = Instantiate(_ammoPrefab);
-//            shotBullet.transform.position = canon.transform.position;
-//            shotBullet.GetComponent<Rigidbody2D>().AddForce(randomizedDirectionToShootAt * _shootForce);
-//            Debug.Log("Tire une balle ");
-//            burstGameObjects.Clear();
-//            Debug.Log("Clear la liste");
-//            _ammo--;
-//            ActualiseAmmoCount(burst);
-//        }
-
-//    }
-
-//}
-
-//public void Shoot(Vector3 target)//GameObject target
-//{
-    //if (ActualAmmoInClip > 0) //  _ammo > 0    Ammo > 0 && 
-    //{ 
-    //    Vector2 directionToShootAt = target-canon.transform.position;
-
-    //     GameObject t = Instantiate(_ammoPrefab);
-    //     t.transform.position = canon.transform.position;
-    //     Debug.DrawRay(canon.transform.position, target-canon.transform.position, Color.green);
-    //     t.GetComponent<Rigidbody2D>().AddForce(directionToShootAt * _shootForce);//shootAt-transform.position * _shootForce
-
-
-    //    ObjectPooler.Instance.RequestBullet();
-
-    //    // _ammo--;
-    //    ActualiseAmmoCount(1);
-    //} 
-//}
-
-#endregion

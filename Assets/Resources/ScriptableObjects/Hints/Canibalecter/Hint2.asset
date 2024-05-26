@@ -15,6 +15,9 @@ MonoBehaviour:
   hintNumber: 2
   descriptionImage: {fileID: 21300000, guid: 53d9ed8e1d42c90429df721726cc03a9, type: 3}
   description: A receipt for a laser cutter. The adress has been erased.
+  preciseDescription: 'Someone bought a lot of ion-zuper-batteries... And a powerfull
+    laser cutter. Unfortunately, the adress part is missing but at least you are
+    in the right city. '
   nameOfHint: A receipt
   hintPrefabToSpawn: {fileID: 8735926764865145718, guid: 5bbf81e2521520b4f8d3d90e061bf0a6,
     type: 3}

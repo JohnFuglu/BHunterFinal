@@ -98,7 +98,7 @@ public class Controller: MonoBehaviour
     }
     public void ShootDumbBurstAnimation()
     { 
-        _shoot.ShootDumb();
+        _shoot.ShootDumbBurst(target.transform.position);
     }
     public void ShootAuto() {
         _shoot.ShootAuto(target.transform.position);

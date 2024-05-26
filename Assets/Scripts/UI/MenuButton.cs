@@ -10,7 +10,6 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerClick(PointerEventData eventData)
     {
-
         _audio.PlayOneShot(_buttonSfx[1]);
     }
 
@@ -21,7 +20,7 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _audio.PlayOneShot(_buttonSfx[2]);
+        _audio.PlayOneShot(_buttonSfx[0]);
     }
 
 }

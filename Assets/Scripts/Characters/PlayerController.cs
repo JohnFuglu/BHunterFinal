@@ -129,6 +129,7 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
                 Jump(_jumpForce - waterdebuf);
         }
         else 
+            if(_thisHero.name !="Pet")
             HeroDeath();
     }
 
@@ -203,6 +204,11 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
     {
         if (collision.gameObject.CompareTag("Chutteur") && !_thisHero.Destroyed)
         {
+            if(GetComponent<Hero>().name == "Pet"){
+                Pet pet =  GetComponent<Pet>();
+                pet.invoc.InvocationEnd(pet.gameObject);
+            }
+                
             Dead(_thisHero);
         }
     }

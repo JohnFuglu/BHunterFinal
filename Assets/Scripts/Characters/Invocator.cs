@@ -22,7 +22,7 @@ public class Invocator : PlayerController
     public InvoqSc invocatorSc;
 
     private Hero _hero;
- 
+    float tmpkillHeight;
     protected override void Start()
     {
         base.Start();
@@ -59,6 +59,7 @@ public class Invocator : PlayerController
 
     public void InvocAnimation() 
     { 
+        tmpkillHeight = _killHeight;
         StartCoroutine(InvocTimer(petLifeTime));
         _listner.enabled = false;
         GameObject pet = Instantiate(_petPrefab);
@@ -71,10 +72,11 @@ public class Invocator : PlayerController
         _hero.enabled = false;
         _pet = pet.GetComponent<Pet>();
         _pet.invoc = GetComponent<Invocator>();
+        _killHeight=1000;
     }
     public IEnumerator InvocTimer(float timer) {
         yield return new WaitForSeconds(timer);
-        InvocationEnd(GameObject.Find("Pet"));
+        InvocationEnd(_pet.gameObject);
     }
     void Heal(float healthKit) 
     {
@@ -98,7 +100,7 @@ public class Invocator : PlayerController
         keys = _pet.keys;
         numKeys = _pet.numKeys;
         Destroy(pet,1f);
-        
+        _killHeight = tmpkillHeight;
         _hero.enabled = true;
     }
 }

@@ -46,6 +46,7 @@ public class Pet : PlayerController
         }
     }
 
+
     protected override void SpecialAttack()
     {
         _animator.SetTrigger("Teleportation");
@@ -53,9 +54,10 @@ public class Pet : PlayerController
 
     void TeleportationAnimation() 
     {
-        invoc.transform.position = gameObject.transform.position;
+        UnityEngine.Vector3 v  = gameObject.transform.position;
+        v.y = 5;
+        invoc.transform.position = v;
         particle.Play();
-        invoc.InvocationEnd(this.gameObject);
     }
 
     void DeathPet() 

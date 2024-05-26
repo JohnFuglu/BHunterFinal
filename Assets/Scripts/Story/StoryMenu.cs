@@ -8,10 +8,9 @@ public class StoryMenu : MonoBehaviour
 {
     [SerializeField] HeroSc[] _heroesSc;
     [SerializeField] Text _storyText;
-   // [SerializeField] PersistentSave _story;
     [SerializeField] List<string> story;
     [SerializeField] StoriesList slist;
-    bool affiche = false;
+    [SerializeField]bool affiche = false;
 
     public void DisplayStoryText(string buttonName) 
     {
@@ -19,30 +18,39 @@ public class StoryMenu : MonoBehaviour
         {
             case "Jaznot":
                 if(affiche==false)
-                    _storyText.text=GatherStoryPieces(buttonName);
-                affiche = true;
+                    _storyText.text = GatherStoryPieces(buttonName);
+                    StartCoroutine(Affiche(buttonName));
+            break;
+            case "Invocator":
+                if(affiche==false)
+                    _storyText.text = GatherStoryPieces(buttonName);
+                    StartCoroutine(Affiche(buttonName));
             break;
         }
     }
-
+    IEnumerator Affiche(string buttonName){
+        affiche=false;
+        yield return new WaitForSeconds(3);
+    }
 
     string GatherStoryPieces(string herosName) 
     {
-        switch (herosName) 
+        story.Clear();
+        foreach(Story s in slist.stories)
         {
-            case "Jaznot":
-                foreach(Story s in slist.stories)
-                {
-                    if (s.heroName == herosName && s.read)
-                        story.Add(s.text +'\n');
-                }
-            return string.Join("\n", story);
-               
-            default:
-                return "No story";   
+            if (s.heroName == herosName && s.read)
+                story.Add(s.text +'\n');
         }
-    }
-
+        if(story.Count>0){
+            affiche=true;
+            return string.Join("\n", story);
+        }
+           
+        else
+        return "No story";   
+        
+    }  
+    
     public void GoBack() 
     {
         SceneManager.LoadScene("MainMenu");

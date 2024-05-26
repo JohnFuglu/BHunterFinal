@@ -13,6 +13,8 @@ public class Hint : ScriptableObject
     public Sprite descriptionImage;
     [TextArea]
     public string description;
+    [TextArea]    
+    public string preciseDescription;
     public string nameOfHint;
     public GameObject hintPrefabToSpawn;
 }

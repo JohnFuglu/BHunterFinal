@@ -15,6 +15,8 @@ MonoBehaviour:
   hintNumber: 4
   descriptionImage: {fileID: 21300000, guid: a1ae7072cc398974e80d9aeee4f9e908, type: 3}
   description: A tracking device may have been eaten by Canibalecter !
+  preciseDescription: Some nano technology tracking device was in the last corpse.
+    Husband and wife mess... With some luck it can lead to the bad guy.
   nameOfHint: A Gps device
   hintPrefabToSpawn: {fileID: 8735926764865145718, guid: 82ed1aafcb7c32848b0a1248164da96d,
     type: 3}

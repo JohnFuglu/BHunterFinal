@@ -10340,7 +10340,7 @@ MonoBehaviour:
   - {x: -0.35130233, y: -1.7508452, z: 0}
   m_ShapePathHash: 274471727
   m_Mesh: {fileID: 0}
-  m_InstanceId: 90454
+  m_InstanceId: 52028
   m_LocalBounds:
     m_Center: {x: 0.018418133, y: 0.11619949, z: 0}
     m_Extent: {x: 0.4176839, y: 1.8772999, z: 0}
@@ -20425,6 +20425,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: LanceFlamme
       objectReference: {fileID: 0}
+    - target: {fileID: 3269605199400096111, guid: 796aad5a2e4cc2346a52efd6974e6673,
+        type: 3}
+      propertyPath: LightsModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269605199400096111, guid: 796aad5a2e4cc2346a52efd6974e6673,
+        type: 3}
+      propertyPath: NoiseModule.scrollSpeed.scalar
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269605199400096145, guid: 796aad5a2e4cc2346a52efd6974e6673,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 3269605199400096145, guid: 796aad5a2e4cc2346a52efd6974e6673,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269605199400096145, guid: 796aad5a2e4cc2346a52efd6974e6673,
+        type: 3}
+      propertyPath: m_MeshDistribution
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269605199400096145, guid: 796aad5a2e4cc2346a52efd6974e6673,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 2f7b2155c8210c04b82fb75683a7b9c6,
+        type: 3}
     - target: {fileID: 3269605199400096146, guid: 796aad5a2e4cc2346a52efd6974e6673,
         type: 3}
       propertyPath: m_RootOrder

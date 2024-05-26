@@ -135,6 +135,7 @@ public class SelectAPlaceOfHunt : MonoBehaviour
                 {
                    if (id == ht.hintNumber)
                     {
+                        hBut.hint=ht;
                         hint.image.sprite = ht.descriptionImage;
                         hBut.imageOfHint = ht.descriptionImage;
                         hBut.descritpionTextHint = ht.description;

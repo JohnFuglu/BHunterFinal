@@ -15,6 +15,8 @@ MonoBehaviour:
   hintNumber: 1
   descriptionImage: {fileID: 21300000, guid: f766f7461f3828642a6b7b809b8585d0, type: 3}
   description: You find a laser cutter in a paddle of blood.
+  preciseDescription: That kind of laser's used to cut through metal walls in a matter
+    of seconds. Stuff uses a lot of battery, thats something to remember.
   nameOfHint: A laser cutter
   hintPrefabToSpawn: {fileID: 8735926764865145718, guid: 3ade0e299c0d5864ba299f82797c490b,
     type: 3}

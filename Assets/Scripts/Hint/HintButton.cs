@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 
 public class HintButton : MonoBehaviour
 {
     public static Action OnClick;
    
-    //public int buttonNumber;
-
+    public Hint hint;
     public Sprite imageOfHint;
     public string descritpionTextHint;
-    [SerializeField] private Image _zoomedImage;
-    [SerializeField] private Text _zoomedText;
+
+     [SerializeField] private Image zoomPlace;
+    [SerializeField] private TextMeshProUGUI textPlace;
 
 
     public void ShowZoomedHint() 
     {
         SelectAPlaceOfHunt.Instance.zoomedPanelTransform.gameObject.SetActive(true);
-        _zoomedImage = GameObject.Find("ZoomedImage").GetComponent<Image>();
-        _zoomedImage.sprite = imageOfHint;
-        _zoomedText = GameObject.Find("ZoomedDescription").GetComponent<Text>();
-        _zoomedText.text = descritpionTextHint;
+        zoomPlace = GameObject.Find("ZoommedImage").GetComponent<Image>();
+        zoomPlace.sprite = hint.descriptionImage;
+        textPlace = GameObject.Find("TextDescription").GetComponent<TextMeshProUGUI>();
+        textPlace.text = hint.preciseDescription;
         StartCoroutine(HideZoomedHint());
     }
 

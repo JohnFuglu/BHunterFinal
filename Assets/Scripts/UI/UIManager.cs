@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
         StartDisplay();
     }
     private void Awake(){
-        Debug.Log("Hello");
+       // Debug.Log("Hello");
     }
     void ThisIsAPet()
     {
