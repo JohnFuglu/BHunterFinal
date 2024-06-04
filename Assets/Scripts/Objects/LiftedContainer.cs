@@ -16,7 +16,8 @@ public class LiftedContainer : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        _player.transform.SetParent(null);
+        if(gameObject.transform.parent != null)
+            _player.transform.SetParent(null);
     }
 }
 }

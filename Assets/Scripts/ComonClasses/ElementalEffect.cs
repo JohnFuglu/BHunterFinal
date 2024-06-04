@@ -7,7 +7,7 @@ public class ElementalEffect : MonoBehaviour
     [SerializeField] protected ParticleSystem particleEffect;
     [SerializeField] protected float elemDamage, dotTimer;
 
-    protected void Awake()
+    protected void OnEnable()
     {
         particleEffect = GetComponent<ParticleSystem>();
         dotTimer = particleEffect.main.duration;

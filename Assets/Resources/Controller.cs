@@ -28,6 +28,7 @@ public class Controller: MonoBehaviour
     protected ShootSystem _shoot;
     protected List<Rigidbody2D> multipleToPush;
     private string[] heroNames = { "Jaznot", "Royale" };          
+    public bool inAcide = false;
     protected virtual void Start()
     {
         target = GameObject.FindWithTag("Player");
@@ -122,8 +123,8 @@ public class Controller: MonoBehaviour
 
     #endregion
     public void Wounded() //ok
-    {
-        _animator.SetTrigger("Wounded");
+    {   if(!inAcide)
+            _animator.SetTrigger("Wounded");
     }
     public void Dead<T>(T obj) where T : StandardObject
     {

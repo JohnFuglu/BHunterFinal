@@ -36,7 +36,7 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
     public bool inWater = false;
     ParticleSystem splash;
     [SerializeField] GameObject splashGo;
-    float waterdebuf = 20;
+    [SerializeField]float waterdebuf = 5;
 
     [Header("Echelles checker")]
     public bool handsOnLadder = false;
@@ -126,6 +126,8 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
                 Jump(_jumpForce);
             }
             if(inWater)
+                Jump(_jumpForce - waterdebuf);
+            if(inAcide)
                 Jump(_jumpForce - waterdebuf);
         }
         else 
@@ -245,7 +247,7 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
             }
         }
 
-        if (inWater)
+        if (inWater || inAcide)
         {
             _rb.velocity = new Vector2(_xAxis * speed, _rb.velocity.y);   
         }
@@ -302,9 +304,9 @@ public class PlayerController : Controller, IWalk, ICanBleedAndDie
             _rb.AddForce(Vector2.up * jumpF,ForceMode2D.Impulse);
         }
 
-        else if (Input.GetKeyDown(KeyCode.Space) && inWater)
+        else if (Input.GetKeyDown(KeyCode.Space) && inWater || Input.GetKeyDown(KeyCode.Space) && inAcide)
         {
-            _rb.AddForce(Vector2.up * jumpF, ForceMode2D.Impulse);
+            _rb.AddForce(Vector2.up * Mathf.Sqrt(jumpF), ForceMode2D.Impulse);
             audioSource.PlayOneShot(jumpSound);
             grounded = false;
         }
