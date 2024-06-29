@@ -5080,6 +5080,7 @@ Transform:
   - {fileID: 1351236290609220190}
   - {fileID: 1351236291084618085}
   - {fileID: 4956931449544868533}
+  - {fileID: 2777935866273224805}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1351236290213531319
@@ -5500,18 +5501,20 @@ MonoBehaviour:
   woundedSound: {fileID: 8300000, guid: 6ccf613680f7b6d4ca6215a4c712fa63, type: 3}
   attackSound: {fileID: 8300000, guid: c02b75b5258d15a49a85409635c33a0a, type: 3}
   character: {fileID: 1351236290213531308}
+  inAcide: 0
   yVelocity: 0
   _killHeight: 30
   grounded: 0
   theGround:
     serializedVersion: 2
     m_Bits: 36864
-  _jumpForce: 80
+  _jumpForce: 110
   _boostedJumpForce: 60
   _runSpeed: 6
   _speed: 4
   inWater: 0
   splashGo: {fileID: 1351236290369491450}
+  waterdebuf: 5
   handsOnLadder: 0
   handsRadius: 0.2
   ladders:
@@ -5538,6 +5541,7 @@ MonoBehaviour:
   _evadeExposer: 2
   _leachFxPrefab: {fileID: 9005880960312102863, guid: 5f9dfac71565f244c9a29b009b80127e,
     type: 3}
+  tpInvoc: {fileID: 2777935866273224805}
   invocator: {fileID: 0}
   invoc: {fileID: 0}
 --- !u!114 &6155386829675776302
@@ -5568,7 +5572,7 @@ MonoBehaviour:
   - {x: -0.6769104, y: -6.6179676, z: 0}
   m_ShapePathHash: 761329165
   m_Mesh: {fileID: 0}
-  m_InstanceId: 554844
+  m_InstanceId: 163476
   m_LocalBounds:
     m_Center: {x: -0.017921448, y: -1.126544, z: 0}
     m_Extent: {x: 3.0103683, y: 6.2235355, z: 0}
@@ -25226,3 +25230,34 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &2154467136588803350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2777935866273224805}
+  m_Layer: 10
+  m_Name: SpotTP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2777935866273224805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2154467136588803350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 16.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1351236290213531318}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

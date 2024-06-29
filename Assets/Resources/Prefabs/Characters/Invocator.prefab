@@ -200,12 +200,12 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 1.0288024
+  m_UseAutoMass: 0
+  m_Mass: 3
   m_LinearDrag: 1
-  m_AngularDrag: 1.43
-  m_GravityScale: 7
-  m_Material: {fileID: 6200000, guid: 64dc12dff8e26c74ca67407753b6d4a7, type: 2}
+  m_AngularDrag: 1.13
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -509,18 +509,20 @@ MonoBehaviour:
   woundedSound: {fileID: 8300000, guid: a594ea3b82fe1244ba554ef2769793ea, type: 3}
   attackSound: {fileID: 8300000, guid: 59a0620deab448544a4d593135271fbd, type: 3}
   character: {fileID: 5306630833132660351}
+  inAcide: 0
   yVelocity: 0
-  _killHeight: 32
+  _killHeight: 50
   grounded: 0
   theGround:
     serializedVersion: 2
     m_Bits: 36864
-  _jumpForce: 17
+  _jumpForce: 50
   _boostedJumpForce: 20
   _runSpeed: 7
   _speed: 4
   inWater: 0
   splashGo: {fileID: 5306630833516165417}
+  waterdebuf: 5
   handsOnLadder: 0
   handsRadius: 0.2
   ladders:
@@ -627,7 +629,7 @@ MonoBehaviour:
   - {x: -0.62456065, y: -8.933194, z: 0}
   m_ShapePathHash: -828757252
   m_Mesh: {fileID: 0}
-  m_InstanceId: 340104
+  m_InstanceId: 176260
   m_LocalBounds:
     m_Center: {x: -1.2033774, y: -0.8253679, z: 0}
     m_Extent: {x: 1.8169826, y: 8.107826, z: 0}

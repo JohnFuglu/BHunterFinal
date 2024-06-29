@@ -1,34 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(ShootSystem))]
 public class MachinGunTurret : TurretControler
 {
-
     ShootSystem shoot;
     Vector3 dir;
-    void Update()
+    [SerializeField]Transform devant;
+    protected override void Update()
     {
-        dir = target.transform.position - transform.position;
-        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        DetectionDrone();
+
+        hit = Physics2D.Raycast(_shoot.canon.position, devant.transform.position - _shoot.canon.position, _shoot.DistanceDetection);
+        Debug.DrawRay(_shoot.canon.position, devant.transform.position - _shoot.canon.position, Color.yellow);
+        if (Physics2D.OverlapCircle(transform.position, _rangeToDetectPlayer, _layerMask)&&hit)
+            _animator.SetBool("ShootBool",true);
+        else {
+            _animator.SetBool("ShootBool",false);
+            transform.Rotate(new Vector3(0,0,1)*200*Time.deltaTime);
+        } 
     }
 
-
-    void DetectionDrone()
-    {
-        hit = Physics2D.Raycast(_shoot.canon.position, dir, _shoot.DistanceDetection);
-        
-        detectSomething = hit;
-        Debug.DrawRay(_shoot.canon.position, dir, Color.red);
-        if (detectSomething)
-        {
-                target = hit.collider.gameObject;                
-                if (Physics2D.OverlapCircle(transform.position, _rangeToDetectPlayer, _layerMask))
-                    _animator.SetBool("ShootBool",true);
-                else _animator.SetBool("ShootBool", false);
-        }
     }
-}
+

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using Grue;
 
 [RequireComponent(typeof(Collider2D))]
 public class InSceneButton : MonoBehaviour

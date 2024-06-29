@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Canibalecter : SentinelControler
 {
@@ -11,10 +12,9 @@ public class Canibalecter : SentinelControler
     [SerializeField] float canShoot;
     [SerializeField] float cAcCoolDown = 2f;
     [SerializeField] float projCoolDown = 5f;
-
+    [SerializeField]Slider healthBar;
     protected override void ComplexAi()
     {
-
         if(player==null)
             player = GameObject.FindWithTag("Player");
         rangeDistance = _rb.Distance(player.GetComponent<Collider2D>()).distance > 5;
@@ -23,15 +23,12 @@ public class Canibalecter : SentinelControler
 
     protected override void Chasing(GameObject player)
     {
-
-
         Vector2 v = player.transform.position;
         transform.position = Vector2.MoveTowards(transform.position, v, runSpeed * Time.deltaTime);
         _animator.SetBool("Running", true);
       //  _animator.SetBool("Walking", true);
        // _animator.SetBool("Running", false);
     }
-
 
     protected override void MoveCharacter()
     {

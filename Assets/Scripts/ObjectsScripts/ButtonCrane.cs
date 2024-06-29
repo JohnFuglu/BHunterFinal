@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Grue;
+
 
 public class ButtonCrane : InSceneButton
 {
@@ -10,7 +10,7 @@ public class ButtonCrane : InSceneButton
     protected override void OnMouseDown()
     {
         base.OnMouseDown();
-        _crane.CraneCommand(_command);
+        //_crane.CraneCommand(_command);
        
     }
 

@@ -20,8 +20,7 @@ public class ElectricFuse : StandardObject
                 trappe.Action();
                 GetDestroyed();
             }
-            else
-            {
+            else {
                 action.Action();
                 GetDestroyed();
             }

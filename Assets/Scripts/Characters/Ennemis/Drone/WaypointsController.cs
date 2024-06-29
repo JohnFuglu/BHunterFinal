@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaypointsController : Controller
+public class WaypointsController : TurretControler
 {
 
     //Waypoints
@@ -21,16 +21,19 @@ public class WaypointsController : Controller
     private bool _drawnedRay=false;
     [SerializeField] GameObject _circle;
     [SerializeField] float _circleRadius;
+    [SerializeField] Camera cam;
     protected override void Start()
     {
         base.Start();
         _currentWaypoint = _waypoints[_waypointNumber];
         _player = GameObject.FindWithTag("Player");
+        healthBar.maxValue = character.Health;
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         MoveAIWaypoints();
         if (_shoot.ActualAmmoInClip > 0) 
@@ -41,14 +44,17 @@ public class WaypointsController : Controller
         if (_shoot.Ammo > 0 && _shoot.ActualAmmoInClip ==0)
         {
             _animator.SetTrigger("Reload");
-        }
-        
-          
+        }  
         WoundCheck(character);
         DeathCheck(character) ;
         character.GetDestroyed();
+        ShowHealth();
     }
-
+    protected override void ShowHealth()
+    {
+        base.ShowHealth();
+        transform.rotation = cam.transform.rotation;
+    }
     void MoveAIWaypoints()
     {
         if (!Physics2D.OverlapArea(frontToEnnemyA.transform.position, frontToEnnemyB.transform.position, _playerLayer))

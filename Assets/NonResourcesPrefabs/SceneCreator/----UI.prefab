@@ -832,7 +832,7 @@ GameObject:
   - component: {fileID: 6278690035465890703}
   - component: {fileID: 6278690035465890702}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: MainCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -958,7 +958,8 @@ MonoBehaviour:
   _KeyScroll: {fileID: 6278690036493717896}
   _keyPrefab: {fileID: 2578686708559794267, guid: be79049976ce1ea4e9c919cad2b5e874,
     type: 3}
-  _fadeBlack: {fileID: 6278690035985002140}
+  blackFin: {fileID: 0}
+  black: 0
   keys:
   - {fileID: 2578686708559794267, guid: 7eec8068ae8b8bf419801691bef4df30, type: 3}
   - {fileID: 2578686708559794267, guid: cb8a2d3901d09a846a86461b92439746, type: 3}
@@ -977,7 +978,9 @@ MonoBehaviour:
   _gameOverScreen: {fileID: 6278690036257884328}
   _victoryScreen: {fileID: 6278690035696704242}
   _playerHeroName: 
+  _timeLeft: 0
   afficheurTexte: {fileID: 2450753771064719412}
+  quit: 0
 --- !u!1 &6278690035498061212
 GameObject:
   m_ObjectHideFlags: 0

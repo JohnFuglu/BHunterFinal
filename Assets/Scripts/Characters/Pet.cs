@@ -13,6 +13,7 @@ public class Pet : PlayerController
     ParticleSystem _leachFx;
     bool _fx;
     Hero _thisPetHero;
+   [SerializeField] Transform tpInvoc;
   
     public Hero invocator;
     public int EvadeCharges { get { return _evadeExposer; }protected set { value = _evadeExposer; } }
@@ -54,9 +55,7 @@ public class Pet : PlayerController
 
     void TeleportationAnimation() 
     {
-        UnityEngine.Vector3 v  = gameObject.transform.position;
-        v.y = 5;
-        invoc.transform.position = v;
+        invoc.transform.position = tpInvoc.position;
         particle.Play();
     }
 

@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Grue
-{
     public class CraneScript : MonoBehaviour
     {
 
@@ -21,6 +19,8 @@ namespace Grue
         {
             _thisTransform = GetComponent<RectTransform>();
         }
+        
+       /*
         public void CraneCommand(string direction)
         {
             if (direction != null)
@@ -74,6 +74,5 @@ namespace Grue
         {
             yield return new WaitForSeconds(1f);
             _lifted.constraints = RigidbodyConstraints2D.FreezePosition;
-        }
+        }*/
     }
-}

@@ -23,7 +23,7 @@ public class HintAsset : MonoBehaviour
             // Vector2 textPos = new Vector2(collision.transform.position.x, collision.transform.position.y);
             //_fxOnContact.transform.position = textPos;
             //affiche.text="You've found the Hint number " + hintToFind.hintNumber.ToString() + " "+hintToFind.nameOfHint;
-            GameObject.Find("Canvas").GetComponent<UIManager>().AfficheTexte("You've found the Hint number " + hintToFind.hintNumber.ToString() + " " + hintToFind.nameOfHint);
+            GameObject.Find("MainCanvas").GetComponent<UIManager>().AfficheTexte("You've found the Hint number " + hintToFind.hintNumber.ToString() + " " + hintToFind.nameOfHint);
             
             _fxOnContact.Play();
             

@@ -22,7 +22,7 @@ public class LevelHandler : MonoBehaviour
         { 
             thisLevelHint=ChooseMissingHint();
             AddHintInOneGameObject(thisLevelHint);
-            GameObject.Find("Canvas").GetComponent<UIManager>().SetUI(playData.thisHero);
+            GameObject.Find("MainCanvas").GetComponent<UIManager>().SetUI(playData.thisHero);
             playData.GetComponent<ScoreSystem>().SetScore();
         }
     }

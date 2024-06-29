@@ -68,7 +68,7 @@ public class Invocator : PlayerController
         pet.transform.position = petPosition.position;
         AssignCamera("Pet");
         _rb.simulated=false;
-        GameObject.Find("Canvas").GetComponent<UIManager>()._playerHeroName = "Pet";
+        GameObject.Find("MainCanvas").GetComponent<UIManager>()._playerHeroName = "Pet";
         _hero.enabled = false;
         _pet = pet.GetComponent<Pet>();
         _pet.invoc = GetComponent<Invocator>();
@@ -76,6 +76,7 @@ public class Invocator : PlayerController
     }
     public IEnumerator InvocTimer(float timer) {
         yield return new WaitForSeconds(timer);
+        Debug.Log("Timer = "+timer);
         InvocationEnd(_pet.gameObject);
     }
     void Heal(float healthKit) 
@@ -90,8 +91,8 @@ public class Invocator : PlayerController
        _invocFx.Play();
         _animator.SetTrigger("BackToBody");
         _animator.SetBool("OutOfBody",false);
-        GameObject.Find("Canvas").GetComponent<UIManager>()._playerHeroName = "Invocator";
-        GameObject.Find("Canvas").GetComponent<UIManager>().DisplayBackInvocatorHud();
+        GameObject.Find("MainCanvas").GetComponent<UIManager>()._playerHeroName = "Invocator";
+        GameObject.Find("MainCanvas").GetComponent<UIManager>().DisplayBackInvocatorHud();
         AssignCamera("Invocator");
         _rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         _rb.simulated = true; 

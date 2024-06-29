@@ -100,13 +100,14 @@ public class SentinelControler : TurretControler, IWalk, ICanBleedAndDie
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    public virtual void Update()
+    protected override void Update()
     {
         if (!character.Destroyed && !_playerDead)
         {
             AiSwitchStates();
             WoundCheck(character);
             DeathCheck(character);
+            ShowHealth();
             //   if (character.Health <= 0)    /// Remplacer par munitions ?
             //   {
             //    character.GiveHint(gameObject);
@@ -114,7 +115,7 @@ public class SentinelControler : TurretControler, IWalk, ICanBleedAndDie
         }
         else
         {
-            _rb.mass *= 100;
+            _rb.isKinematic=true;
             _animator.SetBool("DeadBool", true);
         }
     }

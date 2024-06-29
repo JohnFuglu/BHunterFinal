@@ -60,7 +60,8 @@ public class StandardObject : MonoBehaviour, IDamageable, IDestructible
             else
             { 
                 ExploEnd(onDestructionFxPrefab);
-                GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().PlayerScore += Score;
+                if(Score>0)
+                    GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().PlayerScore += Score;
             }
 
         }

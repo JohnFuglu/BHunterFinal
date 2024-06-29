@@ -19,8 +19,9 @@ public class AcidWater : Water
     }
     protected override void OnTriggerExit2D(Collider2D collision){
         base.OnTriggerExit2D(collision);
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Player")){
             collision.GetComponent<PlayerController>().inAcide = false;
-             collision.GetComponent<Animator>().SetBool("InAcid",false);
+            collision.GetComponent<Animator>().SetBool("InAcid",false);
+        }
     }
 }
