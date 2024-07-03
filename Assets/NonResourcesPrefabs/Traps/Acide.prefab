@@ -4962,10 +4962,10 @@ BuoyancyEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_SurfaceLevel: 0.29
-  m_Density: 10
-  m_LinearDrag: 1
-  m_AngularDrag: 1
+  m_SurfaceLevel: 0.51
+  m_Density: 95
+  m_LinearDrag: 250
+  m_AngularDrag: 50
   m_FlowAngle: 0
   m_FlowMagnitude: 0
   m_FlowVariation: 0
@@ -5029,5 +5029,5 @@ MonoBehaviour:
   waterSpash: {fileID: 0}
   water: {fileID: 4820573934295105363}
   playerCoule: 0
-  massFactor: 0.15
+  massFactor: 1.1
   acidDamage: 0.05

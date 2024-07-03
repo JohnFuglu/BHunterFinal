@@ -5,6 +5,7 @@ using UnityEngine;
 public class PortInsertionTrigger : MonoBehaviour
 {
     [SerializeField] bool _escape = false;
+    [SerializeField] bool levelHasaShip = true;
     [SerializeField] Animator _anima_ship;
     [SerializeField] AudioSource _audio;
 
@@ -12,13 +13,10 @@ public class PortInsertionTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player") && _escape)
         {
+            if(levelHasaShip)
+                _anima_ship.SetTrigger("TakeOff");
             _audio.PlayOneShot(_audio.clip);
-            GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().EndLevel();
+            GameObject.Find("GameHandler").GetComponent<PlayerPersistentDataHandler>().EndLevel(); 
         }
-        if (collision.CompareTag("Player"))
-        {
-            _audio.PlayOneShot(_audio.clip);
-            _anima_ship.SetTrigger("TakeOff");
-        }
-    }
+    }  
 }

@@ -32,9 +32,8 @@ public class Water : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
 
-             playerCC.inWater = true;
-             playerAnim.SetBool("InWater", true);
-
+            playerCC.inWater = true;
+            playerAnim.SetBool("InWater", true);
             moving = (Input.GetAxis("Horizontal"));
             /*pour couler si on avance pas
             if (moving == 0)
@@ -50,8 +49,7 @@ public class Water : MonoBehaviour
     
       //  WaterSplash(collision);
         if (collision.CompareTag("Player")) {
-            StartCoroutine(OnLand(0.3f));
-            collision.GetComponent<Rigidbody2D>().mass=  playerCoule;
+            StartCoroutine(OnLand(0.3f,collision));
         }
      
     }
@@ -60,17 +58,19 @@ public class Water : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerCoule = collision.GetComponent<Rigidbody2D>().mass;
-            collision.GetComponent<Rigidbody2D>().mass *= massFactor;
-         //   WaterSplash(collision);
+            collision.GetComponent<Rigidbody2D>().mass= collision.GetComponent<Rigidbody2D>().mass * massFactor;
+
             playerAnim.SetBool("InWater", true);
         }
        
     }
-    protected IEnumerator OnLand(float waitTime)
+    protected IEnumerator OnLand(float waitTime,Collider2D collision)
     {
+        
         yield return new WaitForSeconds(waitTime);
         playerCC.inWater = false;
         playerAnim.SetBool("InWater", false);
+        collision.GetComponent<Rigidbody2D>().mass = playerCoule;
     }
 
     protected void WaterSplash(Collider2D collision)

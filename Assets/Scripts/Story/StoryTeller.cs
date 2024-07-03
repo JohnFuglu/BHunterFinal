@@ -19,7 +19,7 @@ public class StoryTeller : MonoBehaviour
                 }
         
         }
-            GameObject.Find("Canvas").GetComponent<UIManager>().AfficheTexte(st);
+            GameObject.Find("MainCanvas").GetComponent<UIManager>().AfficheTexte(st);
             Destroy(gameObject);
         }
     }

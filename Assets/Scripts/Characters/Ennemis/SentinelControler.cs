@@ -28,8 +28,6 @@ public class SentinelControler : TurretControler, IWalk, ICanBleedAndDie
     protected Vector3 flipVector;
     [SerializeField]protected float _detectRadius;
     [SerializeField]protected Transform eyeSight;
-   
-    [SerializeField]protected LayerMask playerLayerMask;
     
     [Header("Ai")]
     [SerializeField] protected Transform _fallChecker;
@@ -95,8 +93,6 @@ public class SentinelControler : TurretControler, IWalk, ICanBleedAndDie
         _startDirection = Vector2.left;
 
         flipVector = _startDirection;
-     //   bloodParticle = bloodGo.GetComponent<ParticleSystem>();
-       // defaultColor = GetComponent<SpriteRenderer>().color;
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -108,10 +104,6 @@ public class SentinelControler : TurretControler, IWalk, ICanBleedAndDie
             WoundCheck(character);
             DeathCheck(character);
             ShowHealth();
-            //   if (character.Health <= 0)    /// Remplacer par munitions ?
-            //   {
-            //    character.GiveHint(gameObject);
-            //   }
         }
         else
         {
@@ -123,7 +115,6 @@ public class SentinelControler : TurretControler, IWalk, ICanBleedAndDie
 
     protected virtual void MoveCharacter()
     {
-      
         transform.Translate(_startDirection * Time.deltaTime * speed);
         _animator.SetBool("Walking", true);
         _walking = true;
@@ -147,9 +138,9 @@ public class SentinelControler : TurretControler, IWalk, ICanBleedAndDie
             switch (sentinelStates)
             {
                 case enemyState.Patrolling:
-                if (character.Health == character.TempHp && character.Health > 0 && _shoot.ActualAmmoInClip > 0)
+                if (character.Health == character.TempHp 
+                    && character.Health > 0 )
                 {
-                    
                     ComplexAi();
                 }
                     if (base.Detection(shootDirection) && _shoot.ActualAmmoInClip > 0)
@@ -178,16 +169,20 @@ public class SentinelControler : TurretControler, IWalk, ICanBleedAndDie
                     
                     
 
-                case enemyState.Reloading:
+                case enemyState.Reloading: 
+                    if(gameObject.name != "Cani")
+                    break;
                     if (character.Health > 0)
                     {
                         if (_shoot.Ammo > 0 && _shoot.ActualAmmoInClip < _shoot.AmmoMaxInClip)
                         {
+                           
                             if (_animator.GetBool("Reload") != true)
                             {
                                 _animator.SetBool("Reload", true);
                                 sentinelStates = enemyState.Patrolling;
                             }
+                            
                         }
                         else
                             sentinelStates = enemyState.Patrolling;
@@ -272,7 +267,7 @@ public class SentinelControler : TurretControler, IWalk, ICanBleedAndDie
             Chasing(player);
             if (!Physics2D.OverlapCircle(_closeAttack.hiterGo.transform.position, _closeAttack.attackRange, _closeAttack.hiterLayer)) {
                 Debug.Log("Je me retourne");
-            FlipAndJump();
+                FlipAndJump();
             }
                 
         }
@@ -321,18 +316,17 @@ public class SentinelControler : TurretControler, IWalk, ICanBleedAndDie
         _collidesDown = Physics2D.OverlapBox(_wallChecker.position, _jumpBoxSize, wallLayerMask);
         _canAdvance = Physics2D.OverlapBox(_fallChecker.position, _fallBoxSize, wallLayerMask);
 
-        if (_collidesUp && onGround)
+        if (_collidesUp  && _collidesDown && onGround)
         {
-         
             Flip();
         }
-        if (!_collidesUp && _collidesDown && onGround && _canAdvance)
+        else if (!_collidesUp && _collidesDown && onGround && _canAdvance)
         {
        
             JumpAi();
         }
 
-        if (!_canAdvance && onGround)
+        else if (!_canAdvance && onGround)
         {
            
             Flip();

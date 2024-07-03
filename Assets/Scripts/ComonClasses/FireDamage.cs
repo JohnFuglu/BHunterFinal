@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class FireDamage : ElementalEffect
 {
+    [SerializeField]bool spawner=true;
     protected override void OnParticleCollision(GameObject other)
     {
         if (other.TryGetComponent(out StandardObject objectS) && other.name != "Jaznot") { 
             StartCoroutine(GiveElementalDamages(dotTimer, elemDamage, other));
             // InstantiateFlammesOnExplosion(other);
-            FireSpawner fire = new FireSpawner(other, particleEffect);
+            if(spawner){
+                FireSpawner fire = new FireSpawner(other, particleEffect);
+            }
+                
         }
     }
 
@@ -39,7 +43,7 @@ public class FireDamage : ElementalEffect
 }
 
 public class FireSpawner{
-    int max = 5;
+
     public FireSpawner(GameObject other, ParticleSystem part)
     {
 
@@ -55,6 +59,7 @@ public class FireSpawner{
                         flames.transform.position = other.transform.position;
                         flames.gameObject.AddComponent<DistanceJoint2D>();
                         flames.GetComponent<DistanceJoint2D>().connectedBody = other.GetComponent<Rigidbody2D>();
+                        flames.GetComponent<DistanceJoint2D>().distance=0.5f;
                         flames.Play();
                         if (!flames.IsAlive())
                             GameObject.Destroy(flames.gameObject);

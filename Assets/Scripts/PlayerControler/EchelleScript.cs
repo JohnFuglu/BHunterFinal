@@ -20,8 +20,6 @@ public class EchelleScript : MonoBehaviour
             playerRb = playerGo.GetComponent<Rigidbody2D>();
             playerAnim = playerGo.GetComponent<Animator>();
             cControler = playerGo.GetComponent<PlayerController>();
-            bouncinessDefault = playerRb.sharedMaterial.bounciness;
-            frictionDefault = playerRb.sharedMaterial.friction;
             if (collision.name == "Invocator") 
         {
             playerAnim.SetTrigger("DeployWings");

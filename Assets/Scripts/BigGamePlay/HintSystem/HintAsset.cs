@@ -43,7 +43,7 @@ public class HintAsset : MonoBehaviour
     {
          yield return new WaitForSeconds(2f);
             gameObject.SetActive(false);
-        GameObject.Find("Canvas").GetComponent<UIManager>().EffaceTexte();
+        GameObject.Find("MainCanvas").GetComponent<UIManager>().EffaceTexte();
     }
 }
 

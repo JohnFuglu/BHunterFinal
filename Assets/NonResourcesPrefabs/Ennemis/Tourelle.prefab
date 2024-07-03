@@ -181,7 +181,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
 --- !u!95 &2633183706113442326
 Animator:
   serializedVersion: 5
@@ -274,7 +274,7 @@ MonoBehaviour:
   _distanceDetection: 15
   _controller: {fileID: 2633183706113442351}
   burstNbr: 0
-  rateOfFire: 0
+  rateOfFire: 0.0001
   canon: {fileID: 2633183705705420474}
   pool: {fileID: 0}
   _shootForce: 250
@@ -298,12 +298,12 @@ MonoBehaviour:
   character: {fileID: 2633183706113442327}
   inAcide: 0
   looksRight: 0
-  _rangeToDetectPlayer: 15.49
-  _layerMask:
+  _rangeToDetectPlayer: 5.97
+  playerLayerMask:
     serializedVersion: 2
     m_Bits: 1024
   healthBar: {fileID: 8917307992772634157}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 1.13, z: 0}
 --- !u!114 &2633183706113442327
 MonoBehaviour:
   m_ObjectHideFlags: 0

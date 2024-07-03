@@ -14,7 +14,7 @@ public class MachinGunTurret : TurretControler
 
         hit = Physics2D.Raycast(_shoot.canon.position, devant.transform.position - _shoot.canon.position, _shoot.DistanceDetection);
         Debug.DrawRay(_shoot.canon.position, devant.transform.position - _shoot.canon.position, Color.yellow);
-        if (Physics2D.OverlapCircle(transform.position, _rangeToDetectPlayer, _layerMask)&&hit)
+        if (Physics2D.OverlapCircle(transform.position, _rangeToDetectPlayer, playerLayerMask)&&hit)
             _animator.SetBool("ShootBool",true);
         else {
             _animator.SetBool("ShootBool",false);

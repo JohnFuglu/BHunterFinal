@@ -94,5 +94,4 @@ public class LevelHandler : MonoBehaviour
         GameObject go= Instantiate(hero.Collectable);
         go.transform.position = collectablesSpawns[random].position;
     }
-
 }

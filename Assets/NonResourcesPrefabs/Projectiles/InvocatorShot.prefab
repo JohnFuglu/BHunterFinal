@@ -257,4 +257,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nameInPool: InvocatorPool
   _rb: {fileID: 1660381421707410945}
-  damages: 3
+  damages: 4

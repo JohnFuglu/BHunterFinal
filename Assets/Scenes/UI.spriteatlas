@@ -53,6 +53,7 @@ SpriteAtlas:
     - 73d018171b94c8446a32bd20cfa834d9: 21300000
     - 6c0043770aa646341a3287ec08143fae: 21300000
     - a9236588383cf0842b454be560ece154: 21300000
+    - a72048293d0ac7b4aa2508bc89012143: 21300000
     - 042ddd49f3853164fb120ee0d3d2c770: 21300000
     - 8adf9b997837e814996a211bc874774d: 21300000
     - 56d49e5a25700f0499dfa5ccbff9268b: 21300000
@@ -66,9 +67,11 @@ SpriteAtlas:
     - ab51880de73512f4fb4f30bfd3aea92b: 21300000
     - 6b33ac3d0d5709848b5486a9052c270e: 21300000
     - d8bc6c6ddb7b0aa4598e75a15a86e8a1: 21300000
+    - fdfe4f6df9b5e29469e0bf37f393511a: 21300000
     - 4ad7409d5edfd9a4296ecad11ad1ab45: 21300000
     - 14b1533ea59702f43a6dec772aba8f96: 21300000
     - 69a7d46e20a69ec459f79943c266d77f: 21300000
+    - 743a28be4e82dd84c893f83890888759: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 66c02bd06f5fdd640ae8ce6285b3d89c, type: 3}
@@ -87,6 +90,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 73d018171b94c8446a32bd20cfa834d9, type: 3}
   - {fileID: 21300000, guid: 6c0043770aa646341a3287ec08143fae, type: 3}
   - {fileID: 21300000, guid: a9236588383cf0842b454be560ece154, type: 3}
+  - {fileID: 21300000, guid: a72048293d0ac7b4aa2508bc89012143, type: 3}
   - {fileID: 21300000, guid: 042ddd49f3853164fb120ee0d3d2c770, type: 3}
   - {fileID: 21300000, guid: 8adf9b997837e814996a211bc874774d, type: 3}
   - {fileID: 21300000, guid: 56d49e5a25700f0499dfa5ccbff9268b, type: 3}
@@ -100,9 +104,11 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ab51880de73512f4fb4f30bfd3aea92b, type: 3}
   - {fileID: 21300000, guid: 6b33ac3d0d5709848b5486a9052c270e, type: 3}
   - {fileID: 21300000, guid: d8bc6c6ddb7b0aa4598e75a15a86e8a1, type: 3}
+  - {fileID: 21300000, guid: fdfe4f6df9b5e29469e0bf37f393511a, type: 3}
   - {fileID: 21300000, guid: 4ad7409d5edfd9a4296ecad11ad1ab45, type: 3}
   - {fileID: 21300000, guid: 14b1533ea59702f43a6dec772aba8f96, type: 3}
   - {fileID: 21300000, guid: 69a7d46e20a69ec459f79943c266d77f, type: 3}
+  - {fileID: 21300000, guid: 743a28be4e82dd84c893f83890888759, type: 3}
   m_PackedSpriteNamesToIndex:
   - fondtexte
   - fond_menu
@@ -120,6 +126,7 @@ SpriteAtlas:
   - JaznotHPIcon
   - horizontaleFond4
   - PetFace
+  - CibleSelecButton
   - horizontaleFond3
   - barreEquip
   - boutonArme
@@ -133,9 +140,11 @@ SpriteAtlas:
   - InvocatorbarreVieFill
   - PetbarreVieFill
   - buttonC
+  - Firefly 20240701134809
   - barreVieFill
   - Firefly 20240524145247
   - horizontaleFond
+  - cursor
   m_RenderDataMap: {}
   m_Tag: UI
   m_IsVariant: 0

@@ -179,7 +179,7 @@ public class PlayerPersistentDataHandler : MonoBehaviour
 
     public void EndLevel()
     {
-     UIManager ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+     UIManager ui = GameObject.Find("MainCanvas").GetComponent<UIManager>();
      ui.FadeToBlack(); 
      if(ui.black){
         /*Sauve le niveau en cours

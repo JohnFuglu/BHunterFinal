@@ -9,10 +9,11 @@ public class TurretControler : Controller
     
     public bool looksRight;
     [SerializeField]protected float _rangeToDetectPlayer;
-    [SerializeField]protected LayerMask _layerMask;
+    [SerializeField]protected LayerMask playerLayerMask;
      [SerializeField]protected Slider healthBar;
 
      [SerializeField]Vector3 offset;
+     protected float lastShot;
     protected override void Start()
     {
         base.Start();
@@ -39,13 +40,17 @@ public class TurretControler : Controller
     }
     protected virtual void DetectAndShoot() 
     {
-        if (Physics2D.OverlapCircle(this.transform.position, _rangeToDetectPlayer,_layerMask)) 
+        if (Physics2D.OverlapCircle(this.transform.position, _rangeToDetectPlayer,playerLayerMask)) 
         { 
             Detection(shootDirection* _shoot.DistanceDetection);
             if (hit.transform.CompareTag("Player"))
             {
-                Debug.Log("Doit tirer");
-                AskForShot();
+                lastShot-=_shoot.rateOfFire;
+                Debug.Log("Last shot ="+lastShot);
+                if(lastShot <=0){
+                    lastShot = Time.deltaTime;
+                    AskForShot();
+                }
             }
         }
     }

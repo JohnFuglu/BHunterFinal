@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 4646020275093340949}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.1, y: -4.51, z: 0}
+  m_LocalPosition: {x: 10.1, y: -3.14, z: 0}
   m_LocalScale: {x: 0.89521, y: 0.89521, z: 0.89521}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -118,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 7623690819901947033}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.6, y: -18.4, z: 0}
+  m_LocalPosition: {x: 10.78, y: -19.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -257,11 +257,11 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.67777544
+  m_UseAutoMass: 0
+  m_Mass: 12
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -352,19 +352,16 @@ MonoBehaviour:
   inAcide: 0
   looksRight: 0
   _rangeToDetectPlayer: 0
-  _layerMask:
+  playerLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   healthBar: {fileID: 8333104741115076243}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 1, z: 0}
   sentinelStates: 0
   speed: -3
   runSpeed: -4
   _detectRadius: 0
   eyeSight: {fileID: 425800967}
-  playerLayerMask:
-    serializedVersion: 2
-    m_Bits: 1024
   _fallChecker: {fileID: 7623690819901947032}
   _wallChecker: {fileID: 6270173065603589371}
   _jumpChecker: {fileID: 6274940046069146419}
@@ -373,10 +370,10 @@ MonoBehaviour:
   _floorBoxSize: {x: 0.66, y: 0.09}
   _jumpBoxSize: {x: 0.2, y: 0.85}
   _wallBoxSize: {x: 0.63, y: 0.68}
-  _jumpForce: 400
+  _jumpForce: 1110
   jumpLayerMask:
     serializedVersion: 2
-    m_Bits: 36864
+    m_Bits: 36928
   wallLayerMask:
     serializedVersion: 2
     m_Bits: 2103296
@@ -564,7 +561,7 @@ Transform:
   m_GameObject: {fileID: 7623690820738257352}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.3, y: 0.8, z: 0}
+  m_LocalPosition: {x: 5.3, y: -1.1, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -19,10 +19,7 @@ public class HitAttack : MonoBehaviour // classe generic de type character
     //windows
     List<Rigidbody2D> _contactRigidBodies = new List<Rigidbody2D>();
     GameObject _gOToSpawnOn;
-    [SerializeField] AudioClip _glassSound1, _glassSound2;
     
-
-   
 
     public void Push<T>(Rigidbody2D rb) where T: TurretControler
     {

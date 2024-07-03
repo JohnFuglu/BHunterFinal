@@ -24,7 +24,9 @@ public class LiftedContainer : ActionOnDestroy
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(gameObject.transform.parent != null)
-            _player.transform.SetParent(null);
+        if (collision.gameObject.CompareTag("Player")){
+            if(gameObject.transform.parent != null)
+                _player.transform.SetParent(null);
+        } 
     }
 }
